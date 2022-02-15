@@ -1,11 +1,11 @@
-package com.test.portaltest;
+package com.test.portal4u;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.test.portaltest.test.MemoDTO;
-import com.test.portaltest.test.TestService;
+import com.test.portal4u.test.MemoDTO;
+import com.test.portal4u.test.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

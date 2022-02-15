@@ -1,4 +1,4 @@
-package com.test.portaltest.test;
+package com.test.portal4u.test;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;

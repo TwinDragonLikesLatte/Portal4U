@@ -138,7 +138,7 @@
 
 						<li>✅ "test.xml 생성"
 							<ul>
-								<li>"com.test.portaltest.mapper" 패키지 내 생성</li>
+								<li>"com.test.portal4u.mapper" 패키지 내 생성</li>
 							</ul>
 						</li>
 

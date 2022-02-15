@@ -32,6 +32,6 @@
 	</beans:bean>
 	
 	<!-- 컴포넌트 스캔 -->
-	<context:component-scan base-package="com.test.portaltest" />
+	<context:component-scan base-package="com.test.portal4u" />
 	
 </beans:beans>

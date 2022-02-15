@@ -1,4 +1,4 @@
-package com.test.portaltest.test;
+package com.test.portal4u.test;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
