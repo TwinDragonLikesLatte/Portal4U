@@ -4,6 +4,11 @@
 
 <tiles-definitions>
 
+	<!-- NFTAction -->
+	<definition name="NFTAction.*" template="/WEB-INF/views/NFT/NFTAction/main.jsp">
+	
+	</definition>
+
  	<!-- 메인화면 -->
  	<definition name="home.*" template="/WEB-INF/views/home/home.jsp">
 
