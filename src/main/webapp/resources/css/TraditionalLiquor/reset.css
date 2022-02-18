@@ -22,6 +22,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	-webkit-user-drag: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -46,3 +47,25 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.container { 
+	width: 1920px; 
+	padding: 0px; 
+	margin: 0 atuo;	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
