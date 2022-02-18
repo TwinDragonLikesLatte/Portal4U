@@ -6,20 +6,20 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-   <style>
-   
-   </style>
+   <title>사조막걸리</title>
+   <%@ include file="/WEB-INF/views/inc/asset.jsp" %>
+   <link rel="stylesheet" href="../resources/css/TraditionalLiquor/reset.css">
+   <link rel="stylesheet" href="../resources/css/TraditionalLiquor/main.css">
+
 </head>
 <body>
-   <!--  -->
    <div class="container">
-        <img src="./images/paper-g303aec151_1920.jpg" id="main-paper">
-        <img src="./images/branch-g91c73332f_1280.png" id="branch">
+        <img src="../resources/images/TraditionalLiquor/paper-g303aec151_1920.jpg" id="main-paper">
+        <img src="../resources/images/TraditionalLiquor/branch-g91c73332f_1280.png" id="branch">
         
         <div id="main-box"></div>
         <div class="attach-nav"></div>
-        <a href="main.html"><img src="./images/title.png" id="title" ></a>
+        <a href="main.html"><img src="../resources/images/TraditionalLiquor/title.png" id="title" ></a>
         
         <div class="top-nav">
             <a href="#!">레시피</a>
@@ -30,7 +30,7 @@
             <p>소맥장인이만든명품전통주</p>
         </div>
         
-        <img src="./images/alcohols_main.png" id="alcohols_main">
+        <img src="../resources/images/TraditionalLiquor/alcohols_main.png" id="alcohols_main">
 
         <!-- 구독버튼 -->
         <div class="subscribe">
@@ -104,7 +104,7 @@
               </div>
             </div>
             <div class="img-wrapper">
-                 <img src='./images/beoulsan.png' alt=''>    
+                 <img src='../resources/images/TraditionalLiquor/beoulsan.png' alt=''>    
             </div>
           </div>
 
@@ -128,7 +128,7 @@
               </div>
             </div>
             <div class="img-wrapper">
-                 <img src='./images/beoulsan.png' alt=''>    
+                 <img src='../resources/images/TraditionalLiquor/beoulsan.png' alt=''>    
             </div>
           </div>
 
@@ -152,7 +152,7 @@
               </div>
             </div>
             <div class="img-wrapper">
-                 <img src='./images/beoulsan.png' alt=''>    
+                 <img src='../resources/images/TraditionalLiquor/beoulsan.png' alt=''>    
             </div>
           </div>
 
@@ -176,7 +176,7 @@
               </div>
             </div>
             <div class="img-wrapper">
-                 <img src='./images/beoulsan.png' alt=''>    
+                 <img src='../resources/images/TraditionalLiquor/beoulsan.png' alt=''>    
             </div>
           </div>
 
@@ -200,7 +200,7 @@
               </div>
             </div>
             <div class="img-wrapper">
-                 <img src='./images/beoulsan.png' alt=''>    
+                 <img src='../resources/images/TraditionalLiquor/beoulsan.png' alt=''>    
             </div>
           </div>
 

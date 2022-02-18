@@ -1,0 +1,488 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-user-drag: none;
+    
+}
+
+/* 스크롤바 없애기 */
+body {
+  overflow-x: hidden; 
+  overflow-y: auto
+}
+  
+   
+
+   .container {
+    /* border: 1px solid black; */
+    /* background-color: gold; */
+    width: 1920px;
+    
+  }
+
+/* 드래그 색상 */
+*::selection {
+    background-color: rgb(20, 20, 20);
+    color: wheat;
+}
+
+
+/* 메인 상단 */
+
+/* 상단 배경 */
+#main-paper { 
+    width: 1920px;
+    height: 700px;
+    float: left;
+}
+
+#main-box {
+    width: 1920px;
+    height: 700px;
+    background-color: #FCF2D7;
+    opacity: .7;
+}
+
+#branch {
+    position: absolute;
+    float: left;
+    width: 770px;
+    left: -40px;
+    top: -40px;
+    z-index: 2;
+}
+
+#alcohols_main {
+    position: absolute;
+    top : 210px;
+    left: 1200px;
+    width: 550px;
+}
+
+
+/* 상단 붙박이 네비게이션 */
+.attach-nav {
+    width: 1920px;
+    height: 100px;
+    background-color: #FCF2D7;
+    opacity: .5;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+
+#title {
+    width: 250px;
+    height: 100px;
+    float: left;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 4;
+}
+
+.top-nav {
+    position: fixed;
+    width: 300px;
+    top : 35px;
+    left: 1660px;
+    z-index: 5;
+}
+
+.top-nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 20px;
+}
+
+/* 우측 붙박이 설명 */
+.vertical-text {
+    writing-mode: vertical-rl;
+    position: fixed;
+    top : 160px;
+    left: 1840px;
+}
+
+.vertical-text p {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: .5em;
+}
+
+/* 구독버튼 */
+.subscribe {
+    /* background-color: gold; */
+    display: block;
+    align-items: center;
+}
+
+.subscribe input {
+    width: 230px;
+    height: 85px;
+    border-radius: 30px;
+    background-color: #D8BE8E;
+    font-size: 30px;
+    font-weight: 600;
+    color: whitesmoke;
+    letter-spacing: .3em;
+    border: none;
+    margin : auto;
+    position: relative;
+    top:-45px;
+    cursor: pointer;
+}
+
+.subscribe input:active {
+    box-shadow: inset .3rem .4rem .5rem #ac956c; 
+}
+
+/* 검색창 */
+.search {
+    /* background-color: gold; */
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: 50px;
+    margin-bottom: 50px;
+    
+}
+
+.search input {
+    width: 400px;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px; 
+    border: 1px solid rgb(180, 145, 98);   
+    font-size: 1.2em;
+}
+
+
+
+
+/* 중앙 카테고리 */
+/* 중앙 카테고리-이미지 */
+.middle-content {
+   /* border: 1px solid black; */
+    width: 100%;
+    height :300px;
+    /* background-color: tomato; */
+    display: flex;
+    align-items: center;
+    color : transparent;
+
+}
+
+.middle-container {
+    /* border: 1px solid black; */
+    width: 50%;
+    height: 150px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.middle-category {
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.middle-category:nth-child(1) {
+    background-image: url(../../images/TraditionalLiquor/category_makgulri.png);
+    background-size: 320px;
+    background-repeat: no-repeat;
+    background-position: -155px -40px;
+    transform: rotate(-10deg);
+    z-index: 1;
+}
+
+/* .middle-category:nth-child(1):hover {
+  opacity: .3;
+}
+
+.middle-category:hover .sort{
+  opacity: 1 !important;
+  color: black;
+} */
+
+.middle-category:nth-child(2) {
+    background-image: url(../../images/TraditionalLiquor/category_chungju.png);
+    background-repeat: no-repeat;
+    background-size: 320px;
+    background-position: -70px -55px;
+}
+
+.middle-category:nth-child(3) {
+    background-image: url(../../images/TraditionalLiquor/category_fruit.jpg);
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: -20px -22px;
+}
+
+.middle-category:nth-child(4) {
+    background-image: url(../../images/TraditionalLiquor/category_vapor.jpg);
+    background-repeat: no-repeat;
+    background-size: 250px;
+    background-position: -3px -210px;
+}
+/* 중앙카테고리-글씨 */
+
+.sort { 
+    position: relative;
+    top: 50px;
+    text-align: center; 
+    font-size:1.6em;
+    font-weight: bold;
+  }
+
+/* 카테고리별 상품 분리 줄 */
+.divide-line {
+  border: 1px solid rgb(151, 151, 151);
+  width: 1000px;
+  margin: 100px auto;
+
+}
+
+
+
+
+/* 상품이미지 */
+/* @import url('https://fonts.googleapis.com/css?family=Sarala:700|Exo+2:300'); */
+
+*,
+*:before,
+*:after{
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+  outline: 1px solid transparent;
+}
+
+.wrapper{
+  width: 280px;
+  height: 440px;
+  perspective: 800px;
+  position: relative;
+  left: 200px;
+  top: 100px;
+  /* border: 1px solid black; */
+  float: left;
+  margin-right: 120px;
+  margin-bottom: 50px;
+
+}
+
+.card{
+    /* border: 2px solid black; */
+  width: 320px;
+  height: 450px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-140px);
+  transition: transform 350ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  cursor: pointer;
+}
+
+.card > div{
+/* border: 2px solid black; */
+  position: absolute;
+  width: 280px;
+  height: 410px;
+  padding: 34px 21px;
+  transition: all 350ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+}
+
+/* 색상 찾아오기 */
+.front{
+  background-image: linear-gradient(180deg, rgb(155, 63, 46) 0%, rgba(94, 94, 91, 0) 100%);
+  transform: rotateY(0deg) translateZ(160px); 
+  border-radius: 34px 3px 0 0;
+}
+
+.right{ 
+  background-image: linear-gradient(0deg, rgb(49, 49, 47) 0%, rgba(92,91,94,0) 100%);
+  opacity: 0.08;
+  transform: rotateY(90deg) translateZ(140px);
+  border-radius: 0 0 3px 34px;
+}
+
+.card:hover{
+  transform: translateZ(-160px) rotateY( -90deg);
+}
+
+.card:hover .front{
+  opacity: 0; 
+}
+
+.card:hover .right{
+  opacity: 1; 
+}
+
+.wrapper h1,h2{
+  margin: 0;
+  font-size: 38px;
+  letter-spacing: -.25px;
+  transform: translateX(-44px);
+  font-family: 'Sarala'; 
+  font-weight: 700;
+  color: whitesmoke;
+}
+
+.wrapper h2{
+  font-size: 21px;
+  transform: translateX(-34px);
+  color: whitesmoke;
+}
+
+.wrapper  p{
+  margin: 0;
+  font-weight: 300;
+  font-size: 16px;
+  color: whitesmoke;
+}
+
+span{
+  margin-left: 13px;
+  opacity: .55;
+}
+
+.img-wrapper > img{
+    /* border: 1px solid black; */
+  transform-origin: top right;
+  transition: transform 300ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  transition-delay: 100ms;
+  transform: translateX(21%) rotateZ(13deg) skewX(3deg);
+  pointer-events: none;
+}
+
+.img-wrapper{
+  animation: float 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite alternate;
+  position: absolute;
+  top: 0; right: 0;
+  pointer-events: none;
+  backface-visibility: hidden;
+}
+
+@keyframes float{
+  0%{
+    transform: translateZ(20px);
+  }
+  100%{
+    transform: translateY(-21px) translateX(-13px) translateZ(30px);
+  }
+}
+
+.card:hover ~ .img-wrapper img{
+  transform: scale(0.9) translateX(77%) translateY(90%) rotateZ(80deg);
+}
+
+ul{
+  margin-left: 21px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 300;
+  list-style: none;
+}
+
+.wrapper li{
+  padding-bottom: 8px;
+  position: relative;
+  color: whitesmoke;
+}
+
+li:before{
+  content: 'x';
+  position: absolute;
+  left: -21px;
+  opacity: .55;
+}
+
+button{
+  position: absolute;
+  right: 21px; 
+  bottom: 34px;
+  border: none;
+  box-shadow: none;
+  background: none;
+  color: inherit;
+  font-family: 'Exo 2';
+  font-weight: 300;
+  font-size: 15px;  
+  letter-spacing: -.25px;
+  font-weight: 700;
+  padding: 13px 34px;
+  border-radius: 55px 55px 21px 55px;
+  background-image: linear-gradient(130deg, rgba(117,51,165,1)  50%, rgba(51,46,57,.89) 100%);
+  background-size: 125% 100%;
+  background-position: right;
+  cursor: pointer;
+  box-shadow: 8px 5px 13px rgba(34,34,34,.08);
+  transform: scale(0) skewY(13deg);
+  transition: all 150ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  transform-origin: right bottom;
+}
+
+.card:hover button{
+   transform: scale(1) skewY(0);
+}
+
+.card:not(:hover) button{
+opacity: 0;
+}
+
+button:hover{
+  background-position: left;
+}
+
+.price{
+  position: absolute;
+  bottom: 34px;
+  left: 21px;
+  font-size: 34px;
+  opacity: .34;
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0.33;
+    transform: scale(.89);
+  }
+}
+
+@media only screen and (max-width: 600px){
+  body{
+    transform: scale(.67);
+  }
+}
+
+
+
+
+
+/* 하단 */
+.product {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    /* background-color: gold; */
+    /* border: 1px solid black; */
+
+}
+
+footer{
+    width: 1920px;
+    border-top: 2px solid rgb(187, 187, 187);
+    margin-top: 100px;
+    padding: 30px 40px;
+    /* background-color: gold; */
+    color :rgb(187, 187, 187);
+}
+
+
+
+
+
