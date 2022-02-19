@@ -42,7 +42,6 @@ body {
     top : -480px;
     left: 1200px;
     width: 550px;
-    border: 1px solid black;
 }
 
 
@@ -168,7 +167,7 @@ body {
 .middle-content {
    /* border: 1px solid black; */
     width: 100%;
-    height :300px;
+    height :200px;
     /* background-color: tomato; */
     display: flex;
     align-items: center;
@@ -187,7 +186,6 @@ body {
 }
 
 .middle-category {
-    /* border: 1px solid black; */
     border-radius: 50%;
     width: 140px;
     height: 140px;
@@ -204,14 +202,6 @@ body {
     z-index: 1;
 }
 
-/* .middle-category:nth-child(1):hover {
-  opacity: .3;
-}
-
-.middle-category:hover .sort{
-  opacity: 1 !important;
-  color: black;
-} */
 
 .middle-category:nth-child(2) {
     background-image: url(../../images/TraditionalLiquor/category_chungju.png);
@@ -235,20 +225,52 @@ body {
 }
 /* 중앙카테고리-글씨 */
 
-.sort { 
+/* .sort { 
     position: relative;
     top: 50px;
     text-align: center; 
     font-size:1.6em;
     font-weight: bold;
-  }
+  } */
+  
+.middle-text {
+
+	position: relative;
+	top: -120px;
+	height: 30px;
+	text-align: center; 
+}
+.sort { 
+	 display: inline-block;
+	 position: relative;
+	 top: -200px;
+	 left: 5px;
+	 font-weight: 600;
+	 font-size: 1.5em;
+	 margin: 0 83px;
+}
+  
 
 /* 카테고리별 상품 분리 줄 */
 .divide-line {
   border: 1px solid rgb(151, 151, 151);
   width: 1000px;
-  margin: 50px auto;
+  margin: 0 auto;
 
+}
+
+.divide {
+  text-align: center;
+}
+
+.divide img {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  width: 1000px;
+  height: 15px;
+  opacity: .9;
+  position: relative;
+  top: -200px;
 }
 
 
@@ -263,6 +285,13 @@ body {
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(255,255,255,0);
   outline: 1px solid transparent;
+}
+
+.product {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin-top: -150px;
 }
 
 .wrapper{
@@ -467,17 +496,11 @@ button:hover{
 
 
 /* 하단 */
-.product {
-    display: inline-block;
-    width: 100%;
-    height: auto;
-    margin-top: -150px;
 
-}
 
 footer{
   width: 100%;
-  border-top: 2px solid rgb(187, 187, 187);
+  border-top: 1px solid rgb(187, 187, 187);
   margin-top: 100px;
   color :rgb(187, 187, 187);
 }
@@ -498,7 +521,6 @@ footer{
   width: 1000px;
   padding: 20px 10px;
   line-height: 1.8em;
-
 }
 
 .footer-content {

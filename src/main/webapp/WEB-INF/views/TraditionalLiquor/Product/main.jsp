@@ -47,27 +47,8 @@
 		<div class="search">
 			<input type="text" placeholder="오늘은 뭐마시지?" name="search" autocomplete="off">
 			<p class="glyphicon glyphicon-search"></p>
-			<!-- !!! 부트스트랩 설치필요 -->
 		</div>
 
-
-		<!-- 중간 카테고리 -->
-		<!-- <div class="middle-content">
-            <div class="middle-container">
-                <div class="middle-category">
-                  <div class="sort" id="takju">탁주</div>
-                </div>
-                <div class="middle-category">
-                  <div class="sort">약/청주</div>
-                </div>
-                <div class="middle-category">
-                  <div class="sort">과실주</div>
-                </div>
-                <div class="middle-category">
-                  <div class="sort">증류주</div>
-                </div>
-            </div>
-        </div> -->
 
 		<div class="middle-content">
 			<div class="middle-container">
@@ -77,15 +58,16 @@
 				<div class="middle-category"></div>
 			</div>
 		</div>
+		<div class="middle-text">
+			<div class="sort">탁주</div>
+	        <div class="sort">약/청주</div>
+	        <div class="sort">과실주</div>
+	        <div class="sort">증류주</div>
+		</div>
 
-		<!-- <div class="sort" id="takju">탁주</div>
-        <div class="sort">약/청주</div>
-        <div class="sort">과실주</div>
-        <div class="sort">증류주</div> -->
-
-
-
-		<div class="divide-line"></div>
+        <div class="divide">
+          <img src="../resources/images/TraditionalLiquor/divide_1.png" alt="">
+        </div>
 
 
 		<div class="product">
