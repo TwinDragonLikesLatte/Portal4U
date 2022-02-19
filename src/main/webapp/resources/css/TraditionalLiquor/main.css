@@ -44,6 +44,13 @@ body {
     width: 550px;
 }
 
+#main-text{
+  float: left;
+  width: 800px;
+  position: absolute;
+  top: 280px;
+  left: 50px;
+}
 
 /* 상단 붙박이 네비게이션 */
 .attach-nav {
@@ -272,9 +279,6 @@ body {
   position: relative;
   top: -200px;
 }
-
-
-
 
 /* 상품이미지 */
 /* @import url('https://fonts.googleapis.com/css?family=Sarala:700|Exo+2:300'); */

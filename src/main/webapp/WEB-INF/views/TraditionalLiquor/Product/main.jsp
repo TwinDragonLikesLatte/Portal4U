@@ -25,6 +25,8 @@
 		<a href="main.html">
 			<img src="../resources/images/TraditionalLiquor/title.png" id="title">
 		</a>
+		
+		<img src="../resources/images/TraditionalLiquor/main_text.png" id="main-text">
 
 		<div class="top-nav">
 			<a href="#!">레시피</a> <a href="#!">한잔하기</a>
