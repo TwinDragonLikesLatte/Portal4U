@@ -42,6 +42,7 @@ body {
     top : -480px;
     left: 1200px;
     width: 550px;
+    border: 1px solid black;
 }
 
 
@@ -470,22 +471,39 @@ button:hover{
     display: inline-block;
     width: 100%;
     height: auto;
-    /* background-color: gold; */
-    /* border: 1px solid black; */
     margin-top: -150px;
 
 }
 
 footer{
-    width: 100%;
-    border-top: 2px solid rgb(187, 187, 187);
-    margin-top: 100px;
-    padding: 30px 40px;
-    /* background-color: gold; */
-    color :rgb(187, 187, 187);
+  width: 100%;
+  border-top: 2px solid rgb(187, 187, 187);
+  margin-top: 100px;
+  color :rgb(187, 187, 187);
 }
 
+.content-img {
+  opacity: .5;
+  width: 200px;
+  height: 120px;
+  background-image: url(../../images/TraditionalLiquor/title.png);
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: 0px 25px;
+  float: left; 
+  margin-right: 10px;
+}
 
+.copyright {
+  width: 1000px;
+  padding: 20px 10px;
+  line-height: 1.8em;
 
+}
+
+.footer-content {
+  width: 900px;
+  margin: auto;
+}
 
 
