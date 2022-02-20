@@ -13,10 +13,14 @@
 	href="../resources/css/TraditionalLiquor/reset.css">
 <link rel="stylesheet"
 	href="../resources/css/TraditionalLiquor/main.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
 </head>
 <body>
+
+
 	<div class="container">
+
 		<img src="../resources/images/TraditionalLiquor/paper-g303aec151_1920.jpg" id="main-paper"> 
 		<img src="../resources/images/TraditionalLiquor/branch-g91c73332f_1280.png"	id="branch">
 
@@ -206,9 +210,15 @@
 				</div>
 			</div>
 		</div>
-		
-		
 
+		<div class="map-explain">
+			<p><i class="fas fa-map-marker-alt"></i> 찾아오시는 길</p>
+		</div>
+		<div class="map-content">
+			<div class="map-img"></div>
+			<div id="map" style="height:400px;"></div>		
+		</div>
+		
         <footer>
             <div class="footer-content">
               <div class="content-img" id="footer-content"></div>
@@ -221,10 +231,31 @@
               </div>
           </div>
         </footer>
-	</div>
+        
 
+
+    </div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8da6077afd2a545f8651709e442c5dcd"></script>
+	<script src="/jsp/data/map.js"></script>
 	<script>
 		
+		/* 지도 */
+		var container = document.getElementById('map');
+		
+		var options = { 
+				center: new kakao.maps.LatLng(37.499336, 127.033212),
+			level: 4
+		};
+		var map = new kakao.maps.Map(container, options);
+		
+		var m = new daum.maps.Marker({
+			position: new daum.maps.LatLng(37.499336,127.033212)
+		});
+		
+		m.setMap(map);
+		
+
+			
 	</script>
 </body>
 </html>

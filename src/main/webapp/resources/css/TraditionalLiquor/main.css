@@ -514,8 +514,40 @@ button:hover{
   }
 }
 
+/* 지도 */
+.map-explain {
+	height: 40px;
+	width: 78%;
+	margin: 10px auto;
+	font-size: 1.4em;
+	font-weight: 600;
+	padding: 7px 0;
+}
 
+.map-explain i {
+	color: red;
+}
 
+.map-content{
+	width: 78%;
+	height: 400px;
+	margin: auto;
+
+}
+
+.map-img {
+	width: 400px;
+	height: 400px;
+	float: left;
+	background-image: url(../../images/TraditionalLiquor/people.png);
+	background-size: 380px;
+	background-position: 2px 55px;
+	background-repeat: no-repeat;
+}
+
+#map {
+	width: auto;
+}
 
 
 /* 하단 */
@@ -550,5 +582,25 @@ footer{
   width: 900px;
   margin: auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
