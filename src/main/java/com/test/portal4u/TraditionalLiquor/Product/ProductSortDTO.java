@@ -1,5 +1,5 @@
 package com.test.portal4u.TraditionalLiquor.Product;
 
-public class ProductExplainDTO {
+public class ProductSortDTO {
 
 }

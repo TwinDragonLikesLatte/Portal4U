@@ -14,7 +14,6 @@ public class ProductController {
 	@RequestMapping(value = "/TraditionalLiquor/main.do", method = { RequestMethod.GET })
 	public String main(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
-		
 		return "TraditionalLiquor.main";
 	}
 	
