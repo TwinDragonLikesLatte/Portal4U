@@ -71,8 +71,11 @@
           <img src="../resources/images/TraditionalLiquor/divide_1.png" alt="">
         </div>
 
-
+		<!-- 탁주 카테고리 -->
 		<div class="product">
+			<div class="divide-category">
+				<p>탁주 | 맑은 술을 떠내지 않고 그대로 걸러서 만든 술</p>
+			</div>
 			<div class="wrapper">
 				<div class="card">
 					<div class="front">
@@ -99,6 +102,104 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- 약/청주 카테고리 -->
+		<div class="product">
+			<div class="divide-category">
+				<p>약/청주 | 맑은 술</p>
+			</div>
+			<div class="wrapper">
+				<div class="card">
+					<div class="front">
+						<h1>별산 막걸리</h1>
+						<p>
+							7.7 deck<span>2018</span>
+						</p>
+						<p class="price">$ 89.00</p>
+					</div>
+					<div class="right">
+						<h2>Signature</h2>
+						<ul>
+							<li>Width 7.7"</li>
+							<li>Length 31.75"</li>
+							<li>Wheelbase 14"</li>
+							<li>Nose 6.875"</li>
+							<li>Tail 6.25"</li>
+						</ul>
+						<button>Add to cart, yo</button>
+					</div>
+				</div>
+				<div class="img-wrapper">
+					<img src='../resources/images/TraditionalLiquor/beoulsan.png' alt=''>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 과실주 카테고리 -->
+		<div class="product">
+			<div class="divide-category">
+				<p>과실주 | 과실 또는 과즙에 당과 물을 첨가하여 발효시킨 술덧을 여과하여 만든 술</p>
+			</div>
+			<div class="wrapper">
+				<div class="card">
+					<div class="front">
+						<h1>별산 막걸리</h1>
+						<p>
+							7.7 deck<span>2018</span>
+						</p>
+						<p class="price">$ 89.00</p>
+					</div>
+					<div class="right">
+						<h2>Signature</h2>
+						<ul>
+							<li>Width 7.7"</li>
+							<li>Length 31.75"</li>
+							<li>Wheelbase 14"</li>
+							<li>Nose 6.875"</li>
+							<li>Tail 6.25"</li>
+						</ul>
+						<button>Add to cart, yo</button>
+					</div>
+				</div>
+				<div class="img-wrapper">
+					<img src='../resources/images/TraditionalLiquor/beoulsan.png' alt=''>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 증류주 카테고리 -->
+		<div class="product">
+			<div class="divide-category">
+				<p>증류주 | 곡류 등을 발효시켜 증류한 술</p>
+			</div>
+			<div class="wrapper">
+				<div class="card">
+					<div class="front">
+						<h1>별산 막걸리</h1>
+						<p>
+							7.7 deck<span>2018</span>
+						</p>
+						<p class="price">$ 89.00</p>
+					</div>
+					<div class="right">
+						<h2>Signature</h2>
+						<ul>
+							<li>Width 7.7"</li>
+							<li>Length 31.75"</li>
+							<li>Wheelbase 14"</li>
+							<li>Nose 6.875"</li>
+							<li>Tail 6.25"</li>
+						</ul>
+						<button>Add to cart, yo</button>
+					</div>
+				</div>
+				<div class="img-wrapper">
+					<img src='../resources/images/TraditionalLiquor/beoulsan.png' alt=''>
+				</div>
+			</div>
+		</div>
+		
+		
 
         <footer>
             <div class="footer-content">
