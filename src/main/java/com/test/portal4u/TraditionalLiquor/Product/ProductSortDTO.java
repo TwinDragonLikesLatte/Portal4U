@@ -6,5 +6,5 @@ import lombok.Data;
 public class ProductSortDTO {
 
 	private String seq_sort;
-	private String name;
+	private String sort;
 }

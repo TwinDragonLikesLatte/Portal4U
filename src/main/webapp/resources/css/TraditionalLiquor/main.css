@@ -495,10 +495,11 @@ button:hover{
 
 .price{
   position: absolute;
-  bottom: 34px;
+  bottom: 40px;
   left: 21px;
-  font-size: 34px;
-  opacity: .34;
+  font-size: 1.4em;
+  opacity: .64;
+  background-color: tomato;
 }
 
 @keyframes fadeIn{

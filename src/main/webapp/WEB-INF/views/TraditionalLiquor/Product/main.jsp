@@ -99,7 +99,7 @@
 					</div>
 				</div>
 				<div class="img-wrapper">
-					<img src='../resources/images/TraditionalLiquor/beoulsan.png' alt=''>
+					<img src='../resources/images/TraditionalLiquor/${dto.img}' alt=''>
 				</div>
 			</div>
 			</c:forEach>
