@@ -76,14 +76,15 @@
 			<div class="divide-category">
 				<p>탁주 | 맑은 술을 떠내지 않고 그대로 걸러서 만든 술</p>
 			</div>
+			<c:forEach items="${list}" var="dto">
 			<div class="wrapper">
 				<div class="card">
 					<div class="front">
-						<h1>별산 막걸리</h1>
+						<h1>${dto.name}</h1>
 						<p>
-							7.7 deck<span>2018</span>
+							${dto.volume}ml<span>${dto.abv}</span>
 						</p>
-						<p class="price">$ 89.00</p>
+						<p class="price">${dto.price}원</p>
 					</div>
 					<div class="right">
 						<h2>Signature</h2>
@@ -101,6 +102,7 @@
 					<img src='../resources/images/TraditionalLiquor/beoulsan.png' alt=''>
 				</div>
 			</div>
+			</c:forEach>
 		</div>
 		
 		<!-- 약/청주 카테고리 -->
