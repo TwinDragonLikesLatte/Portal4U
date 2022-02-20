@@ -85,7 +85,7 @@
 						<p>
 							${dto.volume}ml<span>${dto.abv}</span>
 						</p>
-						<p class="price">${dto.price}원</p>
+						<p class="price">${dto.manufacturer}</p>
 					</div>
 					<div class="right">
 						<h2>${dto.name}</h2>
@@ -93,8 +93,8 @@
 							<li>주종 | ${dto.sort}</li>
 							<li>도수 | ${dto.abv}</li>
 							<li>용량 | ${dto.volume}ml</li>
-							<li>맛 | </li>
-							<li>Tail 6.25"</li>
+							<li>제조 | ${dto.manufacturer}</li>
+							<li>소개 | ${dto.introduce}</li>
 						</ul>
 						<button>Add to cart, yo</button>
 					</div>
@@ -121,7 +121,7 @@
 						<p>
 							${dto.volume}ml<span>${dto.abv}</span>
 						</p>
-						<p class="price">${dto.price}원</p>
+						<p class="price">${dto.manufacturer}</p>
 					</div>
 					<div class="right">
 						<h2>${dto.name}</h2>
@@ -129,8 +129,8 @@
 							<li>주종 | ${dto.sort}</li>
 							<li>도수 | ${dto.abv}</li>
 							<li>용량 | ${dto.volume}ml</li>
-							<li>맛 &nbsp;&nbsp;&nbsp;&nbsp;| ${dto.introduce} </li>
-							<li>Tail 6.25"</li>
+							<li>제조 | ${dto.manufacturer}</li>
+							<li>소개 | ${dto.introduce}</li>
 						</ul>
 						<button>Add to cart, yo</button>
 					</div>

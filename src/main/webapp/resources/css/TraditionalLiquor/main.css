@@ -223,10 +223,10 @@ body {
 }
 
 .middle-category:nth-child(4) {
-    background-image: url(../../images/TraditionalLiquor/category_vapor.jpg);
+    background-image: url(../../images/TraditionalLiquor/water.jpg);
     background-repeat: no-repeat;
-    background-size: 250px;
-    background-position: -3px -210px;
+    background-size: 200px;
+    background-position: -30px 0px;
 }
 /* 중앙카테고리-글씨 */
 

@@ -4,9 +4,11 @@
 <mapper namespace="product">
 
 	<select id="list" resultType="com.test.portal4u.TraditionalLiquor.Product.ProductDTO">
-		select 
+		select
+		    pl.seq_product,
 		    pl.name,
 		    ps.sort,
+		    ps.seq_sort,
 		    price,
 		    abv,
 		    volume,
@@ -17,7 +19,8 @@
 		    inner join tblProductSort ps
 		        on ps.seq_sort = pl.seq_sort
 		            inner join tblProductInfo pi
-		                on pi.seq_product = pl.seq_product;
+		                on pi.seq_product = pl.seq_product
+		                    order by pl.seq_product desc
 	</select>
 
 </mapper>
