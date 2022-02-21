@@ -1,0 +1,89 @@
+.main-header {
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.write-header {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Black-bar Style */
+.black-bar__sm {
+    width: 100%;
+    height: 20px;
+    background-color: var(--main-black);
+}
+
+.black-bar__lg {
+    width: 100%;
+    height: 30px;
+    background-color: var(--main-black);
+}
+
+/* Title */
+.title {
+    margin: auto auto;
+}
+
+.title span {
+    font-size: 24px;
+}
+
+/* Vertical Style Title */
+.title.vertical {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title.vertical h1 {
+    font-size: 48px;
+    margin-bottom: 25px;
+}
+
+/* Horizontal Style Title */
+.title.horizontal {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+    display: flex;
+    align-items: baseline;
+}
+
+.title.horizontal h1 {
+    font-size: 48px;
+    margin-right: 15px;
+}
+
+/* Menu bar */
+.menu {
+    display: flex;
+}
+
+.menu li {
+    height: 30px;
+    margin: 0px 50px;
+    border-bottom: 3px solid white;
+    transition: all 0.3s ease-in-out;
+    font-size: 14px;
+}
+
+.menu li:hover {
+    color: var(--red);
+    border-bottom: 3px solid var(--red);
+    cursor: pointer;
+}
