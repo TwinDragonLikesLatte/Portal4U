@@ -61,4 +61,14 @@
 		<put-attribute name="content" value="/WEB-INF/views/member/{1}.jsp" />
 	</definition>
 
+	<!-- 얼라이언스 관련 화면 -->
+	<definition name="alliance.*" template="/WEB-INF/views/alliance/alliance.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/alliance/header.jsp" />
+		<put-attribute name="group" value="/WEB-INF/views/alliance/group.jsp" />
+		<put-attribute name="chatroom" value="/WEB-INF/views/alliance/channel.jsp" />
+		<put-attribute name="myinfo" value="/WEB-INF/views/alliance/myinfo.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/alliance/chatContainer.jsp" />
+		<put-attribute name="people" value="/WEB-INF/views/alliance/people.jsp" />
+	</definition>
+
 </tiles-definitions>
