@@ -24,5 +24,10 @@
 	<definition name="test.*" template="/WEB-INF/views/test/test.jsp">
 		<put-attribute name="testTile" value="/WEB-INF/views/test/tileTest.jsp" />
 	</definition>
-	
+
+	<!-- 회원 관련 화면 -->
+	<definition name="member.*" template="/WEB-INF/views/member/member.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/member/{1}.jsp" />
+	</definition>
+
 </tiles-definitions>
