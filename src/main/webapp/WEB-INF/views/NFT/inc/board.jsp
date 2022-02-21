@@ -2,8 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
 
 
-<div class="NFT_board">
-      <h3>자주하는 질문</h3>
+
       <table class="NFT_board_detail table table-bordered" style="width: 900px; margin: 0 auto;">
         <tr>
           <th>번호</th>
@@ -72,4 +71,3 @@
           <td>2022-02-01</td>
         </tr>
       </table>
-    </div>
