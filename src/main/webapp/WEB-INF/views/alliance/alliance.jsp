@@ -16,10 +16,16 @@
     <script src="/resources/js/jquery.serializeObject.js"></script>
     <style>
 
+        body {
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+        }
+
         .container.main {
             display: grid;
-            grid-template-columns: 300px 1fr 300px;
-            grid-template-rows: 60px 60px 1fr 120px;
+            grid-template-columns: 300px minmax(600px, 1fr) 300px;
+            grid-template-rows: 60px 60px minmax(500px, 1fr) 100px;
             grid-gap: 20px;
             width: 100vw;
             height: 100vh;
@@ -31,22 +37,27 @@
             grid-column: 1 / 4;
             grid-row: 1 / 2;
         }
+
         .container.group {
             grid-column: 1 / 2;
             grid-row: 2 / 3;
         }
+
         .container.channel {
             grid-column: 1 / 2;
             grid-row: 3/ 4;
         }
+
         .container.myinfo {
             grid-column: 1 / 2;
             grid-row: 4 / 5;
         }
-        .container.content {
+
+        .container.main-content {
             grid-column: 2 / 3;
             grid-row: 2 / 5;
         }
+
         .container.people {
             grid-column: 3 / 4;
             grid-row: 2 / 5;
@@ -73,7 +84,9 @@
         }
 
         .container > .content {
-            height: 100%;
+            height: calc(100% - 60px);
+            padding: 20px;
+            overflow-y: scroll;
         }
 
         .modal > div {
