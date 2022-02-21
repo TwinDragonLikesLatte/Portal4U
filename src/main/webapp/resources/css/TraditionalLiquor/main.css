@@ -1,7 +1,7 @@
 /* 스크롤바 없애기 */
 body {
-  overflow-x: hidden; 
-  overflow-y: auto
+   overflow-x: hidden; 
+  overflow-y: auto;
 }
    
 
@@ -107,6 +107,8 @@ body {
     font-size: 24px;
     font-weight: 400;
     letter-spacing: .5em;
+    color: wheat;
+    background-color: black;
 }
 
 /* 구독버튼 */
@@ -539,9 +541,9 @@ button:hover{
 	width: 400px;
 	height: 400px;
 	float: left;
-	background-image: url(../../images/TraditionalLiquor/people.png);
+	background-image: url(../../images/TraditionalLiquor/man.png);
 	background-size: 380px;
-	background-position: 2px 55px;
+	background-position: 2px 15px;
 	background-repeat: no-repeat;
 }
 
@@ -583,6 +585,84 @@ footer{
   margin: auto;
 }
 
+.stop-scroll {
+	  height: 100%;
+  overflow: hidden;
+}
+
+/* 모달창-경고 */
+
+.modal-overlay{
+    width: 100%;
+    height: 4430px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    z-index: 101;
+}
+
+#modal .modal-window {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 20px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 13.5px );
+  -webkit-backdrop-filter: blur( 13.5px );
+  border-radius: 5px;
+  border: 1px solid rgba(179, 179, 179, 0.18);
+  width: 1130px;
+  height: 700px;
+  position: fixed;
+  top: 100px;
+  padding: 10px;
+ 
+}
+
+#modal .modal-window img {
+  display: block;
+  position: relative;
+  margin: auto;
+  
+}
+
+#modal .close-area {
+    display: inline;
+    float: right;
+    padding-right: 10px;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px gray;
+    color: white;
+}
+
+#modal .content {
+    margin-top: 20px;
+    padding: 0px 10px;
+    text-shadow: 1px 1px 2px gray;
+    color: white;
+}
+
+
+.btn_close {
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #D8BE8E;
+    font-size: 1.2em;
+    border: none;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.btn_close:active {
+	box-shadow: inset .3rem .4rem .5rem #ac956c; 
+}
 
 
 

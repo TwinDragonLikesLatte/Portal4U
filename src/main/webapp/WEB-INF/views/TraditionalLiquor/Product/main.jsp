@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>사조막걸리</title>
 <%@ include file="/WEB-INF/views/inc/asset.jsp"%>
+<script src="<%= root %>/resources/js/jquery-ui.js"></script>
 <link rel="stylesheet"
 	href="../resources/css/TraditionalLiquor/reset.css">
 <link rel="stylesheet"
@@ -17,9 +18,22 @@
 
 </head>
 <body>
-
-
+   
+    <div class="modal-close">
+	   <div id="modal" class="modal-overlay">
+	        <div class="modal-window" id="modal-window">
+	            <div class="close-area">X</div>
+	            <div class="content">
+	                <img src="../resources/images/TraditionalLiquor/warningmodal.png">
+	            </div>
+	            	<a href="javascript:;"><input type="button" class="btn_close" value="오늘 하루 열지 않음"></a> 
+	        </div>
+		</div>
+   	</div>
+	
+	
 	<div class="container">
+	<!-- <div class="modal-overlay"></div> -->
 
 		<img src="../resources/images/TraditionalLiquor/paper-g303aec151_1920.jpg" id="main-paper"> 
 		<img src="../resources/images/TraditionalLiquor/branch-g91c73332f_1280.png"	id="branch">
@@ -231,12 +245,8 @@
               </div>
           </div>
         </footer>
-        
-
-
     </div>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8da6077afd2a545f8651709e442c5dcd"></script>
-	<script src="/jsp/data/map.js"></script>
 	<script>
 		
 		/* 지도 */
@@ -254,8 +264,45 @@
 		
 		m.setMap(map);
 		
+		/* 모달창 - 경고 */
+		/* x버튼 */
+   	    const closeBtn = modal.querySelector(".close-area")
+        closeBtn.addEventListener("click", e => {
+            modal.style.display = "none"
+        });
+		
+        $('#modal-window').draggable();   
+	    
+        
 
-			
+        $(document).ready(function () {
+            $(".modal-close .btn_close").click(function () {
+                setCookieMobile( "todayCookie", "done" , 1);
+                $(".modal-close").hide();
+            });
+        });
+         
+        function setCookieMobile ( name, value, expiredays ) {
+            var todayDate = new Date();
+            todayDate.setDate( todayDate.getDate() + expiredays );
+            document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+        }
+        function getCookieMobile () {
+            var cookiedata = document.cookie;
+            //alert(cookiedata);
+            if ( cookiedata.indexOf('todayCookie=done') < 0 ){
+                 $(".modal-close").show();
+            }
+            else {
+                $(".modal-close").hide();
+            }
+        }
+
+        getCookieMobile();
+		
+		
+		
+		</script>
 	</script>
 </body>
 </html>
