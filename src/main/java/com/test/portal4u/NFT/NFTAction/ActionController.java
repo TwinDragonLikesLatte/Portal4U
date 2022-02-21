@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ActionController {
 	
-	@RequestMapping(value = "/NFTAction/main.do", method = { RequestMethod.GET })
+	@RequestMapping(value = "/NFTAction/main", method = { RequestMethod.GET })
 	public String NFTAction(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
 		
