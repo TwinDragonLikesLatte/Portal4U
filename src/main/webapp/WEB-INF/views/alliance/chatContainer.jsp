@@ -3,7 +3,7 @@
 
 <style>
 
-    .container.content {
+    .container.main-content {
         position: relative;
     }
 
@@ -13,13 +13,24 @@
         bottom: 0;
         width: 100%;
         padding: 20px;
+        border-top: 1px solid #BEBEBE;
+        background-color: white;
+    }
+
+    .msg-input {
+        display: flex;
+        line-height: 0px;
     }
 
 </style>
 
-<div class="container content">
+<div class="container main-content">
+    <div class="sub-header">채팅방 이름</div>
+    <div class="content">
+
+    </div>
     <div class="msg-input-wrap">
-        <input type="text" class="msg-input form-control" placeholer="메시지를 입력해주세요.">
+        <input type="textarea" class="msg-input form-control" placeholder="메시지를 입력해주세요.">
     </div>
 </div>
 
