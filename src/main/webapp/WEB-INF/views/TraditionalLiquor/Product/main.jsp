@@ -22,11 +22,13 @@
     <div class="modal-close">
 	   <div id="modal" class="modal-overlay">
 	        <div class="modal-window" id="modal-window">
-	            <div class="close-area">X</div>
 	            <div class="content">
 	                <img src="../resources/images/TraditionalLiquor/warningmodal.png">
 	            </div>
+	            <div class="btns">
 	            	<a href="javascript:;"><input type="button" class="btn_close" value="오늘 하루 열지 않음"></a> 
+	            	<input type="button" class="close-area" value="닫기">
+	        	</div>
 	        </div>
 		</div>
    	</div>
