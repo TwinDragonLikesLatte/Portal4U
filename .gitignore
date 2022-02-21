@@ -3,3 +3,8 @@
 /target
 /target/classes
 db.properties
+.classpath
+.project
+.springBeans
+.settings/
+target/

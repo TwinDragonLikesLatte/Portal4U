@@ -1,4 +1,4 @@
-package com.test.portal4u.NFT.NFTAction;
+package com.test.portal4u.NFT.NFTAdmin;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class ActionController {
+public class AdminController {
+
 	
-	@RequestMapping(value = "/NFTAction/main", method = { RequestMethod.GET })
-	public String NFTAction(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+	@RequestMapping(value = "/NFTAction/admin", method = { RequestMethod.GET })
+	public String NFTAdmin(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
 		
 
-		return "NFTAction.main";
+		return "NFTAdmin.main";
 	}
-
 }

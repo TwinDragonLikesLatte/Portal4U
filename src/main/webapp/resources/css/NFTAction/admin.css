@@ -1,0 +1,116 @@
+.NFT_action_add {
+  width: 1140px;
+  height: 600px;
+  border: 1px solid #B2B3B9;
+}
+
+.add_section {
+  width: 940px;
+  height: 500px;
+  margin: 50px 100px;
+  border: 1px solid #B2B3B9;
+}
+
+.board_btn_ad {
+  text-align: right;
+  margin-right: 120px;
+}
+
+.add_board_ad {
+  background-color: #8C2F39;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 15px;
+  margin-top: 10px;
+}
+
+.add_section {
+  display: flex;
+  flex-direction: row;
+}
+
+.add_image {
+  display: flex;
+  flex-direction: column;
+  width: 470px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.image_container {
+  width: 400px;
+  height: 400px;
+  margin: 15px auto;
+}
+
+#preview-image {
+  object-fit: contain;
+  width: 400px;
+  height: 400px;
+}
+
+
+.prod_insert {
+  display: flex;
+  flex-direction: column;
+  width: 470px;
+}
+
+.action_date {
+  width: 450px;
+  height: 30px;
+  margin-top: 15px;
+}
+
+.prod_name {
+  width: 450px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.prod_desc {
+  width: 450px;
+  height: 190px;
+  margin-top: 10px;
+}
+
+.prod_detail {
+  width: 450px;
+  height: 190px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#action_date {
+  border: 1px solid #B2B3B9;
+  border-radius: 4px;
+  margin-left: 15px;
+  width: 370px;
+}
+
+#prod_name {
+  border: 1px solid #B2B3B9;
+  border-radius: 4px;
+  margin-left: 15px;
+  width: 370px;
+}
+
+#prod_desc {
+  border: 1px solid #B2B3B9;
+  border-radius: 4px;
+  width: 438px;
+  height: 170px;
+  resize: none;
+}
+
+#prod_detail {
+  border: 1px solid #B2B3B9;
+  border-radius: 4px;
+  width: 438px;
+  height: 160px;
+  resize: none;
+}
