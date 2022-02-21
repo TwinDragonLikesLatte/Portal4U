@@ -24,7 +24,19 @@
    <section>
     <tiles:insertAttribute name="logo"></tiles:insertAttribute>
 
-   	<tiles:insertAttribute name="adbanner"></tiles:insertAttribute>
+   	<div class="NFT_ad_tap">
+      <h2 class="ad_title">곧 다가올 경매에 집중하세요</h2>
+      <img class="banner1 bannerOn" src="../resources/images/NFTAction/ad.png" alt="ad-banner" />
+      <img class="banner2 bannerOff" src="../resources/images/NFTAction/back.png" alt="ad-banner" />
+      <img class="banner3 bannerOff" src="../resources/images/NFTAction/beach.png" alt="ad-banner" />
+
+	</div>
+	<div class="NFT_ad_button">
+      <div class="ad_button" id="first"></div>
+      <div class="ad_button" id="second"></div>
+      <div class="ad_button" id="third"></div>
+	</div>
+	<hr />
 
 	<tiles:insertAttribute name="action_title"></tiles:insertAttribute>
     
@@ -34,9 +46,12 @@
     
     <tiles:insertAttribute name="in_action"></tiles:insertAttribute>
     
+    <div class="NFT_board">
+    <h3>자주하는 질문</h3>
     <tiles:insertAttribute name="board"></tiles:insertAttribute>
-
-    <tiles:insertAttribute name="up_down_btn"></tiles:insertAttribute>
+	</div>
+    <button class="to_top">△</button>
+    <button class="to_bottom">▽</button>
   </section>
 </body>
 
