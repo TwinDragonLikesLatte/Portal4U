@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+
+
+    <insert id="add" parameterType="MemberDTO">
+        INSERT INTO tblMember (seq, id, name, pw) VALUES (seqMember.nextVal, #{id}, #{name}, #{pw})
+    </insert>
+
+    <select id="list" resultType="MemberDTO">
+        SELECT * FROM tblMember ORDER BY seq ASC
+    </select>
+
+    <select id="get" resultType="MemberDTO" parameterType="Long">
+        SELECT * FROM tblMember WHERE seq = #{seq}
+    </select>
+
+    <update id="edit" parameterType="MemberDTO">
+        UPDATE tblMember SET pw = #{pw} WHERE seq = #{seq}
+    </update>
+
+    <delete id="del" parameterType="Long">
+        DELETE FROM tblMember WHERE seq = #{seq}
+    </delete>
+
+    <select id="login" resultType="MemberDTO" parameterType="MemberDTO">
+        SELECT * FROM tblMember WHERE id = #{id} AND pw = #{pw}
+    </select>
+
+</mapper>
