@@ -3,11 +3,42 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
+	
+	<!-- NFTAdmin -->
+	<definition name="NFTAdmin.*" template="/WEB-INF/views/NFT/Admin/admin.jsp">
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<!-- board -->
+		<put-attribute name="board" value="/WEB-INF/views/NFT/inc/board.jsp"></put-attribute>
+		<!-- logo -->
+		<put-attribute name="logo" value="/WEB-INF/views/NFT/inc/logo.jsp"></put-attribute>
+	</definition>
+	<!-- NFTBoard -->
+	<definition name="NFTBoard.*" template="/WEB-INF/views/NFT/Board/board.jsp">
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<!-- board -->
+		<put-attribute name="board" value="/WEB-INF/views/NFT/inc/board.jsp"></put-attribute>
+		<!-- logo -->
+		<put-attribute name="logo" value="/WEB-INF/views/NFT/inc/logo.jsp"></put-attribute>
+	</definition>
 
 	<!-- NFTAction -->
 	<definition name="NFTAction.*" template="/WEB-INF/views/NFT/NFTAction/main.jsp">
-	
+		<!-- asset -->
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<!-- board -->
+		<put-attribute name="board" value="/WEB-INF/views/NFT/inc/board.jsp"></put-attribute>
+		<!-- logo -->
+		<put-attribute name="logo" value="/WEB-INF/views/NFT/inc/logo.jsp"></put-attribute>
+		<!-- action title -->
+		<put-attribute name="action_title" value="/WEB-INF/views/NFT/inc/action_title.jsp"></put-attribute>
+		<!-- action_content -->
+		<put-attribute name="action_content" value="/WEB-INF/views/NFT/inc/action_content.jsp"></put-attribute>
+		<!-- action_desc -->
+		<put-attribute name="action_desc" value="/WEB-INF/views/NFT/inc/action_desc.jsp"></put-attribute>
+		<!-- in_action -->	
+		<put-attribute name="in_action" value="/WEB-INF/views/NFT/inc/in_action.jsp"></put-attribute>
 	</definition>
+	
 	
 	<!-- TraditionalLiquor -->
 	<definition name="TraditionalLiquor.*" template="/WEB-INF/views/TraditionalLiquor/Product/main.jsp">
