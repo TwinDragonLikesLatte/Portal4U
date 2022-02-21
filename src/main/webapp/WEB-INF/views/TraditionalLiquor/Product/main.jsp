@@ -9,14 +9,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>사조막걸리</title>
 <%@ include file="/WEB-INF/views/inc/asset.jsp"%>
+<script src="<%= root %>/resources/js/jquery-ui.js"></script>
 <link rel="stylesheet"
 	href="../resources/css/TraditionalLiquor/reset.css">
 <link rel="stylesheet"
 	href="../resources/css/TraditionalLiquor/main.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
 </head>
 <body>
+   
+    <div class="modal-close">
+	   <div id="modal" class="modal-overlay">
+	        <div class="modal-window" id="modal-window">
+	            <div class="content">
+	                <img src="../resources/images/TraditionalLiquor/warningmodal.png">
+	            </div>
+	            <div class="btns">
+	            	<a href="javascript:;"><input type="button" class="btn_close" value="오늘 하루 열지 않음"></a> 
+	            	<input type="button" class="close-area" value="닫기">
+	        	</div>
+	        </div>
+		</div>
+   	</div>
+	
+	
 	<div class="container">
+	<!-- <div class="modal-overlay"></div> -->
+
 		<img src="../resources/images/TraditionalLiquor/paper-g303aec151_1920.jpg" id="main-paper"> 
 		<img src="../resources/images/TraditionalLiquor/branch-g91c73332f_1280.png"	id="branch">
 
@@ -76,31 +96,35 @@
 			<div class="divide-category">
 				<p>탁주 | 맑은 술을 떠내지 않고 그대로 걸러서 만든 술</p>
 			</div>
+			<c:forEach items="${list}" var="dto">
+			<c:if test = "${dto.seq_sort eq '1'}">
 			<div class="wrapper">
 				<div class="card">
 					<div class="front">
-						<h1>별산 막걸리</h1>
+						<h1>${dto.name}</h1>
 						<p>
-							7.7 deck<span>2018</span>
+							${dto.volume}ml<span>${dto.abv}</span>
 						</p>
-						<p class="price">$ 89.00</p>
+						<p class="price">${dto.manufacturer}</p>
 					</div>
 					<div class="right">
-						<h2>Signature</h2>
+						<h2>${dto.name}</h2>
 						<ul>
-							<li>Width 7.7"</li>
-							<li>Length 31.75"</li>
-							<li>Wheelbase 14"</li>
-							<li>Nose 6.875"</li>
-							<li>Tail 6.25"</li>
+							<li>주종 | ${dto.sort}</li>
+							<li>도수 | ${dto.abv}</li>
+							<li>용량 | ${dto.volume}ml</li>
+							<li>제조 | ${dto.manufacturer}</li>
+							<li>소개 | ${dto.introduce}</li>
 						</ul>
 						<button>Add to cart, yo</button>
 					</div>
 				</div>
 				<div class="img-wrapper">
-					<img src='../resources/images/TraditionalLiquor/beoulsan.png' alt=''>
+					<img src='../resources/images/TraditionalLiquor/${dto.img}' alt=''>
 				</div>
 			</div>
+			</c:if>
+			</c:forEach>
 		</div>
 		
 		<!-- 약/청주 카테고리 -->
@@ -108,31 +132,35 @@
 			<div class="divide-category">
 				<p>약/청주 | 맑은 술</p>
 			</div>
+			<c:forEach items="${list}" var="dto">
+			<c:if test = "${dto.seq_sort eq '2'}">
 			<div class="wrapper">
 				<div class="card">
 					<div class="front">
-						<h1>별산 막걸리</h1>
+						<h1>${dto.name}</h1>
 						<p>
-							7.7 deck<span>2018</span>
+							${dto.volume}ml<span>${dto.abv}</span>
 						</p>
-						<p class="price">$ 89.00</p>
+						<p class="price">${dto.manufacturer}</p>
 					</div>
 					<div class="right">
-						<h2>Signature</h2>
+						<h2>${dto.name}</h2>
 						<ul>
-							<li>Width 7.7"</li>
-							<li>Length 31.75"</li>
-							<li>Wheelbase 14"</li>
-							<li>Nose 6.875"</li>
-							<li>Tail 6.25"</li>
+							<li>주종 | ${dto.sort}</li>
+							<li>도수 | ${dto.abv}</li>
+							<li>용량 | ${dto.volume}ml</li>
+							<li>제조 | ${dto.manufacturer}</li>
+							<li>소개 | ${dto.introduce}</li>
 						</ul>
 						<button>Add to cart, yo</button>
 					</div>
 				</div>
 				<div class="img-wrapper">
-					<img src='../resources/images/TraditionalLiquor/beoulsan.png' alt=''>
+					<img src='../resources/images/TraditionalLiquor/${dto.img}' alt=''>
 				</div>
 			</div>
+			</c:if>
+			</c:forEach>
 		</div>
 		
 		<!-- 과실주 카테고리 -->
@@ -198,9 +226,15 @@
 				</div>
 			</div>
 		</div>
-		
-		
 
+		<div class="map-explain">
+			<p><i class="fas fa-map-marker-alt"></i> 찾아오시는 길</p>
+		</div>
+		<div class="map-content">
+			<div class="map-img"></div>
+			<div id="map" style="height:400px;"></div>		
+		</div>
+		
         <footer>
             <div class="footer-content">
               <div class="content-img" id="footer-content"></div>
@@ -213,10 +247,64 @@
               </div>
           </div>
         </footer>
-	</div>
-
+    </div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8da6077afd2a545f8651709e442c5dcd"></script>
 	<script>
 		
+		/* 지도 */
+		var container = document.getElementById('map');
+		
+		var options = { 
+				center: new kakao.maps.LatLng(37.499336, 127.033212),
+			level: 4
+		};
+		var map = new kakao.maps.Map(container, options);
+		
+		var m = new daum.maps.Marker({
+			position: new daum.maps.LatLng(37.499336,127.033212)
+		});
+		
+		m.setMap(map);
+		
+		/* 모달창 - 경고 */
+		/* x버튼 */
+   	    const closeBtn = modal.querySelector(".close-area")
+        closeBtn.addEventListener("click", e => {
+            modal.style.display = "none"
+        });
+		
+        $('#modal-window').draggable();   
+	    
+        
+
+        $(document).ready(function () {
+            $(".modal-close .btn_close").click(function () {
+                setCookieMobile( "todayCookie", "done" , 1);
+                $(".modal-close").hide();
+            });
+        });
+         
+        function setCookieMobile ( name, value, expiredays ) {
+            var todayDate = new Date();
+            todayDate.setDate( todayDate.getDate() + expiredays );
+            document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+        }
+        function getCookieMobile () {
+            var cookiedata = document.cookie;
+            //alert(cookiedata);
+            if ( cookiedata.indexOf('todayCookie=done') < 0 ){
+                 $(".modal-close").show();
+            }
+            else {
+                $(".modal-close").hide();
+            }
+        }
+
+        getCookieMobile();
+		
+		
+		
+		</script>
 	</script>
 </body>
 </html>
