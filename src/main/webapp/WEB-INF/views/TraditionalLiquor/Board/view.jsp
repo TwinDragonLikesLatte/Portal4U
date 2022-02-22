@@ -78,7 +78,7 @@
 
 <div class="btns">
 	<a href="list.do"><input type="button" value="돌아가기" class="btn btn-default"></a>
-	<input type="button" value="수정하기" class="btn btn-info">
+	<input type="button" value="수정하기" class="btn btn-info" onclick="location.href='edit.do?seq_tlboard=${dto.seq_tlboard}';">
 	<input type="button" value="삭제하기" class="btn btn-warning">
 </div>
 

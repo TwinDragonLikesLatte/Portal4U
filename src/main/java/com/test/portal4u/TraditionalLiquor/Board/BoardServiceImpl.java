@@ -39,5 +39,10 @@ public class BoardServiceImpl implements BoardService {
 		return dao.add(dto);
 	}
 	
+	@Override
+	public int edit(BoardDTO dto, HttpSession session, HttpServletRequest req, String del) {
+
+		return dao.edit(dto);
+	}
 	
 }

@@ -48,7 +48,7 @@ public class TLBoardController {
     * @param session
     * @param resp
     * @param seq_tlboard
-    * @param model
+    * @param model+
     * @return view.jsp
     */
    @GetMapping("/TraditionalLiquor/view.do")
@@ -75,6 +75,14 @@ public class TLBoardController {
 		return "TLBoard.add";
 	}   
    
+	/**
+	 * 레시피 게시판 글쓰기 성공여부
+	 * @param req
+	 * @param session
+	 * @param resp
+	 * @param dto
+	 * @return 성공시 list.jsp 실패시 add.jsp
+	 */
 	@PostMapping("/TraditionalLiquor/addok.do")
 	public String maddok(HttpServletRequest req, HttpSession session, HttpServletResponse resp, BoardDTO dto) {
 		
@@ -87,6 +95,48 @@ public class TLBoardController {
 			return "redirect:/TraditionalLiquor/add.do";
 		}
 	}
+	
+	/**
+	 * 레시피 게시판 수정
+	 * @param req
+	 * @param session
+	 * @param resp
+	 * @param seq_tlboard
+	 * @param model
+	 * @return edit.jsp
+	 */
+	@GetMapping("/TraditionalLiquor/edit.do")
+	public String medit(HttpServletRequest req, HttpSession session, HttpServletResponse resp, String seq_tlboard, Model model) {
+		
+		BoardDTO dto = service.get(seq_tlboard);
+		
+		model.addAttribute("dto", dto);
+		
+		return "TLBoard.edit";
+	}
+	
+	/**
+	 * 레시피 게시판 수정 성공여부
+	 * @param req
+	 * @param session
+	 * @param resp
+	 * @param dto
+	 * @param del
+	 * @return 성공시 list.jsp 실패시 edit.jsp
+	 */
+	@PostMapping("/TraditionalLiquor/editok.do")
+	public String meditok(HttpServletRequest req, HttpSession session, HttpServletResponse resp, BoardDTO dto, String del) {
+								
+		int result = service.edit(dto, session, req, del);
+		
+		if (result == 1) {
+			return "redirect:/TraditionalLiquor/list.do";
+		} else {
+			return "redirect:/TraditionalLiquor/edit.do?seq_tlboard=" + dto.getSeq_tlboard();
+		}
+	}
+	
+	
    
 }
 

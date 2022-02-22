@@ -30,6 +30,14 @@
 	    , null
 	    )
 	</insert>
+	
+	<update id="edit" parameterType="com.test.portal4u.TraditionalLiquor.Board.BoardDTO">
+		update tblTLBoard set 
+		    title = #{title}, 
+		    content = #{content}
+		where seq_tlboard = #{seq_tlboard}	
+	</update>
+	
 
 </mapper>
 

@@ -13,5 +13,7 @@ public interface BoardService {
 
 	int add(BoardDTO dto, HttpSession session, HttpServletRequest req);
 
+	int edit(BoardDTO dto, HttpSession session, HttpServletRequest req, String del);
+
 
 }

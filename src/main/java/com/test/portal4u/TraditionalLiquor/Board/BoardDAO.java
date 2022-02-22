@@ -14,6 +14,8 @@ public interface BoardDAO {
 
 	int add(BoardDTO dto);
 
+	int edit(BoardDTO dto);
+
 	
 
 }

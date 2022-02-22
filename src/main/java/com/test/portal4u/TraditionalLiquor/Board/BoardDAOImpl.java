@@ -30,4 +30,10 @@ public class BoardDAOImpl implements BoardDAO {
 		return template.insert("tlboard.add", dto);
 	}
 	
+	@Override
+	public int edit(BoardDTO dto) {
+
+		return template.update("tlboard.edit", dto);
+	}
+	
 }
