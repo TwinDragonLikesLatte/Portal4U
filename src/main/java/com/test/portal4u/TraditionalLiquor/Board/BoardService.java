@@ -1,5 +1,10 @@
 package com.test.portal4u.TraditionalLiquor.Board;
 
-public class BoardService {
+import java.util.List;
+
+public interface BoardService {
+
+	List<BoardDTO> list();
+
 
 }

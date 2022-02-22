@@ -1,6 +1,6 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>   
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>   
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,12 +13,10 @@
    </style>
 </head>
 <body>
-   <!--  -->
-   <div class="container">
-      <h1 class="page-header"><small></small></h1>
+
+	<tiles:insertAttribute name="header"></tiles:insertAttribute>   
+
       
-   </div>
-   	리스트 입니다.
    <script>
    
    </script>

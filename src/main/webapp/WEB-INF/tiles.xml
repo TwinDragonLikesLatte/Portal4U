@@ -44,6 +44,15 @@
 	<definition name="TraditionalLiquor.*" template="/WEB-INF/views/TraditionalLiquor/Product/main.jsp">
 	
 	</definition>
+
+	<!-- TraditionalLiquor Board -->
+	<definition name="TLBoard.*" template="/WEB-INF/views/TraditionalLiquor/layout/board.jsp">
+		<!-- header -->
+		<put-attribute name="header" value="/WEB-INF/views/TraditionalLiquor/inc/header_small.jsp"></put-attribute>
+		
+		<!-- content -->
+		<put-attribute name="content" value="/WEB-INF/views/TraditionalLiquor/Board/{1}.jsp"></put-attribute>
+	</definition>
 	
 
  	<!-- 메인화면 -->

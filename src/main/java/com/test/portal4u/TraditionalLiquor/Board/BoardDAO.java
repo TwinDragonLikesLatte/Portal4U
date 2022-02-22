@@ -1,5 +1,11 @@
 package com.test.portal4u.TraditionalLiquor.Board;
 
-public class BoardDAO {
+import java.util.List;
+
+public interface BoardDAO {
+
+	List<BoardDTO> list();
+
+	
 
 }
