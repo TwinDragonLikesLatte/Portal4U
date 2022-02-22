@@ -13,6 +13,18 @@
     <link rel="stylesheet" href="/resources/css/newsletter/screen/write.css">
 
     <title>Pitchfork Newsletter</title>
+
+
+    <Style>
+
+        /* 진심으로 이 친구 왜 css 파일에서 안 먹는지 모르겠음 */
+        .album-list img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+    </Style>
 </head>
 
 <body>
@@ -162,48 +174,19 @@
     <div class="album-container">
         <div class="black-bar__sm"></div>
         <div class="album-lists">
+
+            <!-- 음반 목록 -->
+            <c:forEach items="${list}" var="dto">
             <div class="album-list">
-                <div class="img"></div>
+                <img src="${dto.image_link}" alt="album-img">
                 <div class="album-basic">
-                    <div class="artist">My Bloody Valentine</div>
-                    <div class="album-name">Loveless</div>
+                    <div class="artist">${dto.artist}</div>
+                    <div class="album-name">${dto.album_name}</div>
                 </div>
             </div>
-            <div class="album-list">
-                <div class="img"></div>
-                <div class="album-basic">
-                    <div class="artist">Flipturn</div>
-                    <div class="album-name">Citrona</div>
-                </div>
-            </div>
-            <div class="album-list">
-                <div class="img"></div>
-                <div class="album-basic">
-                    <div class="artist">개쩌는밴드</div>
-                    <div class="album-name">개쩌는앨범ㅠㅠ</div>
-                </div>
-            </div>
-            <div class="album-list">
-                <div class="img"></div>
-                <div class="album-basic">
-                    <div class="artist">Television</div>
-                    <div class="album-name">Asome ablum</div>
-                </div>
-            </div>
-            <div class="album-list">
-                <div class="img"></div>
-                <div class="album-basic">
-                    <div class="artist">Talking Head</div>
-                    <div class="album-name">싸이코킬러</div>
-                </div>
-            </div>
-            <div class="album-list">
-                <div class="img"></div>
-                <div class="album-basic">
-                    <div class="artist">백못끝낼각</div>
-                    <div class="album-name">Back-end the-end</div>
-                </div>
-            </div>
+            </c:forEach>
+
+
         </div>
     </div>
 </div>

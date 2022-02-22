@@ -161,13 +161,13 @@ main.write-page {
 .album-lists .album-list {
     display: flex;
     margin-bottom: 15px;
+    cursor: pointer;
 }
 
-.album-list .img {
+.album-list img {
     width: 50px;
     height: 50px;
     margin-right: 10px;
-    background-color: mistyrose;
 }
 
 .album-list .artist,

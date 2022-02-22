@@ -95,7 +95,7 @@
 
 <!-- Write BTN -->
 <div class="write-btn">
-    <a href="/write.html">
+    <a href="/newsletter/write">
         <div class="glyphicon glyphicon-pencil"></div>
     </a>
 </div>
