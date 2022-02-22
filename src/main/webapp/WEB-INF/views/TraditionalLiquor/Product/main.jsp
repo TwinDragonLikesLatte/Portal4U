@@ -48,7 +48,8 @@
 		<img src="../resources/images/TraditionalLiquor/main_text.png" id="main-text">
 
 		<div class="top-nav">
-			<a href="#!">레시피</a> <a href="#!">한잔하기</a>
+			<a href="list.do">레시피</a> 
+			<a href="#!">한잔하기</a>
 		</div>
 
 		<div class="vertical-text-container">

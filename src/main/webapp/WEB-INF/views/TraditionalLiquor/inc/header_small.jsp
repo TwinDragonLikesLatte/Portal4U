@@ -13,7 +13,7 @@
     </a>
     
     <div class="top-nav">
-        <a href="#!">레시피</a>
+        <a href="list.do">레시피</a>
         <a href="#!">한잔하기</a>
     </div>
     <img src="../resources/images/TraditionalLiquor/alcohols_main.png" id="alcohols_main">
