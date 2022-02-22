@@ -11,6 +11,7 @@
 
         <typeAlias type="com.test.portal4u.newsletter.subscribe.SubscriberDTO" alias="SubscriberDTO"/>
         <typeAlias type="com.test.portal4u.newsletter.subscribe.PreperGenreDTO" alias="GenreDTO"/>
+        <typeAlias type="com.test.portal4u.newsletter.write.PitchforkDTO" alias="PitchforkDTO"/>
 
     </typeAliases>
    

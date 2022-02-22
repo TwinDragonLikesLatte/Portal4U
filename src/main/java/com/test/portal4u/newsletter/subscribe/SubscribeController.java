@@ -56,9 +56,6 @@ public class SubscribeController {
         return "newsletter.statistics";
     }
 
-    @GetMapping("/newsletter/write")
-    public String write(){
-        return "newsletter.write";
-    }
+
 
 }
