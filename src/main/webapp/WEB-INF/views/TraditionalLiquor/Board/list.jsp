@@ -104,6 +104,8 @@
 	font-size:1.1em;
 	text-align: justify;
 }
+
+.card a { text-decoration: none;}
 </style>
 
 
@@ -116,18 +118,20 @@
 	</div>
 	
 	<c:forEach items="${list}" var="dto"> 
-	<div class="post">
-        <img src="../resources/images/TraditionalLiquor/title.png" alt="">
-        <div class="briefing">
-        	<div class="title">${dto.title}</div>
-        	<div class="regdate">
-        		<fmt:parseDate value="${dto.regdate}" var="test" pattern="yyyy-MM-dd" ></fmt:parseDate>
-        		<fmt:formatDate value="${test}" pattern="yyyy-MM-dd" />
-        	</div>
-        	<div class="readcount">조회수 ${dto.readcount}</div>
-        	<div class="txt">${fn:substring(dto.content,0,38)}..</div>
-        </div>
-	</div>
+	<a href="view.do?seq_tlboard=${dto.seq_tlboard}">
+		<div class="post">
+	        <img src="../resources/images/TraditionalLiquor/title.png" alt="">
+	        <div class="briefing">
+	        	<div class="title">${dto.title}</div>
+	        	<div class="regdate">
+	        		<fmt:parseDate value="${dto.regdate}" var="test" pattern="yyyy-MM-dd" ></fmt:parseDate>
+	        		<fmt:formatDate value="${test}" pattern="yyyy-MM-dd" />
+	        	</div>
+	        	<div class="readcount">조회수 ${dto.readcount}</div>
+	        	<div class="txt">${fn:substring(dto.content,0,38)}..</div>
+	        </div>
+		</div>
+	</a>
 	</c:forEach>
 	<div class="post">
         <img src="../resources/images/TraditionalLiquor/title.png" alt="">
