@@ -16,4 +16,14 @@ public class WriteDAOImpl implements WriteDAO{
     public List<PitchforkDTO> list() {
         return template.selectList("pitchfork.list");
     }
+
+    @Override
+    public int getLatestSeq() {
+        return template.selectOne("pitchfork.getLatestSeq");
+    }
+
+    @Override
+    public PitchforkDTO get(int seq) {
+        return template.selectOne("pitchfork.get", seq);
+    }
 }

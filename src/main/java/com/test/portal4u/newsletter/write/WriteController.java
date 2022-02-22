@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -16,28 +19,27 @@ public class WriteController {
     @GetMapping("/newsletter/write")
     public String write(Model model){
 
-
-        /**
-         * write 화면을 어떻게 보여줄 것인가..
-         * 1. 앨범 박스에 앨범 목록을 보여줘야함
-         * 2. 클릭하면 해당 앨범 내용 보여줘야함
-         * 3. 처음 화면은 그럼 아무것도 없는걸로? || db 맨 처음에 있는걸로 보여주기
-         * 4.
-         *
-         *
-         * 1. 피치포크 DTO 리스트 가져오기
-         * 2. 앨범 박스에 해당 내용 뿌리기
-         * --> 우선 여기까지
-         *
-         *
-         */
+        /* Initial Screen Data */
+        int seq = service.getLatestSeq();
+        PitchforkDTO dto = service.get(seq);
+        model.addAttribute("dto", dto);
 
         /* Select Pitchfork List */
         List<PitchforkDTO> list = service.list();
         model.addAttribute("list", list);
 
-
         return "newsletter.write";
+    }
+
+    /**
+     * 앨범박스 선택시 Ajax
+     * @param seq 선택한 Pitchfork 게시물 seq
+     * @return 해당 게시물 DTO
+     */
+    @GetMapping("/newsletter/write/{seq}")
+    @ResponseBody
+    public PitchforkDTO select(@RequestBody @PathVariable("seq") int seq){
+        return service.get(seq);
     }
 
 }

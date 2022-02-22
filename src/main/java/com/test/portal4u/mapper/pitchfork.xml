@@ -8,6 +8,15 @@
         order by seq_pitchfork desc
     </select>
 
+    <select id="getLatestSeq" resultType="Integer">
+        select max(seq_pitchfork) from tblpitchfork
+    </select>
+
+    <select id="get" parameterType="Integer" resultType="PitchforkDTO">
+        select * from tblpitchfork
+        where seq_pitchfork = #{seq}
+    </select>
+
 
 </mapper>
 

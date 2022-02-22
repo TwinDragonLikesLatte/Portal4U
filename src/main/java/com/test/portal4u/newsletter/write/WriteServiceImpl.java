@@ -15,4 +15,14 @@ public class WriteServiceImpl implements WriteService{
     public List<PitchforkDTO> list() {
         return dao.list();
     }
+
+    @Override
+    public int getLatestSeq() {
+        return dao.getLatestSeq();
+    }
+
+    @Override
+    public PitchforkDTO get(int seq) {
+        return dao.get(seq);
+    }
 }

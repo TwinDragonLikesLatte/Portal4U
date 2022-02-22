@@ -35,16 +35,16 @@ main.write-page {
     display: flex;
 }
 
-.album-info .img {
+.album-info img {
     width: 200px;
     height: 200px;
-    background-color: mistyrose;
     margin-right: 20px;
 }
 
 .album-basic {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .album-basic .release-date,
@@ -64,6 +64,10 @@ main.write-page {
     color: var(--gray);
 }
 
+.album-basic .title {
+    margin: 0 0;
+}
+
 .album-basic .title div {
     margin-bottom: 12px;
 }
@@ -78,7 +82,7 @@ main.write-page {
     margin-bottom: 2px;
 }
 
-.write-form .my-review textarea {
+.write-form .my-review-box textarea {
     border: none;
     resize: none;
     width: 100%;
@@ -91,7 +95,7 @@ main.write-page {
     /* background-color: bisque; */
 }
 
-.write-form .my-review textarea:focus {
+.write-form .my-review-box textarea:focus {
     outline: none;
 }
 
