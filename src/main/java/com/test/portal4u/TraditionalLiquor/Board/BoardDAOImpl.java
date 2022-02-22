@@ -24,5 +24,10 @@ public class BoardDAOImpl implements BoardDAO {
 		return template.selectOne("tlboard.get", seq_tlboard);
 	}
 	
+	@Override
+	public int add(BoardDTO dto) {
+
+		return template.insert("tlboard.add", dto);
+	}
 	
 }

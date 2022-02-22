@@ -4,7 +4,7 @@
 <mapper namespace="tlboard">
 
 	<select id="list" resultType="com.test.portal4u.TraditionalLiquor.Board.BoardDTO">
-		select * from tblTLBoard
+		select * from tblTLBoard order by regdate desc
 	</select>
 	
 	<select id="get" parameterType="String" resultType="com.test.portal4u.TraditionalLiquor.Board.BoardDTO">
@@ -13,8 +13,23 @@
 		    m.name
 		from tblTLBoard b
 		    inner join tblmember m
-		        on b.seq = m.seq		
+		        on b.seq = m.seq
+		        	where b.seq_tlboard = #{seq_tlboard}
+		        		
 	</select>
+	
+	<insert id="add" parameterType="com.test.portal4u.TraditionalLiquor.Board.BoardDTO">
+		insert into tblTLBoard values 
+	    (seqTLBoard.nextVal
+	    , 1
+	    , #{title}
+	    , #{content}
+	    , sysdate
+	    , default
+	    , null
+	    , null
+	    )
+	</insert>
 
 </mapper>
 

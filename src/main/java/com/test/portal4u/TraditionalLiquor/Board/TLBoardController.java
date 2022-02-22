@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  * 전통주 레시피 게시판 컨트롤러
@@ -41,6 +42,15 @@ public class TLBoardController {
       
    }
    
+   /**
+    * 레시피 게시판 글 보기
+    * @param req
+    * @param session
+    * @param resp
+    * @param seq_tlboard
+    * @param model
+    * @return view.jsp
+    */
    @GetMapping("/TraditionalLiquor/view.do")
    public String view(HttpServletRequest req, HttpSession session, HttpServletResponse resp, String seq_tlboard, Model model) {
 	   
@@ -52,8 +62,67 @@ public class TLBoardController {
 	   
    }
    
+   /**
+    * 레시피 게시판 글쓰기
+    * @param req
+    * @param session
+    * @param resp
+    * @return add.jsp
+    */
+	@GetMapping("/TraditionalLiquor/add.do")
+	public String madd(HttpServletRequest req, HttpSession session, HttpServletResponse resp) {
+		
+		return "TLBoard.add";
+	}   
    
-   
-   
+	@PostMapping("/TraditionalLiquor/addok.do")
+	public String maddok(HttpServletRequest req, HttpSession session, HttpServletResponse resp, BoardDTO dto) {
+		
+								
+		int result = service.add(dto, session, req);
+		
+		if (result == 1) {
+			return "redirect:/TraditionalLiquor/list.do";
+		} else {
+			return "redirect:/TraditionalLiquor/add.do";
+		}
+	}
    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

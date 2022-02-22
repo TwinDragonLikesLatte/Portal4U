@@ -106,6 +106,21 @@
 }
 
 .card a { text-decoration: none;}
+
+
+/* 버튼 */
+.page-title .btn-write {
+	width: 80px;
+	margin: 0;
+	padding: 0;
+	background-color: white;
+}
+
+.page-title .btn-write:hover {
+	background-color: rgb(236, 236, 236);
+	border: 1px solid #CCCCCC;
+}
+
 </style>
 
 
@@ -115,6 +130,7 @@
 		<div class="recipe">레시피</div>
 		<input type="text" placeholder="검색">
 		<a herf='#!'><p class="glyphicon glyphicon-search"></p></a>
+		<input type="button" value="글쓰기" class="btn-write" onclick="location.href='add.do';" >
 	</div>
 	
 	<c:forEach items="${list}" var="dto"> 
@@ -133,71 +149,6 @@
 		</div>
 	</a>
 	</c:forEach>
-	<div class="post">
-        <img src="../resources/images/TraditionalLiquor/title.png" alt="">
-        <div class="briefing">
-        	<div class="title">막걸리엔 모다?</div>
-        	<div class="regdate">2022-02-22</div>
-        	<div class="readcount">조회수 100</div>
-        	<div class="txt">비오는날은 모다? 막걸리다 오늘은 막걸리에 어울리는 요리를 알아보겠..</div>
-        
-        </div>
-	</div>
-	<div class="post">
-        <img src="../resources/images/TraditionalLiquor/title.png" alt="">
-        <div class="briefing">
-        	<div class="title">막걸리엔 모다?</div>
-        	<div class="regdate">2022-02-22</div>
-        	<div class="readcount">조회수 100</div>
-        	<div class="txt">비오는날은 모다? 막걸리다 오늘은 막걸리에 어울리는 요리를 알아보겠..</div>
-        
-        </div>
-	</div>
-	<div class="post">
-        <img src="../resources/images/TraditionalLiquor/title.png" alt="">
-        <div class="briefing">
-        	<div class="title">막걸리엔 모다?</div>
-        	<div class="regdate">2022-02-22</div>
-        	<div class="readcount">조회수 100</div>
-        	<div class="txt">비오는날은 모다? 막걸리다 오늘은 막걸리에 어울리는 요리를 알아보겠..</div>
-        
-        </div>
-	</div>
-	<div class="post">
-        <img src="../resources/images/TraditionalLiquor/title.png" alt="">
-        <div class="briefing">
-        	<div class="title">막걸리엔 모다?</div>
-        	<div class="regdate">2022-02-22</div>
-        	<div class="readcount">조회수 100</div>
-        	<div class="txt">비오는날은 모다? 막걸리다 오늘은 막걸리에 어울리는 요리를 알아보겠..</div>
-        
-        </div>
-	</div>
-	<div class="post">
-        <img src="../resources/images/TraditionalLiquor/title.png" alt="">
-        <div class="briefing">
-        	<div class="title">막걸리엔 모다?</div>
-        	<div class="regdate">2022-02-22</div>
-        	<div class="readcount">조회수 100</div>
-        	<div class="txt">비오는날은 모다? 막걸리다 오늘은 막걸리에 어울리는 요리를 알아보겠..</div>
-        
-        </div>
-	</div>
-	<div class="post">
-        <img src="../resources/images/TraditionalLiquor/title.png" alt="">
-        <div class="briefing">
-        	<div class="title">막걸리엔 모다?</div>
-        	<div class="regdate">2022-02-22</div>
-        	<div class="readcount">조회수 100</div>
-        	<div class="txt">비오는날은 모다? 막걸리다 오늘은 막걸리에 어울리는 요리를 알아보겠..</div>
-        
-        </div>
-	</div>
-
-
-
-
-
 
 </div>
 	
