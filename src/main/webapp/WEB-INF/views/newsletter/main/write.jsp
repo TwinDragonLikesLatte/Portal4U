@@ -180,6 +180,12 @@
         obj.style.height = (24 + obj.scrollHeight) + 'px';
     }
 
+
+    const postDate = new Date().getFullYear() + "-" + (new String(new Date().getMonth() + 1)).padStart(2,"0") + "-" + (new String(new Date().getDate())).padStart(2, "0");
+    $('.post-date').text(postDate);
+
+
+
     $('.album-list').click(function() {
 
         let seq = $(this).context.id;
