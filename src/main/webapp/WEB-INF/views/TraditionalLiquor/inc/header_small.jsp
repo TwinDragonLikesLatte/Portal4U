@@ -8,7 +8,7 @@
     
     <div id="main-box"></div>
     <div class="attach-nav"></div>
-    <a href="main.html">
+    <a href="main.do">
         <img src="../resources/images/TraditionalLiquor/title.png" id="title" >
     </a>
     
