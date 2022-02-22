@@ -1,30 +1,20 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-   <style>
-   
-   </style>
-</head>
-<body>
-   <!--  -->
-   <div class="container">
-      <h1 class="page-header"><small></small></h1>
-      
-   </div>
-   
-   <script>
-   
-   </script>
-</body>
-</html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
+<style>
+.btns {
+	width: 100%;
+	text-align: center;
+}
+</style>
+<form method="POST" action="delok.do" enctype="multipart/form-data">
+<div class="btns">
+	<input type="button" value="돌아가기" class="btn btn-default" onclick="location.href='edit.do?seq_tlboard=${seq_tlboard}';">
+	<input type="submit" value="삭제하기" class="btn btn-danger">
+</div>
 
+<input type="hidden" name="seq_tlboard" value="${seq_tlboard}">
 
-
+</form>
+	

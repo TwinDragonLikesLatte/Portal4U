@@ -7,11 +7,11 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>NEW FUTURE THINGS.ad</title>
+   <title>Document</title>
    <link rel="stylesheet" href="../resources/css/NFTAction/reset.css">
    <link rel="stylesheet" href="../resources/css/NFTAction/styles.css">
    <link rel="stylesheet" href="../resources/css/NFTAction/admin.css">
-   
+   <!-- <link rel="stylesheet" href="/resources/css/NFTAction/board.css"> -->
    
    <tiles:insertAttribute name="asset"></tiles:insertAttribute>
    <style>
@@ -24,37 +24,36 @@
     <div class="NFT_action_title">
       <h2>경매 물품 등록</h2>
     </div>
-     <form action="/portal4u/NFTAction/admin/add" method="POST" enctype="multipart/form-data">
     <div class="NFT_action_add">
-    
+     <form action="#" method="post" class="image_add">
       <div class="add_section">
         <div class="add_image">
           <div class="image-container">
             <img id="preview-image" src="https://dummyimage.com/500x500/ffffff/000000.png&text=preview+image">
-              <input type="file" id="input-image" name="attach" />
+              <input type="file" id="input-image">
               <input class="pay" type="submit" value="등록하기">
           </div>
         </div>
         <div class="prod_insert">
           <div class="action_date">
             <label for="action_date">경매날짜</label>
-            <input type="date" id="action_date" name="start_date"/>
+            <input type="date" id="action_date" />
           </div>
           <div class="prod_name">
             <label for="prod_name">상품이름</label>
-            <input type="text" id="prod_name" name="prod_name" />
+            <input type="text" id="prod_name" />
           </div>
           <div class="prod_desc">
             <label for="prod_desc">상품설명</label><br />
-            <textarea id="prod_desc" name="prod_desc"></textarea>
+            <textarea id="prod_desc"></textarea>
           </div>
           <div class="prod_detail">
             <label for="prod_detail">상품상세</label><br />
-            <textarea id="prod_detail" name="prod_detail"></textarea>
+            <textarea id="prod_detail"></textarea>
           </div>
         </div>
       </div>
-    
+     </form>
     </div>
 
     <div class="NFT_board">
@@ -65,7 +64,7 @@
         <button class="add_board_ad">수정하기</button>
       </div>
     </div>
- </form>
+
 
     <button class=" to_top">△</button>
     <button class="to_bottom">▽</button>
@@ -106,33 +105,6 @@
     // to_bottom 클래스에 클릭 이벤트를 설정하고 스크롤 이벤트 적용
     const to_bottom = document.querySelector('.to_bottom');
     to_bottom.addEventListener('click', scrollMoveDown);
-    
-    //모달창 팝업 클릭 이벤트
-        const $card_item = document.querySelector('.card_item')
-    const $modal = document.querySelector('.modal');
-    const $body = document.querySelector('body');
-
-
-    $card_item.addEventListener('click', () => {
-      $modal.classList.remove('modal');
-      $modal.classList.add('popup');
-      $body.classList.add('body_scroll');
-    });
-
-
-    (function () {
-      document.addEventListener('keydown', function (e) {
-        const keyCode = e.keyCode;
-
-        if (keyCode == 27) { // Esc key
-          $modal.classList.add('modal');
-          $modal.classList.remove('popup');
-          $body.classList.remove('body_scroll');
-        }
-      })
-    })();
-
-    
   </script>
 </body>
 </html>
