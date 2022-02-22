@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-user-drag: none;
+}
+
+/* 스크롤바 없애기 */
+body {
+  overflow-x: hidden; 
+  overflow-y: auto
+}
+  
+.container {
+/* border: 1px solid black; */
+/* background-color: gold; */
+width: 1920px;
+}
+
+/* 드래그 색상 */
+*::selection {
+    background-color: rgb(20, 20, 20);
+    color: wheat;
+}
+
+
+/* 메인 상단 */
+
+/* 상단 배경 */
+#main-paper { 
+    width: 1920px;
+    height: 220px;
+    float: left;
+}
+
+#main-box {
+    width: 1920px;
+    height: 220px;
+    background-color: #FCF2D7;
+    opacity: .7;
+}
+
+#branch {
+    position: absolute;
+    float: left;
+    width: 420px;
+    left: -40px;
+    top: 10px;
+    z-index: 2;
+}
+
+#alcohols_main {
+    position: absolute;
+    top : 110px;
+    left: 1710px;
+    width: 140px;
+}
+
+
+/* 상단 붙박이 네비게이션 */
+.attach-nav {
+    width: 1920px;
+    height: 100px;
+    background-color: #FCF2D7;
+    opacity: .5;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+
+#title {
+    width: 250px;
+    height: 100px;
+    float: left;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 4;
+}
+
+.top-nav {
+    position: fixed;
+    width: 300px;
+    top : 35px;
+    left: 1660px;
+    z-index: 5;
+}
+
+.top-nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 20px;
+}
+

@@ -28,7 +28,7 @@ public class TLBoardController {
     * @param session
     * @param resp
     * @param model
-    * @return list.jsp
+    * @return board.jsp
     */
    @GetMapping("/TraditionalLiquor/list.do")
    public String list(HttpServletRequest req, HttpSession session, HttpServletResponse resp, Model model) {
