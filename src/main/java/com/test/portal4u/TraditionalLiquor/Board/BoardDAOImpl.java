@@ -18,6 +18,11 @@ public class BoardDAOImpl implements BoardDAO {
 		return template.selectList("tlboard.list");
 	}
 	
+	@Override
+	public BoardDTO get(String seq_tlboard) {
+
+		return template.selectOne("tlboard.get", seq_tlboard);
+	}
 	
 	
 }

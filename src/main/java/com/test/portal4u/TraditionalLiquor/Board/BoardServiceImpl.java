@@ -19,5 +19,11 @@ public class BoardServiceImpl implements BoardService {
 		return list;
 	}
 	
+	@Override
+	public BoardDTO get(String seq_tlboard) {
+
+		return dao.get(seq_tlboard);
+	}
+	
 	
 }

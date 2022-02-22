@@ -6,5 +6,7 @@ public interface BoardService {
 
 	List<BoardDTO> list();
 
+	BoardDTO get(String seq_tlboard);
+
 
 }

@@ -42,9 +42,13 @@ public class TLBoardController {
    }
    
    @GetMapping("/TraditionalLiquor/view.do")
-   public String view(HttpServletRequest req, HttpSession session, HttpServletResponse resp, String seq, Model model) {
+   public String view(HttpServletRequest req, HttpSession session, HttpServletResponse resp, String seq_tlboard, Model model) {
 	   
-	   BoardDTO dto = service.get(seq);
+	   BoardDTO dto = service.get(seq_tlboard);
+	   
+	   model.addAttribute("dto", dto);
+	   
+	   return "TLBoard.view";
 	   
    }
    

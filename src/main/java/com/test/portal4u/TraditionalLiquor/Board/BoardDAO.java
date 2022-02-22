@@ -6,6 +6,8 @@ public interface BoardDAO {
 
 	List<BoardDTO> list();
 
+	BoardDTO get(String seq_tlboard);
+
 	
 
 }

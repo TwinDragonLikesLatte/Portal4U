@@ -6,6 +6,15 @@
 	<select id="list" resultType="com.test.portal4u.TraditionalLiquor.Board.BoardDTO">
 		select * from tblTLBoard
 	</select>
+	
+	<select id="get" parameterType="String" resultType="dto">
+		select
+		    b.*,
+		    m.name
+		from tblTLBoard b
+		    inner join tblmember m
+		        on b.seq = m.seq		
+	</select>
 
 </mapper>
 

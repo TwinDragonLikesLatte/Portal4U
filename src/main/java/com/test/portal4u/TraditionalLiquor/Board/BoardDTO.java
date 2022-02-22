@@ -3,7 +3,7 @@ package com.test.portal4u.TraditionalLiquor.Board;
 import lombok.Data;
 
 /**
- * tblTLBoard의 데이터입니다.
+ * 레시피페이지 관련 데이터입니다.
  * @author JH LEE
  *
  */
@@ -17,4 +17,6 @@ public class BoardDTO {
 	private String readcount;						//조회수
 	private String orgfilename;						//첨부파일
 	private String filename;						//첨부파일
+	private String name;							//회원명
+	
 }
