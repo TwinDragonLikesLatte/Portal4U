@@ -1,5 +1,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <style>
 
@@ -62,6 +64,7 @@
     color: #444;
     display: inline-block;
     vertical-align: top; /* 인라인의 무게 중심 지정 */
+    cursor: pointer;
 }
 
 /* 게시물 이미지 */
@@ -112,16 +115,20 @@
 		<a herf='#!'><p class="glyphicon glyphicon-search"></p></a>
 	</div>
 	
+	<c:forEach items="${list}" var="dto"> 
 	<div class="post">
         <img src="../resources/images/TraditionalLiquor/title.png" alt="">
         <div class="briefing">
-        	<div class="title">막걸리엔 모다?</div>
-        	<div class="regdate">2022-02-22</div>
-        	<div class="readcount">조회수 100</div>
-        	<div class="txt">비오는날은 모다? 막걸리다 오늘은 막걸리에 어울리는 요리를 알아보겠..</div>
-        
+        	<div class="title">${dto.title}</div>
+        	<div class="regdate">
+        		<fmt:parseDate value="${dto.regdate}" var="test" pattern="yyyy-MM-dd" ></fmt:parseDate>
+        		<fmt:formatDate value="${test}" pattern="yyyy-MM-dd" />
+        	</div>
+        	<div class="readcount">조회수 ${dto.readcount}</div>
+        	<div class="txt">${fn:substring(dto.content,0,38)}..</div>
         </div>
 	</div>
+	</c:forEach>
 	<div class="post">
         <img src="../resources/images/TraditionalLiquor/title.png" alt="">
         <div class="briefing">

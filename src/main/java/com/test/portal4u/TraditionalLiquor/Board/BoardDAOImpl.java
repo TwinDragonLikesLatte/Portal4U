@@ -15,7 +15,7 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public List<BoardDTO> list() {
 
-		return template.selectList("board.list");
+		return template.selectList("tlboard.list");
 	}
 	
 	

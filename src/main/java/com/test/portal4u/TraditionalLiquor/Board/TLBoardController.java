@@ -33,12 +33,19 @@ public class TLBoardController {
    @GetMapping("/TraditionalLiquor/list.do")
    public String list(HttpServletRequest req, HttpSession session, HttpServletResponse resp, Model model) {
       
-//      List<BoardDTO> list = service.list();
-//      
-//      model.addAttribute("list", list);
+      List<BoardDTO> list = service.list();
+      
+      model.addAttribute("list", list);
       
       return "TLBoard.list";
       
+   }
+   
+   @GetMapping("/TraditionalLiquor/view.do")
+   public String view(HttpServletRequest req, HttpSession session, HttpServletResponse resp, String seq, Model model) {
+	   
+	   BoardDTO dto = service.get(seq);
+	   
    }
    
    
