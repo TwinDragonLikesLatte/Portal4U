@@ -136,7 +136,27 @@ public class TLBoardController {
 		}
 	}
 	
+	@GetMapping("/TraditionalLiquor/del.do")
+	public String mdel(HttpServletRequest req, HttpSession session, HttpServletResponse resp, String seq_tlboard, Model model) {
+		
+		model.addAttribute("seq_tlboard", seq_tlboard);
+		
+		return "TLBoard.del";
+	}
 	
+	@PostMapping("/TraditionalLiquor/delok.do")
+	public String mdelok(HttpServletRequest req, HttpSession session, HttpServletResponse resp, String seq_tlboard) {
+										
+		int result = service.del(seq_tlboard, req);
+		
+		if (result == 1) {
+			return "redirect:/TraditionalLiquor/list.do";
+		} else {
+			return "redirect:/TraditionalLiquor/view.do?seq_tlboard=" + seq_tlboard;
+		}
+		
+		
+	}
    
 }
 

@@ -38,6 +38,10 @@
 		where seq_tlboard = #{seq_tlboard}	
 	</update>
 	
+	<delete id="del" parameterType="String">
+		delete from tblTLBoard where seq_tlboard = #{seq_tlboard}
+	</delete>
+	
 
 </mapper>
 

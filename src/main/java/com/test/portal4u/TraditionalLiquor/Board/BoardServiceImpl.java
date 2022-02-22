@@ -45,4 +45,10 @@ public class BoardServiceImpl implements BoardService {
 		return dao.edit(dto);
 	}
 	
+	@Override
+	public int del(String seq_tlboard, HttpServletRequest req) {
+
+		return dao.del(seq_tlboard);
+	}
+	
 }

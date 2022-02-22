@@ -36,4 +36,10 @@ public class BoardDAOImpl implements BoardDAO {
 		return template.update("tlboard.edit", dto);
 	}
 	
+	@Override
+	public int del(String seq_tlboard) {
+
+		return template.delete("tlboard.del", seq_tlboard);
+	}
+	
 }

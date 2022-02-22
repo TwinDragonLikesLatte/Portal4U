@@ -16,6 +16,8 @@ public interface BoardDAO {
 
 	int edit(BoardDTO dto);
 
+	int del(String seq_tlboard);
+
 	
 
 }

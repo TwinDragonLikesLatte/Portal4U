@@ -15,5 +15,7 @@ public interface BoardService {
 
 	int edit(BoardDTO dto, HttpSession session, HttpServletRequest req, String del);
 
+	int del(String seq_tlboard, HttpServletRequest req);
+
 
 }
