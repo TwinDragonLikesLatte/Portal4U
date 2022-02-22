@@ -26,8 +26,8 @@
 	    , #{content}
 	    , sysdate
 	    , default
-	    , null
-	    , null
+	    , #{orgfilename}
+	    , #{filename}
 	    )
 	</insert>
 	

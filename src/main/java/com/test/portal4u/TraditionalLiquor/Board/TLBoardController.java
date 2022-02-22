@@ -1,7 +1,11 @@
 package com.test.portal4u.TraditionalLiquor.Board;
 
+import java.io.FileInputStream;
+import java.net.URLEncoder;
 import java.util.List;
 
+import javax.servlet.ServletContext;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -22,6 +26,7 @@ public class TLBoardController {
 
    @Autowired
    private BoardService service;
+   private ServletContext context;
    
    /**
     * 레시피 게시판 목록
@@ -86,7 +91,7 @@ public class TLBoardController {
 	@PostMapping("/TraditionalLiquor/addok.do")
 	public String maddok(HttpServletRequest req, HttpSession session, HttpServletResponse resp, BoardDTO dto) {
 		
-								
+		System.out.println("으아아아 dto:" + dto);						
 		int result = service.add(dto, session, req);
 		
 		if (result == 1) {
@@ -136,6 +141,15 @@ public class TLBoardController {
 		}
 	}
 	
+	/**
+	 * 레시피 게시판 삭제
+	 * @param req
+	 * @param session
+	 * @param resp
+	 * @param seq_tlboard
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/TraditionalLiquor/del.do")
 	public String mdel(HttpServletRequest req, HttpSession session, HttpServletResponse resp, String seq_tlboard, Model model) {
 		
@@ -144,6 +158,14 @@ public class TLBoardController {
 		return "TLBoard.del";
 	}
 	
+	/**
+	 * 레시피 게시판 삭제 여부
+	 * @param req
+	 * @param session
+	 * @param resp
+	 * @param seq_tlboard
+	 * @return
+	 */
 	@PostMapping("/TraditionalLiquor/delok.do")
 	public String mdelok(HttpServletRequest req, HttpSession session, HttpServletResponse resp, String seq_tlboard) {
 										
@@ -155,6 +177,52 @@ public class TLBoardController {
 			return "redirect:/TraditionalLiquor/view.do?seq_tlboard=" + seq_tlboard;
 		}
 		
+		
+	}
+	
+	@GetMapping("/TraditionalLiquor/download.do")
+	public void download(HttpServletRequest req, HttpSession session, HttpServletResponse resp) throws Exception {
+		
+		String fileName = req.getParameter("filename");
+		String orgfileName = req.getParameter("orgfilename");
+
+		String savePath = "resources/images/TraditionalLiquor";
+		
+		String sDownloadPath = context.getRealPath(savePath);
+
+
+		String sFilePath = sDownloadPath + "/" + fileName;
+		byte b[] = new byte[4096];
+		FileInputStream in = new FileInputStream(sFilePath);
+		String sMimeType = context.getMimeType(sFilePath);
+		System.out.println("sMimeType>>>" + sMimeType);
+
+		if (sMimeType == null)
+			sMimeType = "application/octet-stream";
+
+		resp.setContentType(sMimeType);
+		String agent = req.getHeader("User-Agent");
+		boolean ieBrowser = (agent.indexOf("MSIE") > -1) || (agent.indexOf("Trident") > -1);
+
+		if (ieBrowser) {
+			fileName = URLEncoder.encode(fileName, "UTF-8").replaceAll("/+", "%20");
+		} else {
+			fileName = new String(fileName.getBytes("UTF-8"), "iso-8859-1");
+		}
+
+		orgfileName = new String(orgfileName.getBytes("UTF-8"), "ISO-8859-1");
+		
+		resp.setHeader("Content-Disposition", "attachment; filename= " + orgfileName);
+
+		ServletOutputStream out2 = resp.getOutputStream();
+		int numRead;
+
+		while ((numRead = in.read(b, 0, b.length)) != -1) {
+			out2.write(b, 0, numRead);
+		}
+		out2.flush();
+		out2.close();
+		in.close();
 		
 	}
    

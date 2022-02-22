@@ -6,7 +6,7 @@
 <style>
 /* 전체틀 */
 .view-content {
-	width: 70%;
+	width: 1330px;
 	height: 500px;
 	margin: 0 auto 20px auto;
 }
@@ -37,6 +37,7 @@
 	font-weight: 600;
 	float: left;
 	margin-right: 15px;
+	
 }
 
 /* 등록일 */
@@ -55,21 +56,43 @@
 }
 
 .btns{
-	width: 70%;
+	width: 1330px;
 	margin: auto;
 	text-align: right;
+}
+
+/* 첨부파일 */
+.view-content .file { 
+	width: 500px;
+	border: 0;
+	margin-top: 10px;
+	margin-left: 3px;
+	text-align: left;
+	font-size: 1em;
+	position: relative;
+	top: 3px;
+	
 }
 </style>
 
 <div class="view-content">
 	<div class="food-img">
-		<img alt="" src="../resources/images/TraditionalLiquor/title.png">
+		<img alt="" src="../resources/images/TraditionalLiquor/${dto.filename}">
 	</div>
 	<div class="recipe-subject">
 		<div class="subject-txt">${dto.title}</div>
 		<div class="subject-regdate">등록일 
 			<fmt:parseDate value="${dto.regdate}" var="test" pattern="yyyy-MM-dd" ></fmt:parseDate>
        		<fmt:formatDate value="${test}" pattern="yyyy-MM-dd" />
+		</div>
+		<br>
+		<div class="file">
+			<c:if test="${empty dto.orgfilename}">
+				첨부파일 없음
+			</c:if>
+			<c:if test="${not empty dto.orgfilename}"> 첨부파일명: 
+				<a href="/TraditionalLiquor/download.do?filename=${dto.filename}&orgfilename=${dto.orgfilename}">${dto.orgfilename}</a>
+			</c:if>
 		</div>
 	</div>
 	<hr>

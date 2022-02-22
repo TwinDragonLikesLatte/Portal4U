@@ -136,7 +136,14 @@
 	<c:forEach items="${list}" var="dto"> 
 	<a href="view.do?seq_tlboard=${dto.seq_tlboard}">
 		<div class="post">
-	        <img src="../resources/images/TraditionalLiquor/title.png" alt="">
+			<c:if test="${not empty dto.filename}">
+	        	<img src="../resources/images/TraditionalLiquor/${dto.filename}" alt="">
+	        </c:if>
+			<c:if test="${empty dto.filename}">
+	        	<img src="../resources/images/TraditionalLiquor/title.png" alt="">
+	        </c:if>
+	        
+	        
 	        <div class="briefing">
 	        	<div class="title">${dto.title}</div>
 	        	<div class="regdate">
