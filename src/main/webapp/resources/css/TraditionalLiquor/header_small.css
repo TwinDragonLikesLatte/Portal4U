@@ -15,13 +15,13 @@ body {
 
 /* 상단 배경 */
 #main-paper { 
-    width: 1920px;
+    width: 100%;
     height: 220px;
     float: left;
 }
 
 #main-box {
-    width: 1920px;
+    width: 100%;
     height: 220px;
     background-color: #FCF2D7;
     opacity: .7;
@@ -37,8 +37,8 @@ body {
 }
 
 #alcohols_main {
-    position: absolute;
-    top : 110px;
+    position: relative;
+    top : -110px;
     left: 1710px;
     width: 140px;
 }
@@ -46,7 +46,7 @@ body {
 
 /* 상단 붙박이 네비게이션 */
 .attach-nav {
-    width: 1920px;
+    width: 100%;
     height: 100px;
     background-color: #FCF2D7;
     opacity: .5;
