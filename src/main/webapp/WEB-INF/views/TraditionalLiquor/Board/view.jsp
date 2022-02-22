@@ -1,5 +1,6 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 
 
 <style>
@@ -7,7 +8,7 @@
 .view-content {
 	width: 70%;
 	height: 500px;
-	margin: auto;
+	margin: 0 auto 20px auto;
 }
 
 /* 이미지틀 */
@@ -52,23 +53,34 @@
 	font-size : 1.2em;
 
 }
-</style>
 
+.btns{
+	width: 70%;
+	margin: auto;
+	text-align: right;
+}
+</style>
 
 <div class="view-content">
 	<div class="food-img">
 		<img alt="" src="../resources/images/TraditionalLiquor/title.png">
 	</div>
 	<div class="recipe-subject">
-		<div class="subject-txt">비오는 날엔 역시?</div>
-		<div class="subject-regdate">등록일 2022-02-22</div>
+		<div class="subject-txt">${dto.title}</div>
+		<div class="subject-regdate">등록일 
+			<fmt:parseDate value="${dto.regdate}" var="test" pattern="yyyy-MM-dd" ></fmt:parseDate>
+       		<fmt:formatDate value="${test}" pattern="yyyy-MM-dd" />
+		</div>
 	</div>
 	<hr>
-	<div class="recipe-content">
-		내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 
-	</div>
+	<div class="recipe-content">${dto.content}</div>
 </div>
 
+<div class="btns">
+	<a href="list.do"><input type="button" value="돌아가기" class="btn btn-default"></a>
+	<input type="button" value="수정하기" class="btn btn-info">
+	<input type="button" value="삭제하기" class="btn btn-warning">
+</div>
 
 
 
