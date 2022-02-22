@@ -40,8 +40,10 @@
 	</definition>
 	
 	
-	<!-- TraditionalLiquor -->
+	<!-- TraditionalLiquor main -->
 	<definition name="TraditionalLiquor.*" template="/WEB-INF/views/TraditionalLiquor/Product/main.jsp">
+		<!-- footer -->
+		<put-attribute name="footer" value="/WEB-INF/views/TraditionalLiquor/inc/tl_footer.jsp"></put-attribute>
 	
 	</definition>
 
@@ -52,6 +54,9 @@
 		
 		<!-- content -->
 		<put-attribute name="content" value="/WEB-INF/views/TraditionalLiquor/Board/{1}.jsp"></put-attribute>
+		
+		<!-- footer -->
+		<put-attribute name="footer" value="/WEB-INF/views/TraditionalLiquor/inc/tl_footer.jsp"></put-attribute>
 	</definition>
 	
 

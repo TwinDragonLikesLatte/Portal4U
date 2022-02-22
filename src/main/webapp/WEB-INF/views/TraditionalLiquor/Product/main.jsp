@@ -1,6 +1,6 @@
-<%@page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>   
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +10,9 @@
 <title>사조막걸리</title>
 <%@ include file="/WEB-INF/views/inc/asset.jsp"%>
 <script src="<%= root %>/resources/js/jquery-ui.js"></script>
-<link rel="stylesheet"
-	href="../resources/css/TraditionalLiquor/reset.css">
-<link rel="stylesheet"
-	href="../resources/css/TraditionalLiquor/main.css">
+<link rel="stylesheet" href="../resources/css/TraditionalLiquor/reset.css">
+<link rel="stylesheet" href="../resources/css/TraditionalLiquor/main.css">
+<link rel="stylesheet" href="../resources/css/TraditionalLiquor/tl_footer.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
 </head>
@@ -235,18 +234,9 @@
 			<div id="map" style="height:400px;"></div>		
 		</div>
 		
-        <footer>
-            <div class="footer-content">
-              <div class="content-img" id="footer-content"></div>
-              <div class="copyright">
-                &copy;四組大門
-                <br>
-                사업장 주소 : 서울시 강남구 막걸리대로&nbsp;|&nbsp;전화번호 : 010-1234-5678
-                <br>
-                대표 : 이정현&nbsp;|&nbsp;사업자등록번호 : 112-XX-A5732e&nbsp;|&nbsp;통신판매업신고 : 2022-서울강남-0219
-              </div>
-          </div>
-        </footer>
+		
+		<tiles:insertAttribute name="footer"></tiles:insertAttribute> 
+
     </div>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8da6077afd2a545f8651709e442c5dcd"></script>
 	<script>

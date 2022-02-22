@@ -12,6 +12,7 @@
 <script src="<%= root %>/resources/js/jquery-ui.js"></script>
 <link rel="stylesheet" href="../resources/css/TraditionalLiquor/reset.css">
 <link rel="stylesheet" href="../resources/css/TraditionalLiquor/header_small.css">
+<link rel="stylesheet" href="../resources/css/TraditionalLiquor/tl_footer.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
 
@@ -20,7 +21,7 @@
 <body>
 
 	<tiles:insertAttribute name="header"></tiles:insertAttribute>   
-
+	<tiles:insertAttribute name="footer"></tiles:insertAttribute>
       
    <script>
    
