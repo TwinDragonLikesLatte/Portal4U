@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="subscribe">
+
+    <!--  구독자 insert  -->
+    <insert id="addSubscriber" parameterType="SubscriberDTO">
+        insert into tblSubscriber(seq_subscriber, name, email, subscription_date, subscription_state, subscription_except)
+            values(seqSubscriber.nextVal, #{name}, #{email}, default, default, default)
+
+        <selectKey keyProperty="seqSubscriber" keyColumn="seq_subscriber" resultType="Integer" order="BEFORE">
+            SELECT seqSubscriber.nextVal FROM DUAL
+        </selectKey>
+    </insert>
+
+    <!-- 선호장르 insert -->
+    <insert id="addPreperGenre" parameterType="GenreDTO">
+        insert into tblPreperGenre(seq, seq_subscriber, seq_genre)
+            values(seqPreperGenre.nextVal, #{seqSubscriber}, #{seqGenre})
+    </insert>
+
+
+</mapper>
+
