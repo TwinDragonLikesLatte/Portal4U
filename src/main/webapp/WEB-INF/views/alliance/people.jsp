@@ -6,7 +6,7 @@
     .people-wrap {
         display: flex;
         align-items: center;
-        margin-bottom: 20px;
+        padding: 10px 20px;
     }
 
     .people-thumb {

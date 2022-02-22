@@ -47,15 +47,21 @@
 
             dataType: 'json',
             success: function(list) {
-                $(list).each((index, item) => {
+                $(list).each((index, channel) => {
+
+                    if (index == 0) {
+                        selChannel = channel.seq;
+                    }
 
                     let $div = $('<div>');
-                    $div.attr('data-channel-seq', item.seq);
-                    $div.text(item.name);
+                    $div.attr('data-channel-seq', channel.seq);
+                    $div.text(channel.name);
                     $div.prepend('<div class="glyphicon glyphicon-comment"></div>');
                     $div.addClass('channel-selector');
 
                     $('.container.channel>.content').append($div);
+
+                    subTopic(channel.seq);
                 });
 
                 addEventChannelSelector();
@@ -66,8 +72,7 @@
     function addEventChannelSelector() {
 
         $('.channel-selector').on('click', function() {
-            alert();
-            console.log($(this).data('channel-seq'));
+            console.log("selChannel :",$(this).data('channel-seq'));
             selChannel = $(this).data('channel-seq');
         });
     }

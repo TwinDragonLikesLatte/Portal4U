@@ -85,7 +85,6 @@
 
         .container > .content {
             height: calc(100% - 60px);
-            padding: 20px;
             overflow-y: scroll;
         }
 
@@ -141,9 +140,8 @@
     let selChannel = null;
 
     $(document).ready( function() {
-        listGroup();
-        // connectWS();
         connectStomp();
+        listGroup();
     })
 
     function connectStomp() {
@@ -152,78 +150,45 @@
         client = Stomp.over(socket);
         client.connect({}, function(frame) {
             console.log('Cennected to Stomp', frame);
-            // subTopic();
         });
 
         $('.msg-input').keydown((evt) => {
             if (evt.keyCode == 13) {
 
-                client.send('/rooms/' + selChannel, {}, JSON.stringify({'name': '${loginInfo.name}'}));
+                client.send('/chat/' + selChannel, {}, JSON.stringify({
+                    'text': $('.msg-input').val(),
+                    'seqSender': '${loginInfo.seq}',
+                    'nameSender': '${loginInfo.name}',
+                    'seqChannel': selChannel
+                }));
+
                 $('.msg-input').val('');
             }
         });
     }
 
-    function subTopic1() {
+    function subTopic(seqChannel) {
         //해당 토픽 구독
         if (client != null) {
-            client.subscribe('/topic/1', function (event) {
-                console.log("!!!!!!!!!!!!!!!event>>", event)
-            });
-            // client.subscribe('/topic/2', function (event) {
-            //     console.log("!!!!!!!!!!!!!!!event>>", event)
-            // });
-        }
-    }
+            client.subscribe('/topic/' + seqChannel, function (event) {
 
-    function subTopic2() {
-        //해당 토픽 구독
-        if (client != null) {
-            client.subscribe('/topic/2', function (event) {
-                console.log("!!!!!!!!!!!!!!!event>>", event)
+                let message = JSON.parse(event.body);
+
+                if (selChannel == message.seqChannel) {
+
+                    addMessage(message);
+                }
             });
         }
     }
 
-    function connectWS() {
-        ws = new WebSocket("ws://localhost:8090/alliance/chat/" + selGroup);
-        socket = ws;
-
-        ws.onopen = function () {
-            console.log('Info: connection opened.');
-            // setTimeout( function(){ connect(); }, 1000); // retry connection!!
-        };
-
-        ws.onmessage = function (event) {
-            console.log("ReceiveMessage: " + event.data+'\n');
-            $('.channel-list').append('<div>'+event.data+'</div>');
-        };
-
-        ws.onclose = function (event) { console.log('Info: connection closed.'); };
-
-        ws.onerror = function (event) { console.log('Error: err.'); };
-
-        $('#btnSend').on('click', function(evt) {
-            evt.preventDefault();
-
-            if (ws.readyState !== 1) return;
-            let msg = $('input#msg').val();
-            socket.send(msg);
-
-            if (socket) {
-                // websocket에 보내기!! (reply, 댓글작성자, 게시글작성자, 글번호)
-                socket.send(msg, "홍길동", "아무개");
-            }
-
-        });
-
-        $('.msg-input').keydown((evt) => {
-            if (evt.keyCode == 13) {
-                ws.send($('.msg-input').val());
-                $('.msg-input').val('');
-            }
-        });
-
+    function addMessage(message) {
+        let $div = $('<div>');
+        $div.addClass('chat-message');
+        $div.append('<div class="chat-member">' + message.nameSender + '<span>' + message.regdate + '</span></div>')
+        $div.append('<div class="chat-text">' + message.text + '</div>')
+        $('.main-content>.content').append($div);
+        $('.main-content').scrollTop('.chat-message'[0]);
     }
 
     function modalAddGroup() {
@@ -234,7 +199,6 @@
         let data = JSON.stringify($('#form-add-group').serializeObject());
         addGroup(data);
     })
-
 
     function addGroup(data) {
 

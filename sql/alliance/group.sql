@@ -46,6 +46,9 @@ CREATE SEQUENCE seqGroupJoin;
 INSERT INTO tblGroupJoin (seq, seq_group, seq_member) VALUES (seqGroupJoin.nextVal, 1, 4);
 INSERT INTO tblGroupJoin (seq, seq_group, seq_member) VALUES (seqGroupJoin.nextVal, 2, 4);
 
+INSERT INTO tblGroupJoin (seq, seq_group, seq_member) VALUES (seqGroupJoin.nextVal, 1, 5);
+INSERT INTO tblGroupJoin (seq, seq_group, seq_member) VALUES (seqGroupJoin.nextVal, 2, 5);
+
 select g.seq as seq,
        g.name as name
 FROM tblGroup g

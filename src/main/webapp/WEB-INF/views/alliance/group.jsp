@@ -69,17 +69,17 @@
 
             dataType: 'json',
             success: function(list) {
-                $(list).each((index, item) => {
+                $(list).each((index, group) => {
 
                     let $div = $('<div>');
-                    $div.attr('data-group-seq', item.seq);
-                    $div.text(item.name);
+                    $div.attr('data-seq-group', group.seq);
+                    $div.text(group.name);
                     $('.group-list').append($div);
 
                     if (index == 0) {
-                        selGroup = item.seq;
 
-                        console.log("seq: ", selGroup);
+                        selGroup = group.seq;
+                        $('.group-name').text(group.name);
                     }
                 });
 
@@ -96,16 +96,15 @@
 
         $('.group-list').children('div').on('click', function(event) {
 
-            console.log($(this));
-
-            moveToGroup($(this).data('group-seq'));
+            moveToGroup($(this));
 
             $('.modal-group').modal('hide');
         })
     }
 
-    function moveToGroup(seqGroup) {
-        selGroup = seqGroup;
+    function moveToGroup(group) {
+        selGroup = group.data('seq-group');
+        $('.group-name').text(group.text());
 
         listChannel();
     }
