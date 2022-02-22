@@ -1,0 +1,112 @@
+main {
+    width: 800px;
+    margin: 0px auto;
+    margin-top: 30px;
+}
+
+.subtitle-box h2 {
+    font-size: 24px;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* member-filter box */
+.member-filter {
+    height: 150px;
+    margin: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px;
+}
+
+.member-filter .member-filter__condition {
+    margin-bottom: 15px;
+}
+
+.member-filter .member-filter__condition span {
+    display: inline-block;
+    width: 80px;
+    font-weight: 700px;
+}
+
+.member-filter .member-filter__condition label {
+    margin-right: 10px;
+}
+
+.member-filter .member-filter__condition:nth-child(3),
+.member-filter .member-filter__condition:nth-child(3) > div {
+    display: flex;
+}
+
+.member-filter .member-filter__condition:nth-child(3) {
+    justify-content: space-between;
+}
+
+.member-filter__condition .member-filter-search {
+    width: 300px;
+    height: 30px;
+}
+
+.member-filter .member-filter__btn {
+    display: flex;
+    justify-content: right;
+}
+
+.member-filter .member-filter__btn .btn {
+    background-color: var(--main-black);
+    color: white;
+}
+
+/* Member lists table */
+.member-table {
+    background-color: white;
+}
+
+.member-table thead {
+    background-color: var(--main-black);
+    color: white;
+}
+
+.member-table thead th,
+.member-table tbody td {
+    text-align: center;
+}
+
+.member-table thead tr th:nth-child(1) {
+    width: 50px;
+}
+.member-table thead th:nth-child(2) {
+    width: 100px;
+}
+.member-table thead th:nth-child(3) {
+    width: 80px;
+}
+.member-table thead th:nth-child(4) {
+    width: auto;
+}
+.member-table thead th:nth-child(5) {
+    width: 70px;
+}
+.member-table thead th:nth-child(6) {
+    width: 70px;
+}
+.member-table thead th:nth-child(7) {
+    width: 70px;
+}
+
+.member-table__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-bar {
+    width: 100%;
+    text-align: center;
+}
+
+.member-table__btn .btn {
+    background-color: var(--main-black);
+    color: white;
+}

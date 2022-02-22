@@ -8,8 +8,15 @@
         <typeAlias type="com.test.portal4u.member.MemberDTO" alias="MemberDTO" />
         <typeAlias type="com.test.portal4u.alliance.group.GroupDTO" alias="GroupDTO" />
         <typeAlias type="com.test.portal4u.alliance.channel.ChannelDTO" alias="ChannelDTO" />
+
         <typeAlias type="com.test.portal4u.NFT.NFTAdmin.ProdDTO" alias="ProdDTO"/>
         <typeAlias type="com.test.portal4u.NFT.NFTAdmin.NFTBoardDTO" alias="NFTBoardDTO"/>
+
+
+        <typeAlias type="com.test.portal4u.newsletter.subscribe.SubscriberDTO" alias="SubscriberDTO"/>
+        <typeAlias type="com.test.portal4u.newsletter.subscribe.PreperGenreDTO" alias="GenreDTO"/>
+
+
     </typeAliases>
    
 </configuration>
