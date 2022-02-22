@@ -69,6 +69,11 @@ a,
     margin-bottom: 5px;
 }
 
+.genre-box label input,
+.agree-box label input{
+    margin-left: 5px;
+}
+
 .agree-box .highlight {
     font-weight: 600;
     text-decoration: underline;

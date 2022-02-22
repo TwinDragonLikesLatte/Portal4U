@@ -27,13 +27,13 @@
 
       <p>
         지금까지 뉴스레터 보러가기!<br/>
-        <a href="/list.html">Pitchfork NewsLetter</a>
+        <a href="/newsletter/list">Pitchfork NewsLetter</a>
       </p>
 
     </div>
 
     <div class="subscription-box">
-      <form method="POST" action="/subscriptok.html">
+      <form method="POST" action="/newsletter/subscribeok">
         <div>
           <span>이메일 주소를 입력해주세요.<span class="star"> *</span></span>
           <input type="text" name="email" required autocomplete="off"/>
@@ -46,39 +46,39 @@
           <span>좋아하는 장르를 알려주세요!</span>
           <div class="genre-box">
             <label for="Electronic" class="checkbox-container">
-              <input type="checkbox" name="genre" value="Electronic" id="Electronic"> Electronic
+              <input type="checkbox" name="genre" value="1" id="Electronic"> Electronic
               <span class="checkmark"></span>
             </label>
             <label for="Folk/Country" class="checkbox-container">
-              <input type="checkbox" name="genre" value="Folk/Country" id="Folk/Country"> Folk/Country
+              <input type="checkbox" name="genre" value="2" id="Folk/Country"> Folk/Country
               <span class="checkmark"></span>
             </label>
             <label for="Jazz" class="checkbox-container">
-              <input type="checkbox" name="genre" value="Jazz" id="Jazz"> Jazz
+              <input type="checkbox" name="genre" value="3" id="Jazz"> Jazz
               <span class="checkmark"></span>
             </label>
             <label for="Pop/R&B" class="checkbox-container">
-              <input type="checkbox" name="genre" value="Pop/R&Bc" id="Pop/R&B"> Pop/R&B
+              <input type="checkbox" name="genre" value="4" id="Pop/R&B"> Pop/R&B
               <span class="checkmark"></span>
             </label>
             <label for="Rock" class="checkbox-container">
-              <input type="checkbox" name="genre" value="Rock" id="Rock"> Rock
+              <input type="checkbox" name="genre" value="5" id="Rock"> Rock
               <span class="checkmark"></span>
             </label>
             <label for="Experimental" class="checkbox-container">
-              <input type="checkbox" name="genre" value="Experimental" id="Experimental"> Experimental
+              <input type="checkbox" name="genre" value="6" id="Experimental"> Experimental
               <span class="checkmark"></span>
             </label>
             <label for="Global" class="checkbox-container">
-              <input type="checkbox" name="genre" value="Global" id="Global"> Global
+              <input type="checkbox" name="genre" value="7" id="Global"> Global
               <span class="checkmark"></span>
             </label>
             <label for="Metal" class="checkbox-container">
-              <input type="checkbox" name="genre" value="Metal" id="Metal"> Metal
+              <input type="checkbox" name="genre" value="8" id="Metal"> Metal
               <span class="checkmark"></span>
             </label>
             <label for="Rap/Hip-Hop" class="checkbox-container">
-              <input type="checkbox" name="genre" value="Rap/Hip-Hop" id="Rap/Hip-Hop"> Rap/Hip-Hop
+              <input type="checkbox" name="genre" value="9" id="Rap/Hip-Hop"> Rap/Hip-Hop
               <span class="checkmark"></span>
             </label>
           </div>
@@ -86,13 +86,13 @@
 
         <div class="agree-box">
           <label for="req1" class="checkbox-container">
-            <input type="checkbox" name="req1" id="req1" required> (필수) <span
-                  class="highlight">개인정보 수집 및 이용</span>에 동의합니다.
+            <input type="checkbox" name="req1" id="req1" required>
+              (필수)<span class="highlight">개인정보 수집 및 이용</span>에 동의합니다.
             <span class="checkmark"></span>
           </label>
           <label for="req2" class="checkbox-container">
-            <input type="checkbox" name="req2" id="req2" required"> (필수) <span
-                  class="highlight">광고성 정보 수신</span>에 동의합니다.
+            <input type="checkbox" name="req2" id="req2" required">
+              (필수) <span class="highlight">광고성 정보 수신</span>에 동의합니다.
             <span class="checkmark"></span>
           </label>
         </div>

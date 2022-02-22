@@ -17,7 +17,7 @@
             </p>
             <p>
                 <span>지금까지 뉴스레터 보러가기!</span>
-                <a href="/list.html" >Pitchfork NewsLetter</a>
+                <a href="/newsletter/list">Pitchfork NewsLetter</a>
             </p>
         </div>
     </div>
