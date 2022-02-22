@@ -14,9 +14,17 @@
     .channel-selector {
         padding: 10px;
         padding-left: 40px;
-        background-color: tomato;
         font-size: 14px;
+    }
+
+    .channel-selector:hover {
+        background-color: #e6e6e6;
         font-weight: bold;
+    }
+
+    .channel-selector.sel {
+        font-weight: bold;
+        color: #003d63;
     }
 
     .channel-selector > .glyphicon {
@@ -49,11 +57,14 @@
             success: function(list) {
                 $(list).each((index, channel) => {
 
+                    let $div = $('<div>');
+
                     if (index == 0) {
                         selChannel = channel.seq;
+                        $('.main-content > .sub-header').html(channel.name);
+                        $div.addClass('sel');
                     }
 
-                    let $div = $('<div>');
                     $div.attr('data-channel-seq', channel.seq);
                     $div.text(channel.name);
                     $div.prepend('<div class="glyphicon glyphicon-comment"></div>');
@@ -72,9 +83,16 @@
     function addEventChannelSelector() {
 
         $('.channel-selector').on('click', function() {
-            console.log("selChannel :",$(this).data('channel-seq'));
-            selChannel = $(this).data('channel-seq');
+            moveToChannel($(this));
+            clearChat();
         });
+    }
+
+    function moveToChannel(channel) {
+        $('.channel-selector').removeClass('sel');
+        channel.addClass('sel');
+        selChannel = channel.data('channel-seq');
+        $('.main-content > .sub-header').html(channel.text());
     }
 
 </script>

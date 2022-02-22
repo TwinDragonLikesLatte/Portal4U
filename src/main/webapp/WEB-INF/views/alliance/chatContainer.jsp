@@ -8,7 +8,7 @@
     }
 
     .main-content > .content {
-        height: calc(100% - 140px);
+        height: calc(100% - 134px);
         padding: 10px;
     }
 
@@ -64,3 +64,10 @@
     </div>
 </div>
 
+<script>
+
+    function clearChat() {
+        $('.container.main-content > .content').html('');
+    }
+
+</script>

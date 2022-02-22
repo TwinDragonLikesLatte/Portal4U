@@ -80,6 +80,7 @@
 
                         selGroup = group.seq;
                         $('.group-name').text(group.name);
+                        listChannel();
                     }
                 });
 
@@ -106,6 +107,7 @@
         selGroup = group.data('seq-group');
         $('.group-name').text(group.text());
 
+        clearChat();
         listChannel();
     }
 
@@ -113,5 +115,34 @@
 
         $('.modal-group').modal('show');
     });
+
+    function modalAddGroup() {
+        $('.modal').modal();
+    }
+
+    $('#btn-add-group').on('click', function() {
+        let data = JSON.stringify($('#form-add-group').serializeObject());
+        addGroup(data);
+    })
+
+    function addGroup(data) {
+
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:8090/alliance/groups',
+            contentType: 'application/json;charset=UTF-8',
+            data: data,
+
+            dataType: 'json',
+            success: function(result) {
+                alert(result);
+            },
+
+            error: function(a,b,c) {
+                console.log(a,b,c);
+            }
+        });
+
+    }
 
 </script>

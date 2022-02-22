@@ -20,6 +20,7 @@
             display: flex;
             justify-content: center;
             width: 100vw;
+            /*background-color: #4f8548;*/
         }
 
         .container.main {
@@ -31,6 +32,7 @@
             height: 100vh;
             padding : 20px;
             overflow: hidden;
+            /*background-color: #4f8548;*/
         }
 
         header {
@@ -67,6 +69,7 @@
             padding: 0;
             border: 1px solid #BEBEBE;
             border-radius: 4px;
+            background-color: white;
         }
 
         .container > div {
@@ -189,35 +192,6 @@
         $div.append('<div class="chat-text">' + message.text + '</div>')
         $('.main-content>.content').append($div);
         $('.main-content').scrollTop('.chat-message'[0]);
-    }
-
-    function modalAddGroup() {
-        $('.modal').modal();
-    }
-
-    $('#btn-add-group').on('click', function() {
-        let data = JSON.stringify($('#form-add-group').serializeObject());
-        addGroup(data);
-    })
-
-    function addGroup(data) {
-
-        $.ajax({
-            type: 'POST',
-            url: 'http://localhost:8090/alliance/groups',
-            contentType: 'application/json;charset=UTF-8',
-            data: data,
-
-            dataType: 'json',
-            success: function(result) {
-                alert(result);
-            },
-
-            error: function(a,b,c) {
-                console.log(a,b,c);
-            }
-        });
-
     }
 
 </script>

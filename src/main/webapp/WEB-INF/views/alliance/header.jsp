@@ -11,6 +11,7 @@
         padding: 0 20px;
         border: 1px solid #BEBEBE;
         border-radius: 4px;
+        background-color: white;
     }
 
     .main-title {
