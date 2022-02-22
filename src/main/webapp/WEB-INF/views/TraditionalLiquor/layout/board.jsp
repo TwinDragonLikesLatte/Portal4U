@@ -7,7 +7,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>◽◻사조막걸리◻◽  | 레시피</title>
    <%@ include file="/WEB-INF/views/inc/asset.jsp"%>
 <script src="<%= root %>/resources/js/jquery-ui.js"></script>
 <link rel="stylesheet" href="../resources/css/TraditionalLiquor/reset.css">
