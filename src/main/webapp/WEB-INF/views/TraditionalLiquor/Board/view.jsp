@@ -22,7 +22,6 @@
 .food-img img {
 	width: 500px;
 	height: 500px;
-	border: 1px solid black;
 }
 
 /* 제목틀 */
@@ -77,7 +76,13 @@
 
 <div class="view-content">
 	<div class="food-img">
-		<img alt="" src="../resources/images/TraditionalLiquor/${dto.filename}">
+	
+		<c:if test="${not empty dto.filename}">
+			<img alt="" src="../resources/images/TraditionalLiquor/${dto.filename}">
+		</c:if>
+		<c:if test="${empty dto.filename}">
+			<img alt="" src="../resources/images/TraditionalLiquor/null.png">
+		</c:if>
 	</div>
 	<div class="recipe-subject">
 		<div class="subject-txt">${dto.title}</div>

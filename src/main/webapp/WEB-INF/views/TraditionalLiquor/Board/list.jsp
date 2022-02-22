@@ -140,7 +140,7 @@
 	        	<img src="../resources/images/TraditionalLiquor/${dto.filename}" alt="">
 	        </c:if>
 			<c:if test="${empty dto.filename}">
-	        	<img src="../resources/images/TraditionalLiquor/title.png" alt="">
+	        	<img src="../resources/images/TraditionalLiquor/null.png" alt="">
 	        </c:if>
 	        
 	        

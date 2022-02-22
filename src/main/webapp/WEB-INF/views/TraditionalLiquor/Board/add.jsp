@@ -22,7 +22,6 @@
 .food-img img {
 	width: 500px;
 	height: 500px;
-	border: 1px solid black;
 }
 
 /* 제목틀 */
@@ -69,7 +68,7 @@
 <form method="POST" action="addok.do" enctype="multipart/form-data">
 <div class="view-content">
 	<div class="food-img">
-		<img alt="" src="../resources/images/TraditionalLiquor/title.png">
+		<img alt="" src="../resources/images/TraditionalLiquor/null.png">
 	</div>
 	<div class="recipe-subject"><div class="subject-txt"><input type="text" name="title" class="form-control" placeholder="제목을 입력하세요." required></div></div>
 	<input type="file" name="attach" class="form-control file">
