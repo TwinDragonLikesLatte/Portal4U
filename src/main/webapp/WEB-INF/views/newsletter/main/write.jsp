@@ -70,15 +70,13 @@
                     </div>
                 </div>
                 <div class="my-review-box">
-                    <textarea class="my-reviw" name="" id="" placeholder="내용을 적어주세요!" onkeydown="resize(this)" onkeyup="resize(this)"
+                    <textarea class="my-review" name="my-review" id="my-review" placeholder="내용을 적어주세요!" onkeydown="resize(this)" onkeyup="resize(this)"
                               autofocus></textarea>
                 </div>
                 <div class="review-box">
                     <div class="comment"></div>
                     <div class="review">
-                        <p>
-                        </p>
-
+                        <p></p>
                     </div>
                 </div>
             </form>
@@ -255,6 +253,42 @@
             error: function(a, b, c) { console.log(a, b, c);}
         });
     });
+
+
+    /* 저장 */
+    $('.write-btn').click(function(){
+
+        const myReview = $('textarea').val();
+        summary = $('.posting-box .comment').text();
+        review = $('.posting-box .review p').text();
+
+        const data = {
+            seq_pitchfork : seq,
+            write_date : postDate,
+            my_review : myReview,
+            trans_comment : summary,
+            trans_review : review
+        };
+
+        $.ajax({
+            // request
+            type : 'POST',
+            url: 'http://localhost:8090/newsletter/write',
+            contentType: 'application/json;charset=UTF-8',
+            data : JSON.stringify(data),
+            dataType: 'json',
+
+            success:function(result){
+                if(result == 1)
+                    location.href='/newsletter/list';
+                else{
+                    alert('글쓰기 실패');
+                }
+            },
+            error: function(a, b, c) { console.log(a, b, c);}
+        });
+    });
+
 
 
 </script>

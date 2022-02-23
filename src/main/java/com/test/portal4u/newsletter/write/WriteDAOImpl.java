@@ -26,4 +26,23 @@ public class WriteDAOImpl implements WriteDAO{
     public PitchforkDTO get(int seq) {
         return template.selectOne("pitchfork.get", seq);
     }
+
+    @Override
+    public int add(NewsletterDTO dto) {
+
+        int result = 0;
+        try {
+            result = template.insert("pitchfork.add", dto);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    @Override
+    public int updatePitchforkState(int seq_pitchfork) {
+        return template.update("pitchfork.updatePitchforkState", seq_pitchfork);
+    }
 }

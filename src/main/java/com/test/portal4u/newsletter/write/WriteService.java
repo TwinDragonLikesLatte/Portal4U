@@ -22,4 +22,19 @@ public interface WriteService {
      * @return Pitchfork 게시물
      */
     PitchforkDTO get(int seq);
+
+    /**
+     * Newsletter 포스팅을 저장하는 서비스
+     * @param dto 저장하려는 뉴스레터 게시물 DTO
+     * @return insert 결과값
+     */
+    int add(NewsletterDTO dto);
+
+    /**
+     * Pitchfork 게시물의 뉴스레터 작성여부 변경 서비스
+     * @param seq_pitchfork 상태를 변경하려는 Pitchfork 게시물 seq
+     * @return update 결과값
+     */
+    int updatePitchforkState(int seq_pitchfork);
+
 }

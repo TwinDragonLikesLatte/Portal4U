@@ -3,6 +3,10 @@
 
 <configuration>
 
+    <settings>
+        <setting name="jdbcTypeForNull" value="NULL"/>
+    </settings>
+
     <typeAliases>
         <typeAlias type="com.test.portal4u.test.MemoDTO" alias="MemoDTO" />
         <typeAlias type="com.test.portal4u.member.MemberDTO" alias="MemberDTO" />
@@ -12,6 +16,7 @@
         <typeAlias type="com.test.portal4u.newsletter.subscribe.SubscriberDTO" alias="SubscriberDTO"/>
         <typeAlias type="com.test.portal4u.newsletter.subscribe.PreperGenreDTO" alias="GenreDTO"/>
         <typeAlias type="com.test.portal4u.newsletter.write.PitchforkDTO" alias="PitchforkDTO"/>
+        <typeAlias type="com.test.portal4u.newsletter.write.NewsletterDTO" alias="NewsletterDTO"/>
 
     </typeAliases>
    

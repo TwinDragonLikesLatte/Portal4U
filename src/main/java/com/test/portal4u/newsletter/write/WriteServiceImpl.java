@@ -25,4 +25,14 @@ public class WriteServiceImpl implements WriteService{
     public PitchforkDTO get(int seq) {
         return dao.get(seq);
     }
+
+    @Override
+    public int add(NewsletterDTO dto) {
+        return dao.add(dto);
+    }
+
+    @Override
+    public int updatePitchforkState(int seq_pitchfork) {
+        return dao.updatePitchforkState(seq_pitchfork);
+    }
 }

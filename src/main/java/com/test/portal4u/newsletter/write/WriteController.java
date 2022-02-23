@@ -3,13 +3,13 @@ package com.test.portal4u.newsletter.write;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class WriteController {
@@ -68,6 +68,26 @@ public class WriteController {
         transMap.put("review", review);
 
         return transMap;
+    }
+
+
+    /**
+     * 뉴스레터 포스팅 저장
+     * @param dto 저장하려는 뉴스레터 게시물 dto
+     * @return insert 결과값
+     */
+    @PostMapping("/newsletter/write")
+    @ResponseBody
+    public int add(@RequestBody NewsletterDTO dto){
+
+        int result = service.add(dto);
+
+        if(result == 1)
+            result = service.updatePitchforkState(dto.getSeq_pitchfork());
+        else
+            result = 0;
+
+        return result;
     }
 
 
