@@ -4,13 +4,13 @@ import lombok.Data;
 
 @Data
 public class NewsletterDTO {
-    private int seqNewsletter;
-    private int seqPitchfork;
-    private String writeDate;
-    private String publishDate;
-    private String publishState;
-    private String myReview;
-    private String transComment;
-    private String transReview;
+    private int seq_newsletter;
+    private int seq_pitchfork;
+    private String write_date;
+    private String publish_date;
+    private String publish_state;
+    private String my_review;
+    private String trans_comment;
+    private String trans_review;
 }
 
