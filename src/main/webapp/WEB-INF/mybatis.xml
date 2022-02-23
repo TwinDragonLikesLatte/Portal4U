@@ -13,10 +13,12 @@
         <typeAlias type="com.test.portal4u.alliance.group.GroupDTO" alias="GroupDTO" />
         <typeAlias type="com.test.portal4u.alliance.channel.ChannelDTO" alias="ChannelDTO" />
 
+
         <typeAlias type="com.test.portal4u.newsletter.subscribe.SubscriberDTO" alias="SubscriberDTO"/>
         <typeAlias type="com.test.portal4u.newsletter.subscribe.PreperGenreDTO" alias="GenreDTO"/>
         <typeAlias type="com.test.portal4u.newsletter.write.PitchforkDTO" alias="PitchforkDTO"/>
         <typeAlias type="com.test.portal4u.newsletter.write.NewsletterDTO" alias="NewsletterDTO"/>
+
 
     </typeAliases>
    

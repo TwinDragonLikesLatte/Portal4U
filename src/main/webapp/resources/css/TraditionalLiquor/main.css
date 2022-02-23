@@ -11,7 +11,6 @@ body {
     color: wheat;
 }
 
-
 /* 메인 상단 */
 
 /* 상단 배경 */
@@ -552,43 +551,6 @@ button:hover{
 }
 
 
-/* 하단 */
-
-
-footer{
-  width: 100%;
-  border-top: 1px solid rgb(187, 187, 187);
-  margin-top: 100px;
-  color :rgb(187, 187, 187);
-}
-
-.content-img {
-  opacity: .5;
-  width: 200px;
-  height: 120px;
-  background-image: url(../../images/TraditionalLiquor/title.png);
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: 0px 25px;
-  float: left; 
-  margin-right: 10px;
-}
-
-.copyright {
-  width: 1000px;
-  padding: 20px 10px;
-  line-height: 1.8em;
-}
-
-.footer-content {
-  width: 900px;
-  margin: auto;
-}
-
-.stop-scroll {
-	  height: 100%;
-  overflow: hidden;
-}
 
 /* 모달창-경고 */
 

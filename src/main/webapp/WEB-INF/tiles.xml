@@ -40,12 +40,26 @@
 	</definition>
 	
 	
-	<!-- TraditionalLiquor -->
+	<!-- TraditionalLiquor main -->
 	<definition name="TraditionalLiquor.*" template="/WEB-INF/views/TraditionalLiquor/Product/main.jsp">
+		<!-- footer -->
+		<put-attribute name="footer" value="/WEB-INF/views/TraditionalLiquor/inc/tl_footer.jsp"></put-attribute>
 	
 	</definition>
 
+	<!-- TraditionalLiquor Board -->
+	<definition name="TLBoard.*" template="/WEB-INF/views/TraditionalLiquor/layout/board.jsp">
+		<!-- header -->
+		<put-attribute name="header" value="/WEB-INF/views/TraditionalLiquor/inc/header_small.jsp"></put-attribute>
+		
+		<!-- content -->
+		<put-attribute name="content" value="/WEB-INF/views/TraditionalLiquor/Board/{1}.jsp"></put-attribute>
+		
+		<!-- footer -->
+		<put-attribute name="footer" value="/WEB-INF/views/TraditionalLiquor/inc/tl_footer.jsp"></put-attribute>
+	</definition>
 	
+
  	<!-- 메인화면 -->
  	<definition name="home.*" template="/WEB-INF/views/home/home.jsp">
 
@@ -55,7 +69,6 @@
 	<definition name="test.*" template="/WEB-INF/views/test/test.jsp">
 		<put-attribute name="testTile" value="/WEB-INF/views/test/tileTest.jsp" />
 	</definition>
-
 
 	<!-- 회원 관련 화면 -->
 	<definition name="member.*" template="/WEB-INF/views/member/member.jsp">
@@ -71,26 +84,5 @@
 		<put-attribute name="content" value="/WEB-INF/views/alliance/chatContainer.jsp" />
 		<put-attribute name="people" value="/WEB-INF/views/alliance/people.jsp" />
 	</definition>
-
-
-	<!-- NewsLetter : Subscribe -->
-	<definition name="subscribe.*" template="/WEB-INF/views/newsletter/layout/subscribeMain.jsp">
-		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/views/newsletter/subscribe/{1}.jsp"></put-attribute>
-	</definition>
-
-	<!-- NewsLetter : write -->
-	<definition	name="newsletter.write" template="/WEB-INF/views/newsletter/main/write.jsp">
-		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
-	</definition>
-
-	<!-- NewsLetter : main -->
-	<definition name="newsletter.*" template="/WEB-INF/views/newsletter/layout/newsletterMain.jsp">
-		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
-		<put-attribute name="screen-style" value="/resources/css/newsletter/screen/{1}.css"></put-attribute>
-		<put-attribute name="header" value="/WEB-INF/views/newsletter/inc/header.jsp"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/views/newsletter/main/{1}.jsp"></put-attribute>
-	</definition>
-
 
 </tiles-definitions>
