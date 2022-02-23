@@ -6,4 +6,6 @@ public interface ActionDAO {
 
 	List<NFTBoardDTO> list();
 
+	List<AcProdDTO> list2();
+
 }

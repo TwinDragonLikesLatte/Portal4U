@@ -11,6 +11,8 @@
 
         <typeAlias type="com.test.portal4u.NFT.NFTAdmin.ProdDTO" alias="ProdDTO"/>
         <typeAlias type="com.test.portal4u.NFT.NFTAdmin.NFTBoardDTO" alias="NFTBoardDTO"/>
+        <typeAlias type="com.test.portal4u.NFT.NFTAction.NFTBoardDTO" alias="AcNFTBoardDTO"/>
+        <typeAlias type="com.test.portal4u.NFT.NFTAction.AcProdDTO" alias="AcProdDTO"/>
 
 
         <typeAlias type="com.test.portal4u.newsletter.subscribe.SubscriberDTO" alias="SubscriberDTO"/>

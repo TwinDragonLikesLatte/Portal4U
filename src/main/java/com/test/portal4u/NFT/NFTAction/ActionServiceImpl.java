@@ -19,5 +19,11 @@ public class ActionServiceImpl implements ActionService {
 		return list;
 	}
 	
+	@Override
+	public List<AcProdDTO> list2() {
+		List<AcProdDTO> list2 = dao.list2();
+		return list2;
+	}
+	
 	
 }

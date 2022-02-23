@@ -24,6 +24,10 @@ public class ActionController {
 		List<NFTBoardDTO> list = service.list();
 		
 		model.addAttribute("list", list);
+		
+		List<AcProdDTO> list2 = service.list2();
+		model.addAttribute("list2", list2);
+		
 
 		return "NFTAction.main";
 	}

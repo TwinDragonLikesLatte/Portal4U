@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
+
+
 @Controller
 public class AdminController {
 
@@ -23,9 +25,9 @@ public class AdminController {
 	@RequestMapping(value = "/NFTAction/admin", method = { RequestMethod.GET })
 	public String NFTAdmin(HttpServletRequest req, HttpServletResponse resp, HttpSession session, Model model) {
 
-		List<NFTBoardDTO> list = service.list();
-		
+		List<NFTBoardDTO> list = service.list();		
 		model.addAttribute("list",list);
+		
 
 		return "NFTAdmin.main";
 	}

@@ -146,3 +146,6 @@ voluptate, nam nemo, vero perferendis vitae illo! Cum hic quam laudantium?.','CS
 commit;
 
 SELECT * FROM TBLNFTBOARD;
+
+SELECT * FROM TBLMEMBER;
+SELECT * FROM ACTIONPROD order by prod_seq desc;
