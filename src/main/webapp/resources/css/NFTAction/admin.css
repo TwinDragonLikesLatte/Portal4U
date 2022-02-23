@@ -114,3 +114,75 @@
   height: 160px;
   resize: none;
 }
+
+.popup {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 60vw;
+  height: 70vh;
+  background-color: #fff;
+  overflow: auto;
+  border: 1px solid #ADADAD;
+  overflow-x: hidden;
+}
+
+.modal {
+  display: none;
+}
+
+.body_scroll {
+  overflow: hidden;
+}
+
+.modal-title {
+  width: inherit;
+  height: 70px;
+  background-color: #461220;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.modal-title > p {
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  margin-top: 10px;
+}
+
+.nftboardnum {
+  margin-left: 40px;
+  width: 50px;
+}
+
+.nftboardtitle {
+  max-width: 900px;
+  min-width: 900px;
+}
+
+.card-list {
+  margin-top: 90px;
+  text-align: center;
+}
+
+.card-desc {
+  height: 130px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 40px;
+}
+
+.modal_notice2 {
+  font-weight: 900;
+  margin-top: 5px;
+}
+
+.card_item {
+	cursor: pointer;
+}

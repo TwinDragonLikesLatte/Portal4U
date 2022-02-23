@@ -6,4 +6,6 @@ public interface ActionService {
 
 	List<NFTBoardDTO> list();
 
+	List<AcProdDTO> list2();
+
 }
