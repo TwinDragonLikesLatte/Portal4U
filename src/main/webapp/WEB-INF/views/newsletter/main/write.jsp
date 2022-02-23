@@ -74,22 +74,10 @@
                               autofocus></textarea>
                 </div>
                 <div class="review-box">
-<%--                    <div class="comment">"어쩌구 저쩌구 한줄평 슈게이징 명반이라는 말"</div>--%>
+                    <div class="comment"></div>
                     <div class="review">
-<%--                        <p>--%>
-<%--                            대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~대충 앨범 쩐다라는 내용 ~ 대충 앨범--%>
-<%--                            쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용--%>
-<%--                            ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범--%>
-<%--                            쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용--%>
-<%--                            ~대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~--%>
-<%--                        </p>--%>
-<%--                        <p>--%>
-<%--                            대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~대충 앨범 쩐다라는 내용 ~ 대충 앨범--%>
-<%--                            쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용--%>
-<%--                            ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범--%>
-<%--                            쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용--%>
-<%--                            ~대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~--%>
-<%--                        </p>--%>
+                        <p>
+                        </p>
 
                     </div>
                 </div>
@@ -120,7 +108,7 @@
                             <div class="album-name">${dto.album_name}</div>
                         </div>
                         <div class="sub-info">
-                            <div class="gerne">Gerne<span>/</span>${dto.genre}</div>
+                            <div class="genre">Genre<span>/</span>${dto.genre}</div>
                             <div class="review-date">Reviewed<span>/</span>${dto.review_date}</div>
                             <div class="reviewer">by ${dto.reviewer}</div>
                             <div class="rate">Rate<span>/</span>${dto.rate}</div>
@@ -175,20 +163,23 @@
 
 
 <script>
+
+    /* Textarea 자동 height 조절 */
     function resize(obj) {
         obj.style.height = '1px';
         obj.style.height = (24 + obj.scrollHeight) + 'px';
     }
 
-
+    /* 포스팅 날짜 수정 */
     const postDate = new Date().getFullYear() + "-" + (new String(new Date().getMonth() + 1)).padStart(2,"0") + "-" + (new String(new Date().getDate())).padStart(2, "0");
     $('.post-date').text(postDate);
 
 
-
+    /* 앨범 선택 Ajax */
+    let seq = ${dto.seq_pitchfork};
     $('.album-list').click(function() {
 
-        let seq = $(this).context.id;
+        seq = $(this).context.id;
         let url = 'http://localhost:8090/newsletter/write/' + seq;
 
         $.ajax({
@@ -219,16 +210,51 @@
 
                 /* Reset textarea */
                 $('.posting-box textarea').val('');
-
+                $('.posting-box .comment').text('');
+                $('.posting-box .review p').text('');
             },
-
-            error: function(a, b, c) { console.log(a, b, c)}
-
+            error: function(a, b, c) { console.log(a, b, c);}
         });
-
 
     });
 
+
+    /* 번역 */
+    let summary;
+    let review;
+    $('.trans-btn').click(function(){
+
+        let url = 'http://localhost:8090/newsletter/write/trans/' + seq;
+
+        $.ajax({
+
+            // request
+            type : 'GET',
+            url: url,
+
+            // response
+            dataType: 'json',
+            contentType: 'application/json;charset=UTF-8',
+
+            success:function(map){
+
+                /* 번역 parsing */
+
+                // Summary
+                summary = JSON.parse(map.summary);
+                summary = summary.message.result.translatedText;
+
+                // Review
+                review = JSON.parse(map.review);
+                review = review.message.result.translatedText;
+
+                /* Review box */
+                $('.posting-box .comment').text('"' + summary + '"');
+                $('.posting-box .review p').text(review);
+            },
+            error: function(a, b, c) { console.log(a, b, c);}
+        });
+    });
 
 
 </script>

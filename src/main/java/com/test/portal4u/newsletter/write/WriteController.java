@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -15,6 +16,7 @@ public class WriteController {
 
     @Autowired
     private WriteService service;
+    private TranslateAPI translateAPI = new TranslateAPI();
 
     @GetMapping("/newsletter/write")
     public String write(Model model){
@@ -41,5 +43,33 @@ public class WriteController {
     public PitchforkDTO select(@RequestBody @PathVariable("seq") int seq){
         return service.get(seq);
     }
+
+
+    /**
+     * 번역 Ajax 처리
+     * @param seq 선택한 Pitchfork 게시물 seq
+     * @return 해당 게시물 DTO
+     */
+    @GetMapping("/newsletter/write/trans/{seq}")
+    @ResponseBody
+    public HashMap<String,String> translate(@RequestBody @PathVariable("seq") int seq) {
+
+        HashMap<String, String> transMap = new HashMap<>();
+
+        /* Get Pitchfork post */
+        PitchforkDTO dto = service.get(seq);
+
+        /* Translate summary */
+        String summary = translateAPI.getTransSentence(dto.getSummary());
+        transMap.put("summary", summary);
+
+        /* Translate review */
+        String review = translateAPI.getTransSentence(dto.getReview());
+        transMap.put("review", review);
+
+        return transMap;
+    }
+
+
 
 }
