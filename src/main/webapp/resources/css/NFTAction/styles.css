@@ -329,6 +329,26 @@ strong {
   height: 560px;
   border: 1px solid #B2B3B9;
   margin-top: 70px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.move {
+  padding: 10px 30px;
+  background-color: #8C2F39;
+  text-decoration: none;
+  color: #E0E2E7;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 5px;
+  left: 79%;
+  font-weight: 900;
+}
+
+.move:hover {
+  color: #E0E2E7;
+  text-decoration: none;
 }
 
 .NFT_board > h3 {

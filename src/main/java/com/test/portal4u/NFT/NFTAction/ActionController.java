@@ -14,20 +14,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class ActionController {
-
+	
 	@Autowired
 	private ActionService service;
-
+	
 	@RequestMapping(value = "/NFTAction/main", method = { RequestMethod.GET })
 	public String NFTAction(HttpServletRequest req, HttpServletResponse resp, HttpSession session, Model model) {
 
 		List<NFTBoardDTO> list = service.list();
-
+		
 		model.addAttribute("list", list);
+		
+		List<AcProdDTO> list2 = service.list2();
+		model.addAttribute("list2", list2);
+		
 
 		return "NFTAction.main";
 	}
+
 }
-	
-	
-	

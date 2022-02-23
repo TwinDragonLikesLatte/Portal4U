@@ -1,4 +1,3 @@
-@@ -1,148 +0,0 @@
 CREATE TABLE TBLNFTBOARD(
     seq NUMBER PRIMARY KEY,
     title VARCHAR2(100) NOT NULL ,
@@ -147,3 +146,6 @@ voluptate, nam nemo, vero perferendis vitae illo! Cum hic quam laudantium?.','CS
 commit;
 
 SELECT * FROM TBLNFTBOARD;
+
+SELECT * FROM TBLMEMBER;
+SELECT * FROM ACTIONPROD order by prod_seq desc;

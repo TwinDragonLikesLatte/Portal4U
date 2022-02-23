@@ -3,10 +3,13 @@
 
 <mapper namespace="action">
 	
-	<!-- <insert id="add" parameterType="com.test.spring.AddressDTO">
-		insert into tblAddress (seq, name, age, tel, address)
-			values (seqAddress.nextVal, #{name}, #{age}, #{tel}, #{address})
-	</insert> -->
+	<select id="list" resultType="AcNFTBoardDTO">
+		select * from TBLNFTBOARD
+	</select>
+	
+	<select id="list2" resultType="AcProdDTO">
+		SELECT * FROM ACTIONPROD order by prod_seq desc
+	</select>
 	
 </mapper>
 

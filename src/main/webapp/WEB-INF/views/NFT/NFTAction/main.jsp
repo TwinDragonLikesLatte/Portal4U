@@ -1,6 +1,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +41,7 @@
 
 	<tiles:insertAttribute name="action_title"></tiles:insertAttribute>
     
-    <tiles:insertAttribute name="action_content"></tiles:insertAttribute>
+	<%-- <tiles:insertAttribute name="action_content"></tiles:insertAttribute> --%>
     
     <tiles:insertAttribute name="action_desc"></tiles:insertAttribute>
     
@@ -49,6 +50,7 @@
     <div class="NFT_board">
     <h3>자주하는 질문</h3>
     <tiles:insertAttribute name="board"></tiles:insertAttribute>
+    <a href="/portal4u/NFTBoard/board" class="move">게시판보기</a>
 	</div>
     <button class="to_top">△</button>
     <button class="to_bottom">▽</button>
@@ -119,6 +121,31 @@
   $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
   });
+  
+//모달창 팝업 클릭 이벤트
+  const $card_item = document.querySelector('.card_item')
+const $modal = document.querySelector('.modal');
+const $body = document.querySelector('body');
+
+
+$card_item.addEventListener('click', () => {
+$modal.classList.remove('modal');
+$modal.classList.add('popup');
+$body.classList.add('body_scroll');
+});
+
+
+(function () {
+document.addEventListener('keydown', function (e) {
+  const keyCode = e.keyCode;
+
+  if (keyCode == 27) { // Esc key
+    $modal.classList.add('modal');
+    $modal.classList.remove('popup');
+    $body.classList.remove('body_scroll');
+  }
+})
+})();
 </script>
 </body>
 </html>
