@@ -1,3 +1,5 @@
+
+-- 자주하는 질문 게시판 생성 테이블
 CREATE TABLE TBLNFTBOARD(
     seq NUMBER PRIMARY KEY,
     title VARCHAR2(100) NOT NULL ,
@@ -8,9 +10,22 @@ CREATE TABLE TBLNFTBOARD(
     password VARCHAR2(20) NOT NULL
 );
 
+create sequence nftboard;
 
-DROP TABLE TBLNFTBOARD;
+-- 익명 게시판 생성 테이블
+CREATE TABLE TBLNFTFREEBOARD
+(
+    seq      NUMBER PRIMARY KEY,
+    title    VARCHAR2(100)  NOT NULL,
+    content  VARCHAR2(1000) NOT NULL,
+    regdate  date default SYSDATE,
+    id       VARCHAR2(30)   NOT NULL,
+    password VARCHAR2(20)   NOT NULL
+);
 
+create sequence nftfreeboard;
+
+-- 관리자 화면에서 상품 등록을 위한 테이블
 CREATE TABLE actionProd (
 	prod_seq	NUMBER	NOT NULL,
 	prod_name	VARCHAR2(100)	NULL,
@@ -27,11 +42,7 @@ ALTER TABLE actionProd ADD CONSTRAINT PK_ACTIONPROD PRIMARY KEY (
 
 CREATE SEQUENCE seqProd;
 
-
-SELECT * FROM actionProd;
-
-DROP TABLE actionProd;
---
+-- 현재 경매 상황을 누적하기 위한 테이블
 CREATE TABLE nowAction (
 	total_num	NUMBER	NOT NULL,
 	prod_seq	NUMBER	NOT NULL,
@@ -61,8 +72,8 @@ REFERENCES tblMember (
 
 
 CREATE SEQUENCE seqTotalNum;
---
 
+-- 경매가 끝난 시점에서 결과를 확인할 수 있는 테이블
 CREATE TABLE actionEnd (
 	prod_seq	NUMBER	NOT NULL,
 	end_price	NUMBER	NULL,
@@ -83,9 +94,7 @@ REFERENCES tblMember (
 	seq
 );
 
-
-
-
+-- 경매 시작가와 호가를 설정할 수 있는 테이블
 CREATE TABLE actionStart (
 	prod_seq	NUMBER	NOT NULL,
 	start_price	NUMBER	NULL,
@@ -100,16 +109,7 @@ REFERENCES actionProd (
 );
 
 
--- CREATE TABLE TBLNFTBOARD(
---     seq NUMBER PRIMARY KEY,
---     title VARCHAR2(100) NOT NULL ,
---     content VARCHAR2(1000) NOT NULL ,
---     id VARCHAR2(30) NOT NULL ,
---     password VARCHAR2(20) NOT NULL
--- );
-
-create sequence nftboard;
-drop sequence nftboard;
+-- NFTBOARD 더미데이터
 
 insert into TBLNFTBOARD (seq, title, content, buseo, regdate, id, password) values (nftboard.nextval,'NFT는 뭔가요?','대체 불가능 토큰(Non-fungible
 token, NFT)이란 블록체인 기술을 이용해서 디지털 자산의 소유주를 증명하는 가상의 토큰(token)으로, 그림·영상 등의 디지털 파일이나 자산에 복제 및 위조가 불가능한 암호를 증명서로 붙임으로써 그 고유한
@@ -145,7 +145,3 @@ voluptate, nam nemo, vero perferendis vitae illo! Cum hic quam laudantium?.','CS
 
 commit;
 
-SELECT * FROM TBLNFTBOARD;
-
-SELECT * FROM TBLMEMBER;
-SELECT * FROM ACTIONPROD order by prod_seq desc;

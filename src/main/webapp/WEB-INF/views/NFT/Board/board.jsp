@@ -1,6 +1,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,16 +22,7 @@
 <body>
    <section>
     <tiles:insertAttribute name="logo"></tiles:insertAttribute>
-    <div class="NFT_action_title">
-      <h2>QnA 게시판</h2>
-    </div>
-    <div class="NFT_board">
-      <tiles:insertAttribute name="board"></tiles:insertAttribute>
-      <div class=" board_btn_ad">
-        <button class=" add_board_ad">작성하기</button>
-        <button class="add_board_ad">수정하기</button>
-      </div>
-    </div>
+    <tiles:insertAttribute name="content"></tiles:insertAttribute>
   </section>
    
    <script>

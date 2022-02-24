@@ -62,8 +62,46 @@
 
 		<!-- 구독버튼 -->
 		<div class="subscribe">
-			<input type="button" value="구독하기" name="subscribe" class="subscribe-btn">
+			<a href=""></a>
+			<input type="button" value="구독하기" name="subscribe" class="subscribe-btn btn-lg" data-toggle="modal" data-target="#myModal">
 		</div>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">사조막걸리 | 구독 신청</h4>
+		      </div>
+		      <div class="modal-body">
+		        <table>
+		          <tr>
+		            <th>이름</th>
+		            <td> <input type="text" class="form-control"></td>
+		          </tr>
+		          <tr>
+		            <th>주소</th>
+		            <td> <input type="text" class="form-control"></td>
+		          </tr>
+		          <tr>
+		            <th>전화번호</th>
+		            <td> <input type="text" class="form-control"></td>
+		          </tr>
+		          <tr>
+		            <th>입금계좌</th>
+		            <td>우리은행 1002-6xx-7xxxxx 이정현</td>
+		          </tr>
+		        </table>
+		      </div>
+		      <div class="modal-footer">
+		        <input type="button" class="btn btn-default" data-dismiss="modal" value="닫기">
+		        <input type="button" class="btn btn-primary" value="저장">
+		      </div>
+		    </div>
+		  </div>
+		</div>
+ 
 
 		<!-- 검색창 -->
 		<div class="search">
@@ -264,7 +302,7 @@
 		});
 		
 		m.setMap(map);
-		
+
 		/* 모달창 - 경고 */
 		/* x버튼 */
    	    const closeBtn = modal.querySelector(".close-area")
