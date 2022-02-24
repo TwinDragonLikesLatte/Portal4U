@@ -24,7 +24,7 @@
         align-items: center;
     }
 
-    .icons > .glyphicon {
+    .icons .glyphicon {
         margin: 0 10px;
         font-size: 24px;
         color: black;
