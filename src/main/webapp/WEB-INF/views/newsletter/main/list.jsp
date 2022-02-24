@@ -134,6 +134,7 @@
     for(let i = 0; i < closeBtn.length; i++){
         closeBtn[i].addEventListener('click', ()=>{
             modal[i].classList.toggle('hidden');
+            body.classList.toggle('prevent-scroll');
         });
     }
 
