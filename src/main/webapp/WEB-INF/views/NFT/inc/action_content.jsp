@@ -5,7 +5,7 @@
 <div class="NFT_action_content">
       <div class="product_img">
       	<%-- <c:forEach items="${list2}" var="dto"> --%>
-        <%-- <img src="<spring:url value = '/image/${list2[0].filename}'/> " alt="판매상품" class="pro_img"> --%>
+        <img src="<spring:url value = '/image/${list2[0].filename}'/> " alt="판매상품" class="pro_img">
         
         <%-- </c:forEach> --%>
       </div>

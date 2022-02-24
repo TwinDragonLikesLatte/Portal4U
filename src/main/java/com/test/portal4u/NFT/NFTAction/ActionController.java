@@ -19,7 +19,7 @@ public class ActionController {
 	private ActionService service;
 	
 	@RequestMapping(value = "/NFTAction/main", method = { RequestMethod.GET })
-	public String NFTAction(HttpServletRequest req, HttpServletResponse resp, HttpSession session, Model model) {
+	public String NFTAction(HttpServletRequest req, HttpServletResponse resp, HttpSession session, Model model, String input_price) {
 
 		List<NFTBoardDTO> list = service.list();
 		
@@ -28,6 +28,8 @@ public class ActionController {
 		List<AcProdDTO> list2 = service.list2();
 		model.addAttribute("list2", list2);
 		
+//		System.out.println(input_price);
+		model.addAttribute("input_price",input_price);
 
 		return "NFTAction.main";
 	}
