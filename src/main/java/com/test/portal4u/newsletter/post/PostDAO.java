@@ -9,4 +9,11 @@ public interface PostDAO {
      * @return 뉴스레터 리스트
      */
     List<PostDTO> list();
+
+    /**
+     * 뉴스레터 게시물을 삭제하는 DAO
+     * @param seq 삭제하려는 뉴스레터 seq
+     * @return delete 결과값
+     */
+    int del(int seq);
 }

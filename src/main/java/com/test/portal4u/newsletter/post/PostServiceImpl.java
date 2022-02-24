@@ -17,4 +17,9 @@ public class PostServiceImpl implements PostService{
     public List<PostDTO> list() {
         return dao.list();
     }
+
+    @Override
+    public int del(int seq) {
+        return dao.del(seq);
+    }
 }

@@ -45,6 +45,11 @@
     margin-left: 3px;
 }
 
+.modal button {
+    all: unset;
+    cursor: pointer;
+}
+
 .modal a {
     all : unset;
 }

@@ -3,7 +3,7 @@ package com.test.portal4u.newsletter.post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +20,12 @@ public class PostController {
         model.addAttribute("list", list);
 
         return "newsletter.list";
+    }
+
+    @DeleteMapping("newsletter/list/{seq}")
+    @ResponseBody
+    public int delete(@RequestBody @PathVariable("seq") int seq){
+        return service.del(seq);
     }
 
 
