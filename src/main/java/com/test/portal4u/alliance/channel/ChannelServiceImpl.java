@@ -9,10 +9,15 @@ import java.util.List;
 public class ChannelServiceImpl implements ChannelService {
 
     @Autowired
-    ChannelroomDAO chatroomDAO;
+    ChannelDAO channelDAO;
 
     @Override
-    public List<ChannelDTO> list(Long seqGroup) {
-        return chatroomDAO.list(seqGroup);
+    public List<ChannelDTO> list(Long seq_group) {
+        return channelDAO.list(seq_group);
+    }
+
+    @Override
+    public int add(ChannelDTO channel) {
+        return channelDAO.add(channel);
     }
 }

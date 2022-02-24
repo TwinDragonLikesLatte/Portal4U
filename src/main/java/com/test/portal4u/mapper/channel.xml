@@ -4,8 +4,12 @@
 <mapper namespace="channel">
 
     <select id="list" resultType="ChannelDTO" parameterType="Long">
-        SELECT * FROM tblChannel WHERE seq_group = #{seqGroup} ORDER BY seq ASC
+        SELECT * FROM tblChannel WHERE seq_group = #{seq_group} ORDER BY seq ASC
     </select>
+
+    <insert id="add" parameterType="ChannelDTO">
+        INSERT INTO tblChannel (seq, seq_group, name) values (seqChannel.nextval, #{seq_group}, #{name})
+    </insert>
 
 </mapper>
 

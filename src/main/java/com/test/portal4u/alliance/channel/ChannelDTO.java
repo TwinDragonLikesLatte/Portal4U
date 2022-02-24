@@ -6,6 +6,6 @@ import lombok.Data;
 public class ChannelDTO {
 
     private Long seq;
-    private String seqGroup;
+    private Long seq_group;
     private String name;
 }
