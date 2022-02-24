@@ -3,6 +3,7 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 
 
+
 <style>
 /* 전체틀 */
 .view-content {
@@ -72,6 +73,10 @@
 	top: 3px;
 	
 }
+#pre {
+	background-color: transparent;
+	overflow-x: hidden; 
+}
 </style>
 
 <div class="view-content">
@@ -101,7 +106,7 @@
 		</div>
 	</div>
 	<hr>
-	<div class="recipe-content">${dto.content}</div>
+	<div class="recipe-content"><pre id="pre">${dto.content}</pre></div>
 </div>
 
 <div class="btns">
@@ -110,6 +115,9 @@
 	<input type="button" value="삭제하기" class="btn btn-warning" onclick="location.href='del.do?seq_tlboard=${dto.seq_tlboard}';">
 </div>
 
+
+<script>
+</script>
 
 
 
