@@ -174,7 +174,17 @@
 
         <div class="member-table__footer">
             <div class="page-bar">
-                여기에 페이징바 들어갈 자리
+                <span class="next"><</span>
+                <span class="page-num">1</span>
+                <span class="page-num">2</span>
+                <span class="page-num">3</span>
+                <span class="page-num">4</span>
+                <span class="page-num">5</span>
+                <span class="page-num">6</span>
+                <span class="page-num">7</span>
+                <span class="page-num">8</span>
+                <span class="page-num">9</span>
+                <span class="next">></span>
             </div>
 
             <div class="member-table__btn">

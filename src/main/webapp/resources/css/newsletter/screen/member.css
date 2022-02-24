@@ -103,7 +103,19 @@ main {
 
 .page-bar {
     width: 100%;
+    margin-left: 100px;
     text-align: center;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.page-bar span {
+    margin: 0 5px;
+}
+
+.page-bar .next {
+    color: var(--main-black);
+    font-weight: 700;
 }
 
 .member-table__btn .btn {
