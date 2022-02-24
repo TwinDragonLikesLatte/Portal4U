@@ -62,7 +62,7 @@
 	</definition>
 
 	<!-- 얼라이언스 관련 화면 -->
-	<definition name="alliance.*" template="/WEB-INF/views/alliance/alliance.jsp">
+	<definition name="alliance" template="/WEB-INF/views/alliance/alliance.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/alliance/header.jsp" />
 		<put-attribute name="group" value="/WEB-INF/views/alliance/group.jsp" />
 		<put-attribute name="chatroom" value="/WEB-INF/views/alliance/channel.jsp" />
