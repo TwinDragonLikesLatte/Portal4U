@@ -19,7 +19,7 @@
                     <div>Pitchfork NewsLetter</div>
                     <div>Sunday-Sunny</div>
                     <div>22mallox@gmail.com</div>
-                    <div>2022-01-01</div>
+                    <div>2020-12-22</div>
                 </div>
             </div>
             <div class="newsLetter-info__column">
@@ -29,7 +29,7 @@
                     <div>총 구독자수</div>
                 </div>
                 <div>
-                    <div>2022-02-17</div>
+                    <div>2022-02-24</div>
                     <div>57</div>
                     <div>212</div>
                 </div>
@@ -55,10 +55,12 @@
         </div>
     </div>
 
+    <!--
     <div class="statistics-box">
         <h2>구독자 취향</h2>
         <div class="sub-preference"></div>
     </div>
+    -->
 
     <div class="statistics-box">
         <h2>뉴스레터 통계</h2>
@@ -69,42 +71,42 @@
                     <div class="list">
                         <div class="rank">1</div>
                         <div class="subject">
-                            <div>2022-02-10</div>
-                            <div>My blood Valentian - Loveless</div>
+                            <div>2020-12-22</div>
+                            <div>Wolf Alice - Blue Weekend</div>
                         </div>
-                        <div class="open-count">200</div>
+                        <div class="open-count">342</div>
                     </div>
                     <div class="list">
                         <div class="rank">2</div>
                         <div class="subject">
-                            <div>2022-02-10</div>
-                            <div>LCD Sound System - sound of sliver</div>
+                            <div>2021-01-04</div>
+                            <div>Phoebe Bridgers - Punisher</div>
                         </div>
-                        <div class="open-count">200</div>
+                        <div class="open-count">231</div>
                     </div>
                     <div class="list">
                         <div class="rank">3</div>
                         <div class="subject">
-                            <div>2022-02-10</div>
-                            <div>My blood Valentian - Loveless</div>
+                            <div>2021-02-07</div>
+                            <div>Pavement - Brighten the Corners</div>
                         </div>
-                        <div class="open-count">200</div>
+                        <div class="open-count">154</div>
                     </div>
                     <div class="list">
                         <div class="rank">4</div>
                         <div class="subject">
-                            <div>2022-02-10</div>
-                            <div>My blood Valentian - Loveless</div>
+                            <div>2021-03-12</div>
+                            <div>AC/DC - Back in Black</div>
                         </div>
-                        <div class="open-count">200</div>
+                        <div class="open-count">123</div>
                     </div>
                     <div class="list">
                         <div class="rank">5</div>
                         <div class="subject">
-                            <div>2022-02-10</div>
-                            <div>My blood Valentian - Loveless</div>
+                            <div>2021-04-10</div>
+                            <div>Herbie Hancock - Head Hunters</div>
                         </div>
-                        <div class="open-count">200</div>
+                        <div class="open-count">100</div>
                     </div>
                 </div>
             </div>
@@ -117,39 +119,39 @@
                             <div>서니</div>
                             <div>22mallox@gmail.com</div>
                         </div>
-                        <div class="open-count">200</div>
+                        <div class="open-count">123</div>
                     </div>
                     <div class="list">
                         <div class="rank">2</div>
                         <div class="subject">
-                            <div>서니</div>
-                            <div>22mallox@gmail.com</div>
+                            <div>나비</div>
+                            <div>22y_y@naver.com</div>
                         </div>
-                        <div class="open-count">200</div>
+                        <div class="open-count">120</div>
                     </div>
                     <div class="list">
                         <div class="rank">3</div>
                         <div class="subject">
-                            <div>서니</div>
-                            <div>22mallox@gmail.com</div>
+                            <div>portal</div>
+                            <div>portal@gmail.com</div>
                         </div>
-                        <div class="open-count">200</div>
+                        <div class="open-count">116</div>
                     </div>
                     <div class="list">
                         <div class="rank">4</div>
                         <div class="subject">
-                            <div>서니</div>
-                            <div>22mallox@gmail.com</div>
+                            <div>4u</div>
+                            <div>4u4u4u@gmail.com</div>
                         </div>
-                        <div class="open-count">200</div>
+                        <div class="open-count">112</div>
                     </div>
                     <div class="list">
                         <div class="rank">5</div>
                         <div class="subject">
-                            <div>서니</div>
-                            <div>22mallox@gmail.com</div>
+                            <div>donado14</div>
+                            <div>donado14@gmail.com</div>
                         </div>
-                        <div class="open-count">200</div>
+                        <div class="open-count">109</div>
                     </div>
                 </div>
             </div>

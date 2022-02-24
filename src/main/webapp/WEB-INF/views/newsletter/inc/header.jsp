@@ -7,8 +7,8 @@
         <span>NewsLetter</span>
     </div>
     <ul class="menu">
-        <li><a href="/list.html">뉴스레터 목록</a></li>
-        <li><a href="/member.html">구독자 관리</a></li>
-        <li><a href="/statistics.html">뉴스레터 통계</a></li>
+        <li><a href="/newsletter/list">뉴스레터 목록</a></li>
+        <li><a href="/newsletter/member">구독자 관리</a></li>
+        <li><a href="/newsletter/statistics">뉴스레터 통계</a></li>
     </ul>
 </header>
