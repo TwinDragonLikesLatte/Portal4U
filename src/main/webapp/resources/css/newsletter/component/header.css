@@ -74,6 +74,10 @@
     display: flex;
 }
 
+.menu a {
+    all : unset;
+}
+
 .menu li {
     height: 30px;
     margin: 0px 50px;
