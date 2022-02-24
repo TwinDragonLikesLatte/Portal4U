@@ -32,14 +32,33 @@ header {
   justify-content: center;
 }
 
-.title h1 {
+.title > h1 {
   font-size: 28px;
   margin-bottom: 0;
 }
 
-.title h2 {
-  /*margin-top: 10px;*/
+.title > h2 {
+  margin-top: 10px;
   font-size: 14px;
+}
+
+nav {
+  padding: 0 20px;
+  text-align: right;
+}
+
+nav > a {
+  margin: 0 10px;
+  color: black;
+  text-decoration: none;
+}
+
+nav > a:hover {
+  text-decoration: none;
+}
+
+nav > a > .glyphicon {
+  margin-right: 6px;
 }
 
 .content {
