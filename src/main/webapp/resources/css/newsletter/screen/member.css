@@ -80,7 +80,7 @@ main {
     width: 100px;
 }
 .member-table thead th:nth-child(3) {
-    width: 80px;
+    width: 100px;
 }
 .member-table thead th:nth-child(4) {
     width: auto;
@@ -93,6 +93,21 @@ main {
 }
 .member-table thead th:nth-child(7) {
     width: 70px;
+}
+
+.member-del-btn {
+    border: none;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--red);
+    background-color: var(--light-red);
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.member-del-btn:hover {
+    background-color: var(--middle-red);
 }
 
 .member-table__footer {
