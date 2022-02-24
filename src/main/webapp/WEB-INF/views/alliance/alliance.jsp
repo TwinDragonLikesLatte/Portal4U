@@ -20,6 +20,7 @@
             display: flex;
             justify-content: center;
             width: 100vw;
+            /*background-color: #4f8548;*/
         }
 
         .container.main {
@@ -31,6 +32,7 @@
             height: 100vh;
             padding : 20px;
             overflow: hidden;
+            /*background-color: #4f8548;*/
         }
 
         header {
@@ -67,6 +69,7 @@
             padding: 0;
             border: 1px solid #BEBEBE;
             border-radius: 4px;
+            background-color: white;
         }
 
         .container > div {
@@ -76,6 +79,7 @@
         .container > .sub-header {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             height: 60px;
             padding: 0 20px;
             border-bottom: 1px solid #BEBEBE;
@@ -85,7 +89,6 @@
 
         .container > .content {
             height: calc(100% - 60px);
-            padding: 20px;
             overflow-y: scroll;
         }
 
@@ -119,13 +122,35 @@
     <tiles:insertAttribute name="content" />
     <tiles:insertAttribute name="people" />
 
-    <div class="modal">
+    <div class="modal modal-add-group">
         <div>
             <div class="modal-content">
                 <h1>그룹 추가</h1>
-                <form id="form-add-group">
-                    <input type="text" class="form-control" name="name" placeholder="그룹 이름을 입력해주세요.">
-                    <input type="button" id="btn-add-group" class="btn btn-primary" value="그룹 개설">
+                <form id="form-add-group" onsubmit="return false;">
+                    <input type="text" class="form-control" name="name" placeholder="그룹 이름을 입력해주세요." required>
+                    <input type="submit" id="btn-add-group" class="btn btn-primary" value="추가하기">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-add-channel">
+        <div>
+            <div class="modal-content">
+                <h1>채널 추가</h1>
+                <form id="form-add-channel" onsubmit="return false;">
+                    <input type="text" class="form-control" name="name" placeholder="채널 이름을 입력해주세요." required>
+                    <input type="submit" id="btn-add-channel" class="btn btn-primary" value="추가하기">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-add-people">
+        <div>
+            <div class="modal-content">
+                <h1>회원 초대</h1>
+                <form id="form-add-people" onsubmit="return false;">
+                    <input type="text" class="form-control" name="name" placeholder="초대할 회원의 아이디를 입력해주세요." required>
+                    <input type="submit" id="btn-add-people" class="btn btn-primary" value="초대하기">
                 </form>
             </div>
         </div>
@@ -139,10 +164,10 @@
 
     let selGroup = null;
     let selChannel = null;
+    let selPage = 1;
+    let pageEnd = false;
 
     $(document).ready( function() {
-        listGroup();
-        // connectWS();
         connectStomp();
     })
 
@@ -152,109 +177,69 @@
         client = Stomp.over(socket);
         client.connect({}, function(frame) {
             console.log('Cennected to Stomp', frame);
-            // subTopic();
+            listGroup();
         });
 
         $('.msg-input').keydown((evt) => {
             if (evt.keyCode == 13) {
 
-                client.send('/rooms/' + selChannel, {}, JSON.stringify({'name': '${loginInfo.name}'}));
+                client.send('/chat/' + selChannel, {}, JSON.stringify({
+                    'text': $('.msg-input').val(),
+                    'seq_sender': '${loginInfo.seq}',
+                    'name_sender': '${loginInfo.name}',
+                    'seq_channel': selChannel
+                }));
+
                 $('.msg-input').val('');
             }
         });
     }
 
-    function subTopic1() {
+    function subTopic(seq_Channel) {
         //해당 토픽 구독
         if (client != null) {
-            client.subscribe('/topic/1', function (event) {
-                console.log("!!!!!!!!!!!!!!!event>>", event)
-            });
-            // client.subscribe('/topic/2', function (event) {
-            //     console.log("!!!!!!!!!!!!!!!event>>", event)
-            // });
-        }
-    }
+            client.subscribe('/topic/' + seq_Channel, function (event) {
 
-    function subTopic2() {
-        //해당 토픽 구독
-        if (client != null) {
-            client.subscribe('/topic/2', function (event) {
-                console.log("!!!!!!!!!!!!!!!event>>", event)
+                let message = JSON.parse(event.body);
+
+                if (selChannel == message.seq_channel) {
+
+                    appendMessage(message);
+                } else {
+
+                    console.log($('.channel-selector[data-channel-seq=' + message.seq_channel + ']'));
+                    $('.channel-selector[data-channel-seq=' + message.seq_channel + '] > .channel-notice').addClass('new');
+                }
             });
         }
     }
 
-    function connectWS() {
-        ws = new WebSocket("ws://localhost:8090/alliance/chat/" + selGroup);
-        socket = ws;
-
-        ws.onopen = function () {
-            console.log('Info: connection opened.');
-            // setTimeout( function(){ connect(); }, 1000); // retry connection!!
-        };
-
-        ws.onmessage = function (event) {
-            console.log("ReceiveMessage: " + event.data+'\n');
-            $('.channel-list').append('<div>'+event.data+'</div>');
-        };
-
-        ws.onclose = function (event) { console.log('Info: connection closed.'); };
-
-        ws.onerror = function (event) { console.log('Error: err.'); };
-
-        $('#btnSend').on('click', function(evt) {
-            evt.preventDefault();
-
-            if (ws.readyState !== 1) return;
-            let msg = $('input#msg').val();
-            socket.send(msg);
-
-            if (socket) {
-                // websocket에 보내기!! (reply, 댓글작성자, 게시글작성자, 글번호)
-                socket.send(msg, "홍길동", "아무개");
-            }
-
-        });
-
-        $('.msg-input').keydown((evt) => {
-            if (evt.keyCode == 13) {
-                ws.send($('.msg-input').val());
-                $('.msg-input').val('');
-            }
-        });
-
+    function appendMessage(message) {
+        let $div = $('<div>');
+        $div.addClass('chat-message');
+        $div.append('<div class="chat-member">' + message.name_sender + '<span>' + message.regdate.substring(0, 16) + '</span></div>')
+        $div.append('<div class="chat-text">' + message.text + '</div>')
+        $('.main-content>.content').append($div);
+        $('.main-content>.content').scrollTop($('.main-content>.content').prop('scrollHeight'));
     }
 
-    function modalAddGroup() {
-        $('.modal').modal();
+    function prependMessage(message) {
+        let $div = $('<div>');
+        $div.addClass('chat-message');
+        $div.append('<div class="chat-member">' + message.name_sender + '<span>' + message.regdate.substring(0, 16) + '</span></div>')
+        $div.append('<div class="chat-text">' + message.text + '</div>')
+        $('.main-content>.content').prepend($div);
     }
 
-    $('#btn-add-group').on('click', function() {
-        let data = JSON.stringify($('#form-add-group').serializeObject());
-        addGroup(data);
+    $('#form-add-group').submit(function() {
+        addGroup();
+        return false;
     })
 
-
-    function addGroup(data) {
-
-        $.ajax({
-            type: 'POST',
-            url: 'http://localhost:8090/alliance/groups',
-            contentType: 'application/json;charset=UTF-8',
-            data: data,
-
-            dataType: 'json',
-            success: function(result) {
-                alert(result);
-            },
-
-            error: function(a,b,c) {
-                console.log(a,b,c);
-            }
-        });
-
-    }
+    $('#form-add-channel').submit(function() {
+        addChannel();
+        return false;
+    })
 
 </script>
 

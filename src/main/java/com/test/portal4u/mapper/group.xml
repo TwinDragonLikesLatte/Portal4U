@@ -15,7 +15,8 @@
                g.name as name
         FROM tblGroup g
                  INNER JOIN tblGroupJoin gj ON gj.seq_group = g.seq
-        WHERE seq_member = #{seqMember}
+        WHERE seq_member = #{seq_Member}
+        ORDER BY seq DESC
     </select>
 
 </mapper>

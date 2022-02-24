@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="groupJoin">
+
+    <select id="list" resultType="GroupJoinDTO" parameterType="Long">
+        SELECT * FROM vwGroupJoin WHERE seq_group = #{seq_group}
+    </select>
+
+    <insert id="addOwner" parameterType="GroupJoinDTO">
+        INSERT INTO tblGroupJoin (seq, seq_group, seq_member, grade) VALUES (seqGroupJoin.nextVal, #{seq_group}, #{seq_member}, 1)
+    </insert>
+
+    <insert id="add" parameterType="GroupJoinDTO">
+        INSERT INTO tblGroupJoin (seq, seq_group, seq_member) VALUES (seqGroupJoin.nextVal, #{seq_group}, #{seq_member})
+    </insert>
+
+</mapper>

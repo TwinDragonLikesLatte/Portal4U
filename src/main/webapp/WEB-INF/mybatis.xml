@@ -12,7 +12,10 @@
         <typeAlias type="com.test.portal4u.test.MemoDTO" alias="MemoDTO" />
         <typeAlias type="com.test.portal4u.member.MemberDTO" alias="MemberDTO" />
         <typeAlias type="com.test.portal4u.alliance.group.GroupDTO" alias="GroupDTO" />
+        <typeAlias type="com.test.portal4u.alliance.group.GroupJoinDTO" alias="GroupJoinDTO" />
         <typeAlias type="com.test.portal4u.alliance.channel.ChannelDTO" alias="ChannelDTO" />
+        <typeAlias type="com.test.portal4u.alliance.websocket.ChatMessageDTO" alias="ChatMessageDTO" />
+        <typeAlias type="com.test.portal4u.alliance.websocket.ChatMessageTarget" alias="ChatMessageTarget" />
 
         <typeAlias type="com.test.portal4u.NFT.NFTAdmin.ProdDTO" alias="ProdDTO"/>
         <typeAlias type="com.test.portal4u.NFT.NFTAdmin.NFTBoardDTO" alias="NFTBoardDTO"/>
@@ -21,14 +24,11 @@
         <typeAlias type="com.test.portal4u.NFT.NFTAction.AcProdDTO" alias="AcProdDTO"/>
         <typeAlias type="com.test.portal4u.NFT.NFTBoard.NFTFreeBoardDTO" alias="NFTFreeBoardDTO"/>
 
-
         <typeAlias type="com.test.portal4u.newsletter.subscribe.SubscriberDTO" alias="SubscriberDTO"/>
         <typeAlias type="com.test.portal4u.newsletter.subscribe.PreperGenreDTO" alias="GenreDTO"/>
         <typeAlias type="com.test.portal4u.newsletter.write.PitchforkDTO" alias="PitchforkDTO"/>
         <typeAlias type="com.test.portal4u.newsletter.write.NewsletterDTO" alias="NewsletterDTO"/>
         <typeAlias type="com.test.portal4u.newsletter.post.PostDTO" alias="PostDTO"/>
-
-
     </typeAliases>
    
 </configuration>

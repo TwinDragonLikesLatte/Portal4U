@@ -1,6 +1,6 @@
-DROP table tblMember;
+DROP TABLE tblMember;
 
-create table tblMember
+CREATE TABLE tblMember
 (
     seq NUMBER PRIMARY KEY,
     id VARCHAR2(20),
@@ -10,7 +10,12 @@ create table tblMember
 
 CREATE SEQUENCE seqMember;
 
-INSERT INTO tblMember (seq, id, name, pw) VALUES (seqMember.nextVal, 'test1', '홍길동', 1234);
-INSERT INTO tblMember (seq, id, name, pw) VALUES (seqMember.nextVal, 'test2', '두루미', 1234);
+INSERT INTO tblMember (seq, id, name, pw) VALUES (31, 'test1', '강규준', 1234);
+INSERT INTO tblMember (seq, id, name, pw) VALUES (32, 'test2', '이정현', 1234);
+INSERT INTO tblMember (seq, id, name, pw) VALUES (33, 'test3', '임호혁', 1234);
+INSERT INTO tblMember (seq, id, name, pw) VALUES (34, 'test4', '조진욱', 1234);
+INSERT INTO tblMember (seq, id, name, pw) VALUES (35, 'test5', '최선희', 1234);
 
 SELECT * FROM tblMember;
+
+DELETE FROM tblMember;

@@ -17,10 +17,9 @@ public class GroupController {
     GroupService groupService;
 
     @PostMapping("/alliance/groups")
-    public int add(@RequestBody GroupDTO group) {
+    public int add(@RequestBody GroupDTO group, HttpSession session) {
 
-        System.out.println(group);
-        return groupService.add(group);
+        return groupService.add(group, session);
     }
 
     @GetMapping("/alliance/groups")

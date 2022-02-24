@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="chatMessage">
+
+    <select id="list" resultType="ChatMessageDTO" parameterType="ChatMessageTarget">
+        SELECT *
+        FROM (SELECT ROWNUM as num,
+                     chatMessage.*
+              FROM (SELECT *
+                    FROM (SELECT tblChatMessage.*,
+                                 (SELECT name FROM tblMember WHERE seq = tblChatMessage.seq_sender) AS name_sender
+                          FROM tblChatMessage
+                          WHERE seq_Channel = #{seq_channel}
+                          ORDER BY seq DESC)
+                    ) chatMessage)
+        WHERE num > 30 * (#{page} - 1)
+        AND 30 * #{page} >= num
+    </select>
+
+    <insert id="add" parameterType="ChatMessageDTO">
+        INSERT INTO tblChatMessage (seq, text, seq_sender, seq_channel, regdate) VALUES (seqChatMessage.nextVal, #{text}, #{seq_sender}, #{seq_channel}, TO_DATE(#{regdate}, 'yyyy-mm-dd hh24:mi:ss'))
+    </insert>
+
+</mapper>
+
+
