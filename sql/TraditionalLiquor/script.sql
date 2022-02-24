@@ -234,24 +234,6 @@ create table tblTLBoard (
 );
 create sequence seqTLBoard;
 
-insert into tblTLBoard values 
-(seqTLBoard.nextVal
-, 1
-, '비오는 날에는 역시?'
-, '뜨겁게 달군 팬에 밀가루 반죽을 펴고 연한 쪽파를 나란히 얹어 지진 음식이다.
-밀가루 반죽에 파를 넣어서 부치기도 하며, 초간장에 찍어 먹는다.
-
-1. 반죽에 준비된 고기와 실파, 조갯살을 넣고 가볍게 섞는다.
-
-2. 뜨겁게 달군 팬에 기름을 넉넉히 두르고 반죽을 한 국자씩 떠서 앞뒤로 노릇하게 지져낸다.
-
-3. 따끈한 파전을 양념장에 찍어 먹는다.'
-, sysdate
-, default
-, 'pajeon.jpg'
-, 'pajeon.jpg'
-);
-
 
 insert into tblTLBoard values 
 (seqTLBoard.nextVal
