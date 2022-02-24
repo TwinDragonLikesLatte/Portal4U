@@ -183,6 +183,11 @@ main.write-page {
 
 .album-list .album-name {
     border-bottom: 2px solid white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
 .album-lists .album-list:hover .album-name {
