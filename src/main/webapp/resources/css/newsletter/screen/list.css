@@ -68,12 +68,21 @@ main.list-page {
     text-align: left;
 }
 
+.newsLetter-box .post-info .post-subject{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
 .newsLetter-box .post-info .post-subject span {
     font-family: "Merriweather", serif;
     font-weight: 900;
     font-style: italic;
     font-size: 24px;
     margin-right: 5px;
+
 }
 
 .newsLetter-box .post-info .post-subject span:first-child {
@@ -83,6 +92,7 @@ main.list-page {
 .newsLetter-box .post-info .post-subject span:last-child {
     font-size: 16px;
     color: var(--gray);
+
 }
 
 .newsLetter-box .post-descript {
