@@ -62,8 +62,12 @@
 
                         <!-- BTN-BOX -->
                         <div class="btn-box">
-                            <span class="glyphicon glyphicon-edit"></span>
-                            <span class="glyphicon glyphicon-trash"></span>
+                            <button>
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </button>
+                            <button class="newsletter-delete-btn ${dto.seq_newsletter}">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
                         </div>
 
                         <div class="post-date">${dto.write_date}</div>
@@ -112,22 +116,54 @@
 
 <script>
 
+    /* Modal Script */
     const newsLetterBox = document.querySelectorAll('.newsLetter-box');
     const modal = document.querySelectorAll('.modal');
     const closeBtn = document.querySelectorAll(".close-btn");
     const body = document.querySelector('body');
 
+    // Modal Open
     for (let i = 0; i < newsLetterBox.length; i++) {
         newsLetterBox[i].addEventListener('click', () => {
             modal[i].classList.toggle('hidden');
             body.classList.toggle('prevent-scroll');
         });
-    };
+    }
 
+    // Modal Delete btn
     for(let i = 0; i < closeBtn.length; i++){
         closeBtn[i].addEventListener('click', ()=>{
             modal[i].classList.toggle('hidden');
         });
     }
-    
+
+    /* NewsLetter Delete */
+    $('.modal .newsletter-delete-btn').click(function(evt){
+        evt.preventDefault();
+        const seq = $(this).attr('class').split(' ')[1];
+        console.log('seq : ' + seq);
+
+        let url = 'http://localhost:8090/newsletter/list/' + seq;
+
+        $.ajax({
+            type :'DELETE',
+            url : url,
+
+            // response
+            dataType: 'json',
+
+            success : function(result){
+                if(result == 1)
+                    location.href='/newsletter/list';
+                else
+                    alert('뉴스레터 삭제 실패');
+            },
+
+            error:function (a, b, c) { console.log(a, b, c);}
+        });
+
+
+    });
+
+
 </script>
