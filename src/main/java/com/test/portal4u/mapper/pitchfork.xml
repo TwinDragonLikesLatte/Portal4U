@@ -22,7 +22,15 @@
 
     <insert id="add" parameterType="NewsletterDTO">
         insert into tblNewsLetter(seq_newsletter, seq_pitchfork, write_date, publish_date, publish_state, my_review, trans_comment, trans_review)
-            values(seqNewsletter.nextVal, #{seq_pitchfork}, #{write_date}, NULL, default, #{my_review}, #{trans_comment}, #{trans_review})
+            values(
+                   (select NVL(max(seq_newsletter), 0) + 1 from tblNewsLetter),
+                   #{seq_pitchfork},
+                   #{write_date},
+                   NULL, default,
+                   #{my_review},
+                   #{trans_comment},
+                   #{trans_review}
+                   )
     </insert>
 
 
