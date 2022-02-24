@@ -111,6 +111,10 @@ body {
 }
 
 /* 구독버튼 */
+.subscribe-btn:active {
+    box-shadow: inset .3rem .4rem .5rem #ac956c; 
+}
+
 .subscribe {
     /* background-color: gold; */
     display: block;
@@ -135,8 +139,18 @@ body {
     cursor: pointer;
 }
 
-.subscribe-btn:active {
-    box-shadow: inset .3rem .4rem .5rem #ac956c; 
+/* 구독 모달 */
+.modal-body table {
+  width: 500px;
+}
+.modal-body tr {
+  width: 200px;
+  padding-bottom: 10px;
+  height: 50px;
+}
+
+.modal-body th {
+  width: auto;
 }
 
 /* 검색창 */
