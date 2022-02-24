@@ -9,7 +9,13 @@ CREATE TABLE tblChannel
 
 CREATE SEQUENCE seqChannel;
 
+INSERT INTO tblChannel (seq, seq_group, name) VALUES (seqChannel.nextVal, 1, '공지방');
+INSERT INTO tblChannel (seq, seq_group, name) VALUES (seqChannel.nextVal, 1, '게임방');
+INSERT INTO tblChannel (seq, seq_group, name) VALUES (seqChannel.nextVal, 1, '잡담방');
 
+INSERT INTO tblChannel (seq, seq_group, name) VALUES (seqChannel.nextVal, 2, '공지');
+INSERT INTO tblChannel (seq, seq_group, name) VALUES (seqChannel.nextVal, 2, '코드');
+INSERT INTO tblChannel (seq, seq_group, name) VALUES (seqChannel.nextVal, 2, '일반');
 
 SELECT * FROM tblChannel;
 
