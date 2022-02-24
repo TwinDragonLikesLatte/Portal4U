@@ -1,4 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 
 
 <main class="list-page">
@@ -10,18 +13,19 @@
     </div>
 
     <!-- Review Post -->
-    <div class="newsLetter-box">
-        <div class="img">img-box</div>
+    <c:forEach items="${list}" var="dto" varStatus="status">
+    <div class="newsLetter-box ${dto.seq_newsletter}">
+        <img src="${dto.image_link}" alt="ablum-img">
         <div class="post-info">
             <div>
-                <div class="post-date">2022.02.07</div>
+                <div class="post-date">${dto.write_date}</div>
                 <div class="post-subject">
-                    <span>#3</span>
-                    <span>Radiohead</span>
-                    <span>kid A Mnesia</span>
+                    <span>#<c:out value="${fn:length(list) - status.index}"></c:out></span>
+                    <span>${dto.artist}</span>
+                    <span>${dto.album_name}</span>
                 </div>
                 <div class="post-descript">
-                    생각해보니 한글 번역이 들어가야되구나. 사실 KID A는 잘 안 들어봤어요. 2집 The bends, 3집 OK Computer, 7집 In rainbows 좀 들었습니다.
+                    ${dto.my_review}
                 </div>
             </div>
             <div>
@@ -29,66 +33,7 @@
             </div>
         </div>
     </div>
-
-    <div class="newsLetter-box">
-        <div class="img">img-box</div>
-        <div class="post-info">
-            <div>
-                <div class="post-date">2022.02.07</div>
-                <div class="post-subject">
-                    <span>#3</span>
-                    <span>Radiohead</span>
-                    <span>kid A Mnesia</span>
-                </div>
-                <div class="post-descript">
-                    생각해보니 한글 번역이 들어가야되구나. 사실 KID A는 잘 안 들어봤어요. 2집 The bends, 3집 OK Computer, 7집 In rainbows 좀 들었습니다.
-                </div>
-            </div>
-            <div>
-                <button class="publish-btn">발송하기</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="newsLetter-box">
-        <div class="img">img-box</div>
-        <div class="post-info">
-            <div>
-                <div class="post-date">2022.02.07</div>
-                <div class="post-subject">
-                    <span>#3</span>
-                    <span>Radiohead</span>
-                    <span>kid A Mnesia</span>
-                </div>
-                <div class="post-descript">
-                    생각해보니 한글 번역이 들어가야되구나. 사실 KID A는 잘 안 들어봤어요. 2집 The bends, 3집 OK Computer, 7집 In rainbows 좀 들었습니다.
-                </div>
-            </div>
-            <div>
-                <button class="publish-btn">발송하기</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="newsLetter-box">
-        <div class="img">img-box</div>
-        <div class="post-info">
-            <div>
-                <div class="post-date">2022.02.07</div>
-                <div class="post-subject">
-                    <span>#3</span>
-                    <span>Radiohead</span>
-                    <span>kid A Mnesia</span>
-                </div>
-                <div class="post-descript">
-                    생각해보니 한글 번역이 들어가야되구나. 사실 KID A는 잘 안 들어봤어요. 2집 The bends, 3집 OK Computer, 7집 In rainbows 좀 들었습니다.
-                </div>
-            </div>
-            <div>
-                <button class="publish-btn">발송하기</button>
-            </div>
-        </div>
-    </div>
+    </c:forEach>
 
 </main>
 
@@ -102,6 +47,7 @@
 
 
 <!-- NewsLetter Modal -->
+<c:forEach items="${list}" var="dto">
 <div class="modal hidden">
     <div class="modal__overlay"></div>
     <div class="newsLetter-viewer">
@@ -120,72 +66,60 @@
                             <span class="glyphicon glyphicon-trash"></span>
                         </div>
 
-                        <div class="post-date">2022-02-18</div>
+                        <div class="post-date">${dto.write_date}</div>
                         <div class="album-info">
-                            <div class="img"></div>
+                            <img src="${dto.image_link}" alt="ablum-img">
                             <div class="album-basic">
                                 <div class="title">
-                                    <div class="release-date">1991</div>
-                                    <div class="artist">My Bloody Valentine</div>
-                                    <div class="album-name">Lovess</div>
+                                    <div class="release-date">${dto.release_date}</div>
+                                    <div class="artist">${dto.artist}</div>
+                                    <div class="album-name">${dto.album_name}</div>
                                 </div>
                                 <div class="sub-info">
-                                    <div class="gerne">Gerne<span>/</span>Rock</div>
-                                    <div class="review-date">Reviewed<span>/</span>september 2, 2021</div>
-                                    <div class="reviewer">by Ian Cohen</div>
-                                    <div class="rate">Rate<span>/</span>10.0</div>
+                                    <div class="gerne">Gerne<span>/</span>${dto.genre}</div>
+                                    <div class="review-date">Reviewed<span>/</span>${dto.review_date}</div>
+                                    <div class="reviewer">by ${dto.reviewer}</div>
+                                    <div class="rate">Rate<span>/</span>${dto.rate}</div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="origin-btn-box">
-                            <button class="origin-btn">원본보기</button>
+                            <a href="${dto.origin_link}" target="_blank">
+                                <div class="origin-btn">원본보기</div>
+                            </a>
                         </div>
 
                         <div class="my-review">
-                                <textarea name="" id="" placeholder="내용을 적어주세요!" onkeydown="resize(this)"
-                                          onkeyup="resize(this)" autofocus></textarea>
+                            <p>${dto.my_review}</p>
                         </div>
                         <div class="review-box">
-                            <div class="comment">"어쩌구 저쩌구 한줄평 슈게이징 명반이라는 말"</div>
+                            <div class="comment">${dto.trans_comment}</div>
                             <div class="review">
                                 <p>
-                                    대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~대충 앨범 쩐다라는 내용 ~ 대충 앨범
-                                    쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는
-                                    내용
-                                    ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충
-                                    앨범
-                                    쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는
-                                    내용
-                                    ~대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~
+                                    ${dto.trans_review}
                                 </p>
-                                <p>
-                                    대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~대충 앨범 쩐다라는 내용 ~ 대충 앨범
-                                    쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는
-                                    내용
-                                    ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충
-                                    앨범
-                                    쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는
-                                    내용
-                                    ~대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~ 대충 앨범 쩐다라는 내용 ~
-                                </p>
-
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+</c:forEach>
 
 <script>
+
+
+
     const newsLetterBox = document.querySelectorAll(".newsLetter-box");
     const modal = document.querySelector(".modal");
     const closeBtn = modal.querySelector(".close-btn");
     const body = document.body;
 
-    const openModal = () => {
+    const openModal = (evt) => {
         modal.classList.remove("hidden");
         body.classList.add("prevent-scroll");
     }

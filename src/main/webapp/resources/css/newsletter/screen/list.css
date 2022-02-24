@@ -46,7 +46,7 @@ main.list-page {
     cursor: pointer;
 }
 
-.newsLetter-box .img {
+.newsLetter-box img {
     width: 180px;
     height: 180px;
     background-color: lightblue;
@@ -84,6 +84,16 @@ main.list-page {
     font-size: 16px;
     color: var(--gray);
 }
+
+.newsLetter-box .post-descript {
+    text-indent: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
 
 .newsLetter-box button {
     width: 60px;

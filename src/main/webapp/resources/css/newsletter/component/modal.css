@@ -45,10 +45,16 @@
     margin-left: 3px;
 }
 
-.modal .origin-btn-box {
-    text-align: right;
-    margin: 10px 0;
+.modal a {
+    all : unset;
 }
+
+.modal .origin-btn-box {
+    display: flex;
+    justify-content: right;
+    margin : 15px 0;
+}
+
 
 .modal .origin-btn {
     width: 60px;
@@ -61,8 +67,22 @@
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+    text-align: center;
 }
 
 .modal .origin-btn:hover {
     background-color: var(--middle-red);
+}
+
+.modal .my-review {
+    font-size: 16px;
+    text-indent: 1em;
+    color : var(--red);
+}
+
+.modal .my-review,
+.modal .review-box {
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", sans-serif;
 }
