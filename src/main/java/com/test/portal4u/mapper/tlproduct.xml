@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="product">
+
+	<select id="list" resultType="com.test.portal4u.TraditionalLiquor.Product.ProductDTO">
+		select
+		    pl.seq_product,
+		    pl.name,
+		    ps.sort,
+		    ps.seq_sort,
+		    price,
+		    abv,
+		    volume,
+		    img,
+		    introduce,
+		    manufacturer
+		from tblproductliquor pl
+		    inner join tblProductSort ps
+		        on ps.seq_sort = pl.seq_sort
+		            inner join tblProductInfo pi
+		                on pi.seq_product = pl.seq_product
+		                    order by pl.seq_product desc
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+

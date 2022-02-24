@@ -1,5 +1,10 @@
 package com.test.portal4u.TraditionalLiquor.Product;
 
-public class ProductService {
+import java.util.List;
+
+public interface ProductService {
+
+	List<ProductDTO> list();
+
 
 }

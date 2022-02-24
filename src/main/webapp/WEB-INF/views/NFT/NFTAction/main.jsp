@@ -1,6 +1,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +41,7 @@
 
 	<tiles:insertAttribute name="action_title"></tiles:insertAttribute>
     
-    <tiles:insertAttribute name="action_content"></tiles:insertAttribute>
+	<tiles:insertAttribute name="action_content"></tiles:insertAttribute>
     
     <tiles:insertAttribute name="action_desc"></tiles:insertAttribute>
     
@@ -49,6 +50,7 @@
     <div class="NFT_board">
     <h3>자주하는 질문</h3>
     <tiles:insertAttribute name="board"></tiles:insertAttribute>
+    <a href="/portal4u/NFTBoard/board" class="move">게시판보기</a>
 	</div>
     <button class="to_top">△</button>
     <button class="to_bottom">▽</button>
@@ -119,6 +121,70 @@
   $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
   });
+  
+//모달창 팝업 클릭 이벤트
+  const $card_item = document.querySelector('.card_item')
+const $modal = document.querySelector('.modal');
+const $body = document.querySelector('body');
+
+
+$card_item.addEventListener('click', () => {
+$modal.classList.remove('modal');
+$modal.classList.add('popup');
+$body.classList.add('body_scroll');
+});
+
+
+//ESC 클릭시 모달창 종료
+(function () {
+document.addEventListener('keydown', function (e) {
+  const keyCode = e.keyCode;
+
+  if (keyCode == 27) { // Esc key
+    $modal.classList.add('modal');
+    $modal.classList.remove('popup');
+    $body.classList.remove('body_scroll');
+  }
+})
+})();
+// 타이머 생성
+const $text_price2 = document.getElementById('text_price2')
+
+const Timer = document.getElementById('Timer')
+let time = 3600000; //60분
+let min = 60;
+let sec = 60;
+
+Timer.value = min+":"+'00';
+
+function TIMER() {
+	PLAYTIME = setInterval(function(){
+		time=time-1000;
+		min = time/(60*1000);
+		
+		if(sec>0){
+			sec=sec-1;
+			Timer.value=Math.floor(min)+':'+sec;
+		}
+		if(sec===0){
+			sec=60;
+			Timer.value=Math.floor(min)+':'+'00'
+		}
+		
+		if(min>0){
+			min
+		}
+	},1000);
+}
+
+TIMER();
+//타이머 종료시 입찰 창 disabled, 최초 가격 20,000
+const $input_money=document.querySelector('.input_money');
+setTimeout(function(){
+	$input_money.disabled = true;
+	$text_price2.value='20,000';
+},3600000);
+
 </script>
 </body>
 </html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="pitchfork">
+
+    <select id="list" resultType="PitchforkDTO">
+        select * from tblpitchfork
+        order by seq_pitchfork desc
+    </select>
+
+
+    <select id="getLatestSeq" resultType="Integer">
+        select max(seq_pitchfork) from tblpitchfork
+    </select>
+
+
+    <select id="get" parameterType="Integer" resultType="PitchforkDTO">
+        select * from tblpitchfork
+        where seq_pitchfork = #{seq}
+    </select>
+
+
+    <insert id="add" parameterType="NewsletterDTO">
+        insert into tblNewsLetter(seq_newsletter, seq_pitchfork, write_date, publish_date, publish_state, my_review, trans_comment, trans_review)
+            values(
+                   (select NVL(max(seq_newsletter), 0) + 1 from tblNewsLetter),
+                   #{seq_pitchfork},
+                   #{write_date},
+                   NULL, default,
+                   #{my_review},
+                   #{trans_comment},
+                   #{trans_review}
+                   )
+    </insert>
+
+
+    <update id="updatePitchforkState" parameterType="Integer">
+        update tblpitchfork
+        set newsletter_state = 'Y'
+        where seq_pitchfork = #{seq_pitchfork}
+    </update>
+
+
+</mapper>
+

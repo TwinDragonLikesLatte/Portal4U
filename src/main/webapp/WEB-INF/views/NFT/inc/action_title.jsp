@@ -3,5 +3,5 @@
 
 
 <div class="NFT_action_title">
-      <h2>2월 오늘의 경매</h2><span class="action_tag">진행중</span><span class="action_timelimit">11:03:01</span>
+      <h2>2월 오늘의 경매</h2><span class="action_tag">진행중</span><input id="Timer" class="action_timelimit" value="" readonly style="width: 105px" />
     </div>

@@ -2,6 +2,11 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+    
+    <settings>
+         <setting name="jdbcTypeForNull" value="NULL"/>
+     </settings>
+
 
     <typeAliases>
         <typeAlias type="com.test.portal4u.test.MemoDTO" alias="MemoDTO" />
@@ -11,6 +16,19 @@
         <typeAlias type="com.test.portal4u.alliance.channel.ChannelDTO" alias="ChannelDTO" />
         <typeAlias type="com.test.portal4u.alliance.websocket.ChatMessageDTO" alias="ChatMessageDTO" />
         <typeAlias type="com.test.portal4u.alliance.websocket.ChatMessageTarget" alias="ChatMessageTarget" />
+
+        <typeAlias type="com.test.portal4u.NFT.NFTAdmin.ProdDTO" alias="ProdDTO"/>
+        <typeAlias type="com.test.portal4u.NFT.NFTAdmin.NFTBoardDTO" alias="NFTBoardDTO"/>
+        <typeAlias type="com.test.portal4u.NFT.NFTAction.NFTBoardDTO" alias="AcNFTBoardDTO"/>
+        <typeAlias type="com.test.portal4u.NFT.NFTAction.AcProdDTO" alias="AcProdDTO"/>
+        <typeAlias type="com.test.portal4u.NFT.NFTAction.AcProdDTO" alias="AcProdDTO"/>
+        <typeAlias type="com.test.portal4u.NFT.NFTBoard.NFTFreeBoardDTO" alias="NFTFreeBoardDTO"/>
+
+        <typeAlias type="com.test.portal4u.newsletter.subscribe.SubscriberDTO" alias="SubscriberDTO"/>
+        <typeAlias type="com.test.portal4u.newsletter.subscribe.PreperGenreDTO" alias="GenreDTO"/>
+        <typeAlias type="com.test.portal4u.newsletter.write.PitchforkDTO" alias="PitchforkDTO"/>
+        <typeAlias type="com.test.portal4u.newsletter.write.NewsletterDTO" alias="NewsletterDTO"/>
+        <typeAlias type="com.test.portal4u.newsletter.post.PostDTO" alias="PostDTO"/>
     </typeAliases>
    
 </configuration>
