@@ -19,6 +19,8 @@
 		<put-attribute name="board" value="/WEB-INF/views/NFT/inc/board.jsp"></put-attribute>
 		<!-- logo -->
 		<put-attribute name="logo" value="/WEB-INF/views/NFT/inc/logo.jsp"></put-attribute>
+		<!-- contents -->
+		<put-attribute name="content" value="/WEB-INF/views/NFT/Board/{1}.jsp"></put-attribute>
 	</definition>
 
 	<!-- NFTAction -->

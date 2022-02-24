@@ -8,6 +8,18 @@ CREATE TABLE TBLNFTBOARD(
     password VARCHAR2(20) NOT NULL
 );
 
+CREATE TABLE TBLNFTFREEBOARD
+(
+    seq      NUMBER PRIMARY KEY,
+    title    VARCHAR2(100)  NOT NULL,
+    content  VARCHAR2(1000) NOT NULL,
+    regdate  date default SYSDATE,
+    id       VARCHAR2(30)   NOT NULL,
+    password VARCHAR2(20)   NOT NULL
+);
+
+create sequence nftfreeboard;
+select * from TBLNFTFREEBOARD;
 
 DROP TABLE TBLNFTBOARD;
 
@@ -149,3 +161,4 @@ SELECT * FROM TBLNFTBOARD;
 
 SELECT * FROM TBLMEMBER;
 SELECT * FROM ACTIONPROD order by prod_seq desc;
+

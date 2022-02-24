@@ -24,7 +24,7 @@
     <div class="NFT_action_title">
       <h2>경매 물품 등록</h2>
     </div>
-     <form action="/portal4u/NFTAction/admin/add" method="POST" enctype="multipart/form-data">
+     <form action="/NFTAction/admin/add" method="POST" enctype="multipart/form-data">
     <div class="NFT_action_add">
     
       <div class="add_section">

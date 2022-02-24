@@ -41,7 +41,7 @@
 
 	<tiles:insertAttribute name="action_title"></tiles:insertAttribute>
     
-	<%-- <tiles:insertAttribute name="action_content"></tiles:insertAttribute> --%>
+	<tiles:insertAttribute name="action_content"></tiles:insertAttribute>
     
     <tiles:insertAttribute name="action_desc"></tiles:insertAttribute>
     
@@ -135,6 +135,7 @@ $body.classList.add('body_scroll');
 });
 
 
+//ESC 클릭시 모달창 종료
 (function () {
 document.addEventListener('keydown', function (e) {
   const keyCode = e.keyCode;
@@ -146,6 +147,44 @@ document.addEventListener('keydown', function (e) {
   }
 })
 })();
+// 타이머 생성
+const $text_price2 = document.getElementById('text_price2')
+
+const Timer = document.getElementById('Timer')
+let time = 3600000; //60분
+let min = 60;
+let sec = 60;
+
+Timer.value = min+":"+'00';
+
+function TIMER() {
+	PLAYTIME = setInterval(function(){
+		time=time-1000;
+		min = time/(60*1000);
+		
+		if(sec>0){
+			sec=sec-1;
+			Timer.value=Math.floor(min)+':'+sec;
+		}
+		if(sec===0){
+			sec=60;
+			Timer.value=Math.floor(min)+':'+'00'
+		}
+		
+		if(min>0){
+			min
+		}
+	},1000);
+}
+
+TIMER();
+//타이머 종료시 입찰 창 disabled, 최초 가격 20,000
+const $input_money=document.querySelector('.input_money');
+setTimeout(function(){
+	$input_money.disabled = true;
+	$text_price2.value='20,000';
+},3600000);
+
 </script>
 </body>
 </html>
