@@ -53,119 +53,119 @@
             <tbody>
             <tr>
                 <td>1</td>
-                <td>2022-02-17</td>
-                <td>최선희</td>
+                <td>2022-02-01</td>
+                <td>써니</td>
                 <td>22mallox@gmail.com</td>
                 <td>구독중</td>
                 <td>
                     <input type="checkbox" name="" id="">
                 </td>
                 <td>
-                    삭제버튼
+                    <div class="member-del-btn">삭제</div>
                 </td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>2022-02-17</td>
-                <td>최선희</td>
-                <td>22mallox@gmail.com</td>
+                <td>2</td>
+                <td>2022-02-02</td>
+                <td>나비</td>
+                <td>22y_y@naver.com</td>
                 <td>수신거부</td>
                 <td>
                     <input type="checkbox" name="" id="">
                 </td>
                 <td>
-                    삭제버튼
+                    <div class="member-del-btn">삭제</div>
                 </td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>2022-02-17</td>
-                <td>최선희</td>
-                <td>22mallox@gmail.com</td>
+                <td>3</td>
+                <td>2022-02-03</td>
+                <td>donado14</td>
+                <td>donado14@gmail.com</td>
                 <td>수신거부</td>
                 <td>
                     <input type="checkbox" name="" id="">
                 </td>
                 <td>
-                    삭제버튼
+                    <div class="member-del-btn">삭제</div>
                 </td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>2022-02-17</td>
-                <td>최선희</td>
-                <td>22mallox@gmail.com</td>
+                <td>4</td>
+                <td>2022-02-04</td>
+                <td>portal4u</td>
+                <td>portal4u@gmail.com</td>
                 <td>수신거부</td>
                 <td>
                     <input type="checkbox" name="" id="">
                 </td>
                 <td>
-                    삭제버튼
+                    <div class="member-del-btn">삭제</div>
                 </td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>2022-02-17</td>
-                <td>최선희</td>
-                <td>22mallox@gmail.com</td>
+                <td>5</td>
+                <td>2022-02-05</td>
+                <td>lattepanda</td>
+                <td>lattepanda@gmail.com</td>
                 <td>수신거부</td>
                 <td>
                     <input type="checkbox" name="" id="">
                 </td>
                 <td>
-                    삭제버튼
+                    <div class="member-del-btn">삭제</div>
                 </td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>2022-02-17</td>
-                <td>최선희</td>
-                <td>22mallox@gmail.com</td>
+                <td>6</td>
+                <td>2022-02-06</td>
+                <td>github</td>
+                <td>github@gmail.com</td>
                 <td>수신거부</td>
                 <td>
                     <input type="checkbox" name="" id="">
                 </td>
                 <td>
-                    삭제버튼
+                    <div class="member-del-btn">삭제</div>
                 </td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>2022-02-17</td>
-                <td>최선희</td>
-                <td>22mallox@gmail.com</td>
+                <td>7</td>
+                <td>2022-02-07</td>
+                <td>twindragon</td>
+                <td>twindragon@gmail.com</td>
                 <td>수신거부</td>
                 <td>
                     <input type="checkbox" name="" id="">
                 </td>
                 <td>
-                    삭제버튼
+                    <div class="member-del-btn">삭제</div>
                 </td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>2022-02-17</td>
-                <td>최선희</td>
-                <td>22mallox@gmail.com</td>
+                <td>8</td>
+                <td>2022-02-08</td>
+                <td>spring</td>
+                <td>spring@gmail.com</td>
                 <td>수신거부</td>
                 <td>
                     <input type="checkbox" name="" id="">
                 </td>
                 <td>
-                    삭제버튼
+                    <div class="member-del-btn">삭제</div>
                 </td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>2022-02-17</td>
-                <td>최선희</td>
-                <td>22mallox@gmail.com</td>
+                <td>9</td>
+                <td>2022-02-09</td>
+                <td>fuckingsibal</td>
+                <td>fuckingsibal@gmail.com</td>
                 <td>수신거부</td>
                 <td>
                     <input type="checkbox" name="" id="">
                 </td>
                 <td>
-                    삭제버튼
+                    <div class="member-del-btn">삭제</div>
                 </td>
             </tr>
 
