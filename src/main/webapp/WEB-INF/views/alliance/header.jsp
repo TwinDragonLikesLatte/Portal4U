@@ -27,6 +27,11 @@
     .icons > .glyphicon {
         margin: 0 10px;
         font-size: 24px;
+        color: black;
+    }
+
+    .icons .glyphicon:hover {
+        color: #003d63;
     }
 
 </style>
@@ -34,9 +39,7 @@
 <header>
     <span class="main-title">Alliance</span>
     <div class="icons">
-        <div class="glyphicon glyphicon-home"></div>
-        <div class="glyphicon glyphicon-send"></div>
-        <div class="glyphicon glyphicon-bell"></div>
+        <a href="/"><div class="glyphicon glyphicon-home"></div></a>
     </div>
 </header>
 
