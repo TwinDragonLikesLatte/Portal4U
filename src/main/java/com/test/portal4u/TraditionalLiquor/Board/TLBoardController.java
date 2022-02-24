@@ -58,7 +58,7 @@ public class TLBoardController {
     */
    @GetMapping("/TraditionalLiquor/view.do")
    public String view(HttpServletRequest req, HttpSession session, HttpServletResponse resp, String seq_tlboard, Model model) {
-	   
+	  
 	   BoardDTO dto = service.get(seq_tlboard);
 	   
 	   model.addAttribute("dto", dto);
@@ -77,6 +77,8 @@ public class TLBoardController {
 	@GetMapping("/TraditionalLiquor/add.do")
 	public String madd(HttpServletRequest req, HttpSession session, HttpServletResponse resp) {
 		
+		
+
 		return "TLBoard.add";
 	}   
    
@@ -91,7 +93,6 @@ public class TLBoardController {
 	@PostMapping("/TraditionalLiquor/addok.do")
 	public String maddok(HttpServletRequest req, HttpSession session, HttpServletResponse resp, BoardDTO dto) {
 		
-		System.out.println("으아아아 dto:" + dto);						
 		int result = service.add(dto, session, req);
 		
 		if (result == 1) {
@@ -189,6 +190,7 @@ public class TLBoardController {
 		String savePath = "resources/images/TraditionalLiquor";
 		
 		String sDownloadPath = context.getRealPath(savePath);
+		System.out.println(sDownloadPath);
 
 
 		String sFilePath = sDownloadPath + "/" + fileName;

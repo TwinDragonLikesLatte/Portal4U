@@ -116,7 +116,7 @@
 							<li>제조 | ${dto.manufacturer}</li>
 							<li>소개 | ${dto.introduce}</li>
 						</ul>
-						<button>Add to cart, yo</button>
+						<button>상세보기</button>
 					</div>
 				</div>
 				<div class="img-wrapper">
@@ -133,7 +133,7 @@
 				<p>약/청주 | 맑은 술</p>
 			</div>
 			<c:forEach items="${list}" var="dto">
-			<c:if test = "${dto.seq_sort eq '2'}">
+			<c:if test = "${dto.seq_sort eq '2' || dto.seq_sort eq '3'}">
 			<div class="wrapper">
 				<div class="card">
 					<div class="front">
@@ -152,7 +152,7 @@
 							<li>제조 | ${dto.manufacturer}</li>
 							<li>소개 | ${dto.introduce}</li>
 						</ul>
-						<button>Add to cart, yo</button>
+						<button>상세보기</button>
 					</div>
 				</div>
 				<div class="img-wrapper">
@@ -166,65 +166,73 @@
 		<!-- 과실주 카테고리 -->
 		<div class="product">
 			<div class="divide-category">
-				<p>과실주 | 과실 또는 과즙에 당과 물을 첨가하여 발효시킨 술덧을 여과하여 만든 술</p>
+				<p>과실주 | 과일로 만든 술</p>
 			</div>
+			<c:forEach items="${list}" var="dto">
+			<c:if test = "${dto.seq_sort eq '4'}">
 			<div class="wrapper">
 				<div class="card">
 					<div class="front">
-						<h1>별산 막걸리</h1>
+						<h1>${dto.name}</h1>
 						<p>
-							7.7 deck<span>2018</span>
+							${dto.volume}ml<span>${dto.abv}</span>
 						</p>
-						<p class="price">$ 89.00</p>
+						<p class="price">${dto.manufacturer}</p>
 					</div>
 					<div class="right">
-						<h2>Signature</h2>
+						<h2>${dto.name}</h2>
 						<ul>
-							<li>Width 7.7"</li>
-							<li>Length 31.75"</li>
-							<li>Wheelbase 14"</li>
-							<li>Nose 6.875"</li>
-							<li>Tail 6.25"</li>
+							<li>주종 | ${dto.sort}</li>
+							<li>도수 | ${dto.abv}</li>
+							<li>용량 | ${dto.volume}ml</li>
+							<li>제조 | ${dto.manufacturer}</li>
+							<li>소개 | ${dto.introduce}</li>
 						</ul>
-						<button>Add to cart, yo</button>
+						<button>상세보기</button>
 					</div>
 				</div>
 				<div class="img-wrapper">
-					<img src='../resources/images/TraditionalLiquor/beoulsan.png' alt=''>
+					<img src='../resources/images/TraditionalLiquor/${dto.img}' alt=''>
 				</div>
 			</div>
+			</c:if>
+			</c:forEach>
 		</div>
 		
 		<!-- 증류주 카테고리 -->
 		<div class="product">
 			<div class="divide-category">
-				<p>증류주 | 곡류 등을 발효시켜 증류한 술</p>
+				<p>증류주 | 양조주를 증류기에 넣고 분별증류를 통해 정제한 술</p>
 			</div>
+			<c:forEach items="${list}" var="dto">
+			<c:if test = "${dto.seq_sort eq '5'}">
 			<div class="wrapper">
 				<div class="card">
 					<div class="front">
-						<h1>별산 막걸리</h1>
+						<h1>${dto.name}</h1>
 						<p>
-							7.7 deck<span>2018</span>
+							${dto.volume}ml<span>${dto.abv}</span>
 						</p>
-						<p class="price">$ 89.00</p>
+						<p class="price">${dto.manufacturer}</p>
 					</div>
 					<div class="right">
-						<h2>Signature</h2>
+						<h2>${dto.name}</h2>
 						<ul>
-							<li>Width 7.7"</li>
-							<li>Length 31.75"</li>
-							<li>Wheelbase 14"</li>
-							<li>Nose 6.875"</li>
-							<li>Tail 6.25"</li>
+							<li>주종 | ${dto.sort}</li>
+							<li>도수 | ${dto.abv}</li>
+							<li>용량 | ${dto.volume}ml</li>
+							<li>제조 | ${dto.manufacturer}</li>
+							<li>소개 | ${dto.introduce}</li>
 						</ul>
-						<button>Add to cart, yo</button>
+						<button>상세보기</button>
 					</div>
 				</div>
 				<div class="img-wrapper">
-					<img src='../resources/images/TraditionalLiquor/beoulsan.png' alt=''>
+					<img src='../resources/images/TraditionalLiquor/${dto.img}' alt=''>
 				</div>
 			</div>
+			</c:if>
+			</c:forEach>
 		</div>
 
 		<div class="map-explain">
