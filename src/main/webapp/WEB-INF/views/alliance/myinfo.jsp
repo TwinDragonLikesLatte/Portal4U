@@ -25,7 +25,6 @@
         height: 40px;
         margin-right: 20px;
         border-radius: 50%;
-        background-color: tomato;
     }
 
     .member-name {

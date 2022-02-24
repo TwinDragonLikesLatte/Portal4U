@@ -79,6 +79,7 @@
         .container > .sub-header {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             height: 60px;
             padding: 0 20px;
             border-bottom: 1px solid #BEBEBE;
@@ -121,13 +122,35 @@
     <tiles:insertAttribute name="content" />
     <tiles:insertAttribute name="people" />
 
-    <div class="modal">
+    <div class="modal modal-add-group">
         <div>
             <div class="modal-content">
                 <h1>그룹 추가</h1>
-                <form id="form-add-group">
-                    <input type="text" class="form-control" name="name" placeholder="그룹 이름을 입력해주세요.">
-                    <input type="button" id="btn-add-group" class="btn btn-primary" value="그룹 개설">
+                <form id="form-add-group" onsubmit="return false;">
+                    <input type="text" class="form-control" name="name" placeholder="그룹 이름을 입력해주세요." required>
+                    <input type="submit" id="btn-add-group" class="btn btn-primary" value="추가하기">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-add-channel">
+        <div>
+            <div class="modal-content">
+                <h1>채널 추가</h1>
+                <form id="form-add-channel" onsubmit="return false;">
+                    <input type="text" class="form-control" name="name" placeholder="채널 이름을 입력해주세요." required>
+                    <input type="submit" id="btn-add-channel" class="btn btn-primary" value="추가하기">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-add-people">
+        <div>
+            <div class="modal-content">
+                <h1>회원 초대</h1>
+                <form id="form-add-people" onsubmit="return false;">
+                    <input type="text" class="form-control" name="name" placeholder="초대할 회원의 아이디를 입력해주세요." required>
+                    <input type="submit" id="btn-add-people" class="btn btn-primary" value="초대하기">
                 </form>
             </div>
         </div>
@@ -141,10 +164,11 @@
 
     let selGroup = null;
     let selChannel = null;
+    let selPage = 1;
+    let pageEnd = false;
 
     $(document).ready( function() {
         connectStomp();
-        listGroup();
     })
 
     function connectStomp() {
@@ -153,6 +177,7 @@
         client = Stomp.over(socket);
         client.connect({}, function(frame) {
             console.log('Cennected to Stomp', frame);
+            listGroup();
         });
 
         $('.msg-input').keydown((evt) => {
@@ -160,9 +185,9 @@
 
                 client.send('/chat/' + selChannel, {}, JSON.stringify({
                     'text': $('.msg-input').val(),
-                    'seqSender': '${loginInfo.seq}',
-                    'nameSender': '${loginInfo.name}',
-                    'seqChannel': selChannel
+                    'seq_sender': '${loginInfo.seq}',
+                    'name_sender': '${loginInfo.name}',
+                    'seq_channel': selChannel
                 }));
 
                 $('.msg-input').val('');
@@ -170,29 +195,51 @@
         });
     }
 
-    function subTopic(seqChannel) {
+    function subTopic(seq_Channel) {
         //해당 토픽 구독
         if (client != null) {
-            client.subscribe('/topic/' + seqChannel, function (event) {
+            client.subscribe('/topic/' + seq_Channel, function (event) {
 
                 let message = JSON.parse(event.body);
 
-                if (selChannel == message.seqChannel) {
+                if (selChannel == message.seq_channel) {
 
-                    addMessage(message);
+                    appendMessage(message);
+                } else {
+
+                    console.log($('.channel-selector[data-channel-seq=' + message.seq_channel + ']'));
+                    $('.channel-selector[data-channel-seq=' + message.seq_channel + '] > .channel-notice').addClass('new');
                 }
             });
         }
     }
 
-    function addMessage(message) {
+    function appendMessage(message) {
         let $div = $('<div>');
         $div.addClass('chat-message');
-        $div.append('<div class="chat-member">' + message.nameSender + '<span>' + message.regdate + '</span></div>')
+        $div.append('<div class="chat-member">' + message.name_sender + '<span>' + message.regdate.substring(0, 16) + '</span></div>')
         $div.append('<div class="chat-text">' + message.text + '</div>')
         $('.main-content>.content').append($div);
-        $('.main-content').scrollTop('.chat-message'[0]);
+        $('.main-content>.content').scrollTop($('.main-content>.content').prop('scrollHeight'));
     }
+
+    function prependMessage(message) {
+        let $div = $('<div>');
+        $div.addClass('chat-message');
+        $div.append('<div class="chat-member">' + message.name_sender + '<span>' + message.regdate.substring(0, 16) + '</span></div>')
+        $div.append('<div class="chat-text">' + message.text + '</div>')
+        $('.main-content>.content').prepend($div);
+    }
+
+    $('#form-add-group').submit(function() {
+        addGroup();
+        return false;
+    })
+
+    $('#form-add-channel').submit(function() {
+        addChannel();
+        return false;
+    })
 
 </script>
 

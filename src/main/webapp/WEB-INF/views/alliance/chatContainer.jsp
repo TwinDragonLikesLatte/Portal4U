@@ -70,4 +70,17 @@
         $('.container.main-content > .content').html('');
     }
 
+    $('.main-content>.content').on('scroll', function() {
+        if ($('.main-content>.content').scrollTop() < 500) {
+
+            if (!pageEnd) {
+
+                selPage ++;
+                pageEnd = true;
+            }
+            console.log(selPage);
+            listMessage();
+        }
+    });
+
 </script>
