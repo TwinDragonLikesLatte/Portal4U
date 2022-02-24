@@ -112,26 +112,22 @@
 
 <script>
 
+    const newsLetterBox = document.querySelectorAll('.newsLetter-box');
+    const modal = document.querySelectorAll('.modal');
+    const closeBtn = document.querySelectorAll(".close-btn");
+    const body = document.querySelector('body');
 
+    for (let i = 0; i < newsLetterBox.length; i++) {
+        newsLetterBox[i].addEventListener('click', () => {
+            modal[i].classList.toggle('hidden');
+            body.classList.toggle('prevent-scroll');
+        });
+    };
 
-    const newsLetterBox = document.querySelectorAll(".newsLetter-box");
-    const modal = document.querySelector(".modal");
-    const closeBtn = modal.querySelector(".close-btn");
-    const body = document.body;
-
-    const openModal = (evt) => {
-        modal.classList.remove("hidden");
-        body.classList.add("prevent-scroll");
+    for(let i = 0; i < closeBtn.length; i++){
+        closeBtn[i].addEventListener('click', ()=>{
+            modal[i].classList.toggle('hidden');
+        });
     }
-
-    const closeModal = () => {
-        modal.classList.add("hidden");
-        body.classList.remove("prevent-scroll");
-    }
-
-    newsLetterBox.forEach(item => {
-        item.addEventListener("click", openModal);
-    });
-
-    closeBtn.addEventListener("click", closeModal);
+    
 </script>
